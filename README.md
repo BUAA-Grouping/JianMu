@@ -1,2 +1,2 @@
 # TeamUs
-a web application for teaming
+a web application for teaming.
