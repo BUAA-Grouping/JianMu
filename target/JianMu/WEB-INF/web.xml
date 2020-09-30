@@ -1,0 +1,31 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>SignServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.SignServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchMemberServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.SearchMemberServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchJobServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.SearchJobServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignServlet</servlet-name>
+        <url-pattern>/sign</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchMemberServlet</servlet-name>
+        <url-pattern>/search_member</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchJobServlet</servlet-name>
+        <url-pattern>/search_job</url-pattern>
+    </servlet-mapping>
+</web-app>
