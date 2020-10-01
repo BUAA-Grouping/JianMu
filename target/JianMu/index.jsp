@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html lang="zh">
@@ -40,7 +40,7 @@
             <nav id="navigation" class="navigation navigation-landscape">
                 <div class="nav-header">
                     <a class="nav-brand" href="#">
-                        <img src="assets/img/logo.png" class="logo" alt="" />
+                        <img src="assets/img/logo.png" class="logo" alt=""/>
                     </a>
                     <div class="nav-toggle"></div>
                 </div>
@@ -166,7 +166,8 @@
                             <div class="job-grid-wrap">
                                 <span class="job-type j-part-time">Part Time</span>
                                 <div class="job-grid-thumb">
-                                    <a href="job-detail.html"><img src="assets/img/微电子.png" class="img-fluid mx-auto" alt="" /></a>
+                                    <a href="job-detail.html"><img src="assets/img/微电子.png" class="img-fluid mx-auto"
+                                                                   alt=""/></a>
                                 </div>
                                 <h4 class="job-title"><a href="job-detail.html">Product Manager</a></h4>
                                 <hr>
@@ -190,7 +191,8 @@
                                 <div class="featured-job"><i class="ti-star filled"></i></div>
                                 <span class="job-type j-full-time">Full Time</span>
                                 <div class="job-grid-thumb">
-                                    <a href="job-detail.html"><img src="assets/img/材料科学与工程.png" class="img-fluid mx-auto" alt="" /></a>
+                                    <a href="job-detail.html"><img src="assets/img/材料科学与工程.png"
+                                                                   class="img-fluid mx-auto" alt=""/></a>
                                 </div>
                                 <h4 class="job-title"><a href="job-detail.html">Project & Team Head</a></h4>
                                 <hr>
@@ -213,7 +215,8 @@
                             <div class="job-grid-wrap">
                                 <span class="job-type j-full-time">Full Time</span>
                                 <div class="job-grid-thumb">
-                                    <a href="job-detail.html"><img src="assets/img/经管.png" class="img-fluid mx-auto" alt="" /></a>
+                                    <a href="job-detail.html"><img src="assets/img/经管.png" class="img-fluid mx-auto"
+                                                                   alt=""/></a>
                                 </div>
                                 <h4 class="job-title"><a href="job-detail.html">Web Designer</a></h4>
                                 <hr>
@@ -237,7 +240,8 @@
                                 <div class="featured-job"><i class="ti-star filled"></i></div>
                                 <span class="job-type j-freelance-time">Freelance</span>
                                 <div class="job-grid-thumb">
-                                    <a href="job-detail.html"><img src="assets/img/航空科学与工程学院.png" class="img-fluid mx-auto" alt="" /></a>
+                                    <a href="job-detail.html"><img src="assets/img/航空科学与工程学院.png"
+                                                                   class="img-fluid mx-auto" alt=""/></a>
                                 </div>
                                 <h4 class="job-title"><a href="job-detail.html">Sales Analytics</a></h4>
                                 <hr>
@@ -260,7 +264,8 @@
                             <div class="job-grid-wrap">
                                 <span class="job-type j-part-time">Part Time</span>
                                 <div class="job-grid-thumb">
-                                    <a href="job-detail.html"><img src="assets/img/计算机学院.png" class="img-fluid mx-auto" alt="" /></a>
+                                    <a href="job-detail.html"><img src="assets/img/计算机学院.png" class="img-fluid mx-auto"
+                                                                   alt=""/></a>
                                 </div>
                                 <h4 class="job-title"><a href="job-detail.html">Product Manager</a></h4>
                                 <hr>
@@ -284,7 +289,8 @@
                                 <div class="featured-job"><i class="ti-star filled"></i></div>
                                 <span class="job-type j-temporary-time">Temporary</span>
                                 <div class="job-grid-thumb">
-                                    <a href="job-detail.html"><img src="assets/img/网安.png" class="img-fluid mx-auto" alt="" /></a>
+                                    <a href="job-detail.html"><img src="assets/img/网安.png" class="img-fluid mx-auto"
+                                                                   alt=""/></a>
                                 </div>
                                 <h4 class="job-title"><a href="job-detail.html">Team Director</a></h4>
                                 <hr>
@@ -409,7 +415,7 @@
                         <!-- Single Testimonial -->
                         <div class="item">
                             <div class="tauth-thumb">
-                                <img src="assets/img/伏拉夫.jpg" class="mx-auto img-circle" alt="" />
+                                <img src="assets/img/伏拉夫.jpg" class="mx-auto img-circle" alt=""/>
                             </div>
                             <div class="tauth-detail">
                                 <h4 class="tauth-title">伏拉夫</h4>
@@ -423,36 +429,42 @@
                         <!-- Single Testimonial -->
                         <div class="item">
                             <div class="tauth-thumb">
-                                <img src="assets/img/user-2.jpg" class="mx-auto img-circle" alt="" />
+                                <img src="assets/img/user-2.jpg" class="mx-auto img-circle" alt=""/>
                             </div>
                             <div class="tauth-detail">
                                 <h4 class="tauth-title">Riya Kilwarnia</h4>
                                 <span class="tauth-subtitle">UI/UX Desihner</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing elit. consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua consectetur adipiscing elit. consectetur
+                                    adipiscing elit, sed do eiusmod tempor incididunt</p>
                             </div>
                         </div>
 
                         <!-- Single Testimonial -->
                         <div class="item">
                             <div class="tauth-thumb">
-                                <img src="assets/img/user-3.jpg" class="mx-auto img-circle" alt="" />
+                                <img src="assets/img/user-3.jpg" class="mx-auto img-circle" alt=""/>
                             </div>
                             <div class="tauth-detail">
                                 <h4 class="tauth-title">Daniel Wartion</h4>
                                 <span class="tauth-subtitle">App Developer</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing elit. consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua consectetur adipiscing elit. consectetur
+                                    adipiscing elit, sed do eiusmod tempor incididunt</p>
                             </div>
                         </div>
 
                         <!-- Single Testimonial -->
                         <div class="item">
                             <div class="tauth-thumb">
-                                <img src="assets/img/user-4.jpg" class="mx-auto img-circle" alt="" />
+                                <img src="assets/img/user-4.jpg" class="mx-auto img-circle" alt=""/>
                             </div>
                             <div class="tauth-detail">
                                 <h4 class="tauth-title">Ritika Uswana</h4>
                                 <span class="tauth-subtitle">Software Developer</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing elit. consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua consectetur adipiscing elit. consectetur
+                                    adipiscing elit, sed do eiusmod tempor incididunt</p>
                             </div>
                         </div>
 
@@ -608,10 +620,11 @@
 
                     <div class="col-lg-4 col-md-4">
                         <div class="footer-widget">
-                            <img src="assets/img/logo-light.png" class="img-footer" alt="" />
+                            <img src="assets/img/logo-light.png" class="img-footer" alt=""/>
                             <div class="footer-add">
                                 <p>BEIHANG UNIVERSITY XUEYUAN ROAD<br> NO.37,HAIDIAN DISTRICT</br> China</p>
-                                <p><strong>Email:</strong></br><a href="mailto:mokoghost@gmail.com">mokoghost@gmail.com</a></p>
+                                <p><strong>Email:</strong></br><a
+                                        href="mailto:mokoghost@gmail.com">mokoghost@gmail.com</a></p>
                                 <!--                                <p><strong>Call:</strong></br></p>-->
                             </div>
 
@@ -635,7 +648,8 @@
                             <ul class="footer-menu">
                                 <li><a href="candidate-dashboard.html">个人资料</a></li>
                                 <li><a href="https://www.bilibili.com">看会B站</a></li>
-                                <li><a href="javascript:void(0)" data-toggle="modal" data-target="#signup" data-dismiss="modal">注册</a></li>
+                                <li><a href="javascript:void(0)" data-toggle="modal" data-target="#signup"
+                                       data-dismiss="modal">注册</a></li>
                             </ul>
                         </div>
                     </div>
@@ -740,7 +754,9 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <div class="mf-link"><i class="ti-user"></i>还没有账号？<a href="javascript:void(0)" data-toggle="modal" data-target="#signup" data-dismiss="modal">注册</a>
+                    <div class="mf-link"><i class="ti-user"></i>还没有账号？<a href="javascript:void(0)" data-toggle="modal"
+                                                                         data-target="#signup"
+                                                                         data-dismiss="modal">注册</a>
                     </div>
                     <div class="mf-forget"><a href="find-back-my-code.html"><i class="ti-help"></i>忘记密码？</a></div>
                 </div>
@@ -829,7 +845,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <div class="mf-link"><i class="ti-user"></i>已有账户？<a href="javascript:void(0)" data-toggle="modal" data-target="#login" data-dismiss="modal">登录</a>
+                    <div class="mf-link"><i class="ti-user"></i>已有账户？<a href="javascript:void(0)" data-toggle="modal"
+                                                                        data-target="#login" data-dismiss="modal">登录</a>
                     </div>
                     <div class="mf-forget"><a href="need-help.html"><i class="ti-help"></i>需要帮助</a></div>
                 </div>

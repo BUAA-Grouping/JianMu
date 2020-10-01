@@ -5,8 +5,12 @@
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
     <servlet>
-        <servlet-name>SignServlet</servlet-name>
-        <servlet-class>com.webapp.servlet.SignServlet</servlet-class>
+        <servlet-name>SignInServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.SignInServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SignUpServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.SignUpServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SearchMemberServlet</servlet-name>
@@ -17,15 +21,19 @@
         <servlet-class>com.webapp.servlet.SearchJobServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>SignServlet</servlet-name>
-        <url-pattern>/sign</url-pattern>
+        <servlet-name>SignInServlet</servlet-name>
+        <url-pattern>/sign_in</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignUpServlet</servlet-name>
+        <url-pattern>/sign_up</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SearchMemberServlet</servlet-name>
-        <url-pattern>/search_member</url-pattern>
+        <url-pattern>/member_search</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SearchJobServlet</servlet-name>
-        <url-pattern>/search_job</url-pattern>
+        <url-pattern>/job_search</url-pattern>
     </servlet-mapping>
 </web-app>
