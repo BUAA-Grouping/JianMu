@@ -5,6 +5,14 @@
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
     <servlet>
+        <servlet-name>DeleteJobServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.DeleteJobServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ModifyUserServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.ModifyUserServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>SignInServlet</servlet-name>
         <servlet-class>com.webapp.servlet.SignInServlet</servlet-class>
     </servlet>
@@ -13,13 +21,21 @@
         <servlet-class>com.webapp.servlet.SignUpServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SearchMemberServlet</servlet-name>
-        <servlet-class>com.webapp.servlet.SearchMemberServlet</servlet-class>
+        <servlet-name>SearchUserServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.SearchUserServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SearchJobServlet</servlet-name>
         <servlet-class>com.webapp.servlet.SearchJobServlet</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteJobServlet</servlet-name>
+        <url-pattern>/job_delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModifyUserServlet</servlet-name>
+        <url-pattern>/user_modify</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SignInServlet</servlet-name>
         <url-pattern>/sign_in</url-pattern>
@@ -29,8 +45,8 @@
         <url-pattern>/sign_up</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SearchMemberServlet</servlet-name>
-        <url-pattern>/member_search</url-pattern>
+        <servlet-name>SearchUserServlet</servlet-name>
+        <url-pattern>/user_search</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SearchJobServlet</servlet-name>

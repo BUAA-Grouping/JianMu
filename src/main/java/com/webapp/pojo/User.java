@@ -1,26 +1,44 @@
 package com.webapp.pojo;
 
 import java.io.Serializable;
+import java.net.URL;
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class User implements Serializable {
     private int id;
-    private String username;
+    private String name;
     private String password;
-    private String nickname;
 
-    private String profile_photo;
-    private Date creat_time;
-    private Date last_login;
-    private String place;
-    private String Department;
+    private int major;
+    private int grade;
+    private int campus;
     private String profile;
+    private URL avatar_url;
 
-    public String getUsername() {
-        return username;
+    private Timestamp update_at;
+    private Timestamp create_at;
+    private Timestamp last_login_at;
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
         return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public User(java.lang.String name, java.lang.String password) {
+        this.name = name;
+        this.password = password;
     }
 }

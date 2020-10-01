@@ -1,6 +1,7 @@
 package com.webapp.servlet;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.webapp.pojo.User;
 import com.webapp.service.SignService;
 import com.webapp.service.impl.SignServiceImpl;
@@ -20,27 +21,26 @@ public class SignInServlet extends HttpServlet {
     SignService signService = new SignServiceImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String username = request.getParameter("username");
-//        String password = request.getParameter("password");
-//        String action = request.getParameter("task");
-//        if (action.equals("sign in")) {
-//            if (signService.signIn(new User(username, password)) == null) {
-//                //TODO where to Jump
-//                System.out.println(username + "sign in" + System.currentTimeMillis());
-//                request.getRequestDispatcher("./").forward(request, response);
-//            } else {
-//                //TODO how to respon
-//            }
-//        } else if (action.equals("sign up")) {
-//            if (signService.existUser(username)) {
-//                //TODO how to respon
-//                request.getRequestDispatcher("./").forward(request, response);
-//            } else {
-//                signService.registUser(new User(username, password));
-//            }
-//        } else {
-//
-//        }
+        String name = request.getParameter("name");
+        String password = request.getParameter("password");
+        SignService signService = new SignServiceImpl();
+        JsonObject jsonObject = new JsonObject();
+        switch (signService.signIn(name, password)) {
+            case -1:
+                jsonObject.addProperty("message", "用户名不存在");
+                break;
+            case -2:
+                jsonObject.addProperty("message", "用户名或密码错误");
+                break;
+            case 0:
+                jsonObject.addProperty("message", "登陆成功");
+            default:
+                jsonObject.addProperty("message", "服务器异常");
+        }
+        response.setContentType("text/html;charset=utf-8");
+        PrintWriter writer = response.getWriter();
+        writer.write(jsonObject.toString());
+        writer.flush();
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
