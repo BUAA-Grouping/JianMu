@@ -1,2 +1,2 @@
-# TeamUs
+# JianMu
 a web application for teaming.
