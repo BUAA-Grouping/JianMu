@@ -38,29 +38,25 @@
             <div class="container-fluid">
                 <nav id="navigation" class="navigation navigation-landscape">
                     <div class="nav-header">
-                        <a class="nav-brand" href="index.html">
+                        <a class="nav-brand" href="#">
                             <img src="assets/img/logo.png" class="logo" alt="" />
                         </a>
                         <div class="nav-toggle"></div>
                     </div>
                     <div class="nav-menus-wrapper" style="transition-property: none;">
                         <ul class="nav-menu">
-
-                            <li><a href="index.html" class="active">首页</a></li>
-
                             <li><a href="#">我要找事做<span class="submenu-indicator"></span></a>
                                 <ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">
                                     <li><a href="search-full-width.html">搜索职位</a></li>
                                     <li><a href="employers-list.html">搜索招募人</a></li>
-                                    <li><a href="candidate-dashboard.html">个人资料</a></li>
+                                    <li><a href="candidate-dashboard.html#profile">个人资料</a></li>
                                 </ul>
                             </li>
-
 
                             <li><a href="#">我要找队友<span class="submenu-indicator"></span></a>
                                 <ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">
                                     <li><a href="candidate-grid.html">搜索候选人</a></li>
-                                    <li><a href="candidate-dashboard.html">招募管理</a></li>
+                                    <li><a href="candidate-dashboard.html#manage-jobs">招募管理</a></li>
                                 </ul>
                             </li>
 
@@ -80,12 +76,12 @@
 
                             <li>
                                 <a href="#" data-toggle="modal" data-target="#login">
-                                    <i class="ti-user mr-1"></i><span class="dn-lg">Login/Register</span>
+                                    <i class="ti-user mr-1"></i><span class="dn-lg">登录/注册</span>
                                 </a>
                             </li>
                             <li class="add-listing theme-bg">
-                                <a href="#">
-                                    <i class="ti-plus"></i> Post Job
+                                <a href="candidate-dashboard.html">
+                                    <i class="ti-plus"></i> 发布任务
                                 </a>
                             </li>
                         </ul>
@@ -104,7 +100,7 @@
             <div class="container">
                 <div class="row">
                     <div class="tr-list-center">
-                        <h2>Web Designer for Brand</h2>
+                        <h2>数据库大作业</h2>
                     </div>
                 </div>
             </div>
@@ -121,22 +117,22 @@
                         <div class="single-job-head head-light style-1 mb-0">
                             <div class="single-job-left">
                                 <div class="single-job-thumb">
-                                    <img src="assets/img/材料科学与工程.png" alt="">
+                                    <img src="assets/img/计算机学院.png" alt="">
                                 </div>
                                 <div class="single-job-info">
-                                    <h4 class="single-job-title">Product Designer for Web<span class="job-type full-time">Full Time</span>
-                                    </h4>
-                                    <span class="sj-location"><i class="ti-location-pin"></i>London, United Kingdom</span>
+                                    <h4 class="single-job-title">计算机学院</h4>
+                                    <span class="sj-location"><i class="ti-location-pin"></i>南校区（学院路）</span>
                                     <ul class="tags-jobs">
-                                        <li><i class="ti-file"></i> Applications 1</li>
-                                        <li><i class="ti-calendar"></i> Post Date: Fab 17, 2020</li>
-                                        <li><i class="fa fa-eye"></i> Views 7249</li>
+                                        <li><i class="ti-file"></i>申请人数 1</li>
+                                        <li><i class="ti-calendar"></i> 发布时间: Fab 17, 2020</li>
+                                        <li><i class="ti-eye"></i> 浏览量 7249</li>
+                                        <!--注意修改-->
                                     </ul>
                                 </div>
                             </div>
 
                             <div class="single-job-apply-wrap">
-                                <a href="#" class="btn apply-btn btn-primary"><i class="ti-check-box"></i>Apply job</a>
+                                <a href="#" class="btn apply-btn btn-primary"><i class="ti-check-box"></i>申请任务</a>
                             </div>
                         </div>
 
@@ -159,45 +155,50 @@
                                 <li class="job-categories">
                                     <i class="ti-layers"></i>
                                     <div class="content">
-                                        <span class="title">Job Categories:</span>
-                                        <span><a href="#" class="text-danger">IT &amp; Computer</a></span>
+                                        <span class="title">招募人数目标：</span>
+                                        <span><a href="#" class="text-danger">3 人</a></span>
                                     </div>
                                 </li>
+                                <!--没用的信息-->
+                                <span>
+                                <!--                            <li class="job-categories">-->
+                                <!--                                <i class="ti-layers"></i>-->
+                                <!--                                <div class="content">-->
+                                <!--                                    <span class="title">Job Type:</span>-->
+                                <!--                                    <span class="dark text-success">Full-Time</span>-->
+                                <!--                                </div>-->
+                                <!--                            </li>-->
+                                <!--                            <li class="job-categories">-->
+                                <!--                                <i class="ti-layers"></i>-->
+                                <!--                                <div class="content">-->
+                                <!--                                    <span class="title">Job Level::</span>-->
+                                <!--                                    <span class="dark text-warning">Senior</span>-->
+                                <!--                                </div>-->
+                                <!--                            </li>-->
+                                <!--                            <li class="job-categories">-->
+                                <!--                                <i class="ti-layers"></i>-->
+                                <!--                                <div class="content">-->
+                                <!--                                    <span class="title">Languages:</span>-->
+                                <!--                                    <span class="dark">English</span>-->
+                                <!--                                </div>-->
+                                <!--                            </li>-->
+                                <!--                            <li class="job-categories">-->
+                                <!--                                <i class="ti-layers"></i>-->
+                                <!--                                <div class="content">-->
+                                <!--                                    <span class="title">Skills:</span>-->
+                                <!--                                    <span class="dark">HTML5, CSS3, Jquery</span>-->
+                                <!--                                </div>-->
+                                <!--                            </li>-->
+                                </span>
+
                                 <li class="job-categories">
                                     <i class="ti-layers"></i>
                                     <div class="content">
-                                        <span class="title">Job Type:</span>
-                                        <span class="dark text-success">Full-Time</span>
-                                    </div>
-                                </li>
-                                <li class="job-categories">
-                                    <i class="ti-layers"></i>
-                                    <div class="content">
-                                        <span class="title">Job Level::</span>
-                                        <span class="dark text-warning">Senior</span>
-                                    </div>
-                                </li>
-                                <li class="job-categories">
-                                    <i class="ti-layers"></i>
-                                    <div class="content">
-                                        <span class="title">Published Date:</span>
+                                        <span class="title">发布时间：</span>
                                         <span class="text-purple">Fab 20 2020</span>
                                     </div>
                                 </li>
-                                <li class="job-categories">
-                                    <i class="ti-layers"></i>
-                                    <div class="content">
-                                        <span class="title">Languages:</span>
-                                        <span class="dark">English</span>
-                                    </div>
-                                </li>
-                                <li class="job-categories">
-                                    <i class="ti-layers"></i>
-                                    <div class="content">
-                                        <span class="title">Skills:</span>
-                                        <span class="dark">HTML5, CSS3, Jquery</span>
-                                    </div>
-                                </li>
+
                             </ul>
                         </div>
                         <!-- Job Overview -->
@@ -205,7 +206,7 @@
                         <!-- Job Overview -->
                         <div class="tr-single-box">
                             <div class="tr-single-header">
-                                <h4><i class="ti-info"></i>Job Overview</h4>
+                                <h4><i class="ti-info"></i>工作内容</h4>
                             </div>
                             <div class="tr-single-body">
                                 <p>We are seeking an experienced Wordpress developer with minimum 2+ years of experiencea WordPress Developer responsible for both back-end and front-end development, including creating WordPress themes and plugins. This position
@@ -216,96 +217,104 @@
                         </div>
 
                         <!-- Job Qualifications -->
-                        <div class="tr-single-box">
-                            <div class="tr-single-header">
-                                <h4><i class="ti-book"></i>Skills and Qualifications</h4>
-                            </div>
-                            <div class="tr-single-body">
-                                <ul class="jb-detail-list">
-                                    <li>Hand On experience with Wordpress</li>
-                                    <li>Good understanding of front-end technologies, including HTML5, CSS3, JavaScript, jQuery
-                                    </li>
-                                    <li>Experience building user interfaces for websites and/or web applications</li>
-                                    <li>Experience designing and developing responsive design websites</li>
-                                    <li>Comfortable working with debugging tools like Firebug, Chrome inspector, etc.</li>
-                                    <li>Ability to understand CSS changes and their ramifications to ensure consistent style across platforms and browsers
-                                    </li>
-                                    <li>Ability to convert comprehensive layout and wireframes into working HTML pages</li>
-                                    <li>Knowledge of how to interact with RESTful APIs and formats (JSON, XML)</li>
-                                    <li>Proficient understanding of code versioning tool GIT</li>
-                                    <li>Strong understanding of PHP back-end development</li>
-                                </ul>
-                            </div>
-                        </div>
+                        <span>
+                        <!--                    <div class="tr-single-box">-->
+                        <!--                        <div class="tr-single-header">-->
+                        <!--                            <h4><i class="ti-book"></i>Skills and Qualifications</h4>-->
+                        <!--                        </div>-->
+                        <!--                        <div class="tr-single-body">-->
+                        <!--                            <ul class="jb-detail-list">-->
+                        <!--                                <li>Hand On experience with Wordpress</li>-->
+                        <!--                                <li>Good understanding of front-end technologies, including HTML5, CSS3, JavaScript,-->
+                        <!--                                    jQuery-->
+                        <!--                                </li>-->
+                        <!--                                <li>Experience building user interfaces for websites and/or web applications</li>-->
+                        <!--                                <li>Experience designing and developing responsive design websites</li>-->
+                        <!--                                <li>Comfortable working with debugging tools like Firebug, Chrome inspector, etc.</li>-->
+                        <!--                                <li>Ability to understand CSS changes and their ramifications to ensure consistent style-->
+                        <!--                                    across platforms and browsers-->
+                        <!--                                </li>-->
+                        <!--                                <li>Ability to convert comprehensive layout and wireframes into working HTML pages</li>-->
+                        <!--                                <li>Knowledge of how to interact with RESTful APIs and formats (JSON, XML)</li>-->
+                        <!--                                <li>Proficient understanding of code versioning tool GIT</li>-->
+                        <!--                                <li>Strong understanding of PHP back-end development</li>-->
+                        <!--                            </ul>-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
+                    </span>
 
-
+                        <!--教育程度要求-->
+                        <span>
                         <!-- Job Education -->
-                        <div class="tr-single-box">
-                            <div class="tr-single-header">
-                                <h4><i class="ti-cup"></i>Education</h4>
-                            </div>
-                            <div class="tr-single-body">
-                                <ul class="jb-detail-list">
-                                    <li>Higher(10th Pass) (Preferred)</li>
-                                    <li>Higher Secondary(12th Pass) (Preferred)</li>
-                                    <li>Any Graduattion Degree(13th Pass) (Preferred)</li>
-                                </ul>
-                            </div>
-                        </div>
+                        <!--                        <div class="tr-single-box">-->
+                        <!--                            <div class="tr-single-header">-->
+                        <!--                                <h4><i class="ti-cup"></i>Education</h4>-->
+                        <!--                            </div>-->
+                        <!--                            <div class="tr-single-body">-->
+                        <!--                                <ul class="jb-detail-list">-->
+                        <!--                                    <li>Higher(10th Pass) (Preferred)</li>-->
+                        <!--                                    <li>Higher Secondary(12th Pass) (Preferred)</li>-->
+                        <!--                                    <li>Any Graduattion Degree(13th Pass) (Preferred)</li>-->
+                        <!--                                </ul>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        </span>
 
-                        <a href="javascript:void(0)" data-toggle="modal" data-target="#apply" class="btn btn-info full-width mb-2"> Apply This Job</a>
+                        <!--                    <a href="javascript:void(0)" data-toggle="modal" data-target="#apply"-->
+                        <!--                       class="btn btn-info full-width mb-2">申请任务</a>-->
 
                     </div>
 
                     <!-- Sidebar Start -->
                     <div class="col-md-4 col-sm-12">
 
-                        <!-- Apply Button Wrap -->
-                        <div class="apply-wrap-buttons">
+                        <!-- Apply Button Wrap(废弃) -->
+                        <span>
+                        <!--                    <div class="apply-wrap-buttons">-->
+                        <!--                        <div class="row">-->
+                        <!--                            <div class="col-lg-12 col-md-12 col-sm-12">-->
+                        <!--                                <div class="input-group">-->
+                        <!--                                    <a href="#" class="btn btn-primary"><i class="ti-check-box"></i>Apply Job</a>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
 
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <div class="input-group">
-                                        <a href="#" class="btn btn-primary"><i class="ti-check-box"></i>Apply Job</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <!--                        <div class="row">-->
+                        <!--                            <div class="col-lg-6 col-md-6 col-sm-6">-->
+                        <!--                                <div class="input-group">-->
+                        <!--                                    <a href="#" class="btn btn-light with-linkedin"><i class="ti-linkedin"></i>Linkedin</a>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                            <div class="col-lg-6 col-md-6 col-sm-6">-->
+                        <!--                                <div class="input-group">-->
+                        <!--                                    <a href="#" class="btn btn-light save-job"><i class="ti-heart"></i>Save Job</a>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
 
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="input-group">
-                                        <a href="#" class="btn btn-light with-linkedin"><i class="ti-linkedin"></i>Linkedin</a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="input-group">
-                                        <a href="#" class="btn btn-light save-job"><i class="ti-heart"></i>Save Job</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
+                        <!--                    </div>-->
+                    </span>
 
                         <!-- Job Overview -->
                         <div class="tr-single-box">
                             <div class="tr-single-header">
-                                <h4><i class="ti-direction"></i> Employer Overview</h4>
+                                <h4><i class="ti-direction"></i> 招募者信息</h4>
                             </div>
 
                             <div class="tr-single-body">
                                 <div class="job-employers-name">
                                     <div class="employers-thumb-caption">
                                         <div class="employers-thumb">
-                                            <img src="assets/img/士额.png" class="img-fluid" alt="" />
+                                            <img src="assets/img/user-3.jpg" class="img-fluid mx-auto img-circle" alt="" />
                                         </div>
-                                        <h4 class="employers-title">Drizvato Soft</h4>
-                                        <span><i class="ti-location-pin"></i>Liverpool, United Kingdom</span>
+                                        <h4 class="employers-title">梁朝伟</h4>
+                                        <span><i class="ti-location-pin"></i>南校区（学院路）</span>
                                     </div>
                                     <div class="employers-enfo">
                                         <ul>
-                                            <li><i class="lni lni-world"></i>https://drizvato.com</li>
-                                            <li><i class="lni lni-phone"></i>+91 123 456 7895</li>
-                                            <li><i class="ti-email"></i>Drizvato@gmail.com</li>
+                                            <li><i class="lni lni-school-compass"></i>计算机学院</li>
+                                            <li><i class="lni lni-phone"></i>+086 110</li>
+                                            <li><i class="ti-email"></i>lwc@gmail.com</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -314,160 +323,163 @@
                         </div>
 
                         <!-- Company Address -->
-                        <div class="tr-single-box">
-                            <div class="tr-single-header">
-                                <h4><i class="ti-direction"></i> Company Address</h4>
-                            </div>
+                        <span>
+<!--                    <div class="tr-single-box">-->
+                        <!--                        <div class="tr-single-header">-->
+                        <!--                            <h4><i class="ti-direction"></i> Company Address</h4>-->
+                        <!--                        </div>-->
 
-                            <div class="tr-single-body">
-                                <ul class="extra-service">
-                                    <li>
-                                        <div class="icon-box-icon-block">
-                                            <a href="#">
-                                                <div class="icon-box-round">
-                                                    <i class="lni-map-marker"></i>
-                                                </div>
-                                                <div class="icon-box-text">
-                                                    524 New Ave, CA 548, USA
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
+                        <!--                        <div class="tr-single-body">-->
+                        <!--                            <ul class="extra-service">-->
+                        <!--                                <li>-->
+                        <!--                                    <div class="icon-box-icon-block">-->
+                        <!--                                        <a href="#">-->
+                        <!--                                            <div class="icon-box-round">-->
+                        <!--                                                <i class="lni-map-marker"></i>-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="icon-box-text">-->
+                        <!--                                                524 New Ave, CA 548, USA-->
+                        <!--                                            </div>-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </li>-->
 
-                                    <li>
-                                        <div class="icon-box-icon-block">
-                                            <a href="#">
-                                                <div class="icon-box-round">
-                                                    <i class="lni-phone-handset"></i>
-                                                </div>
-                                                <div class="icon-box-text">
-                                                    +1 415-989-1002
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
+                        <!--                                <li>-->
+                        <!--                                    <div class="icon-box-icon-block">-->
+                        <!--                                        <a href="#">-->
+                        <!--                                            <div class="icon-box-round">-->
+                        <!--                                                <i class="lni-phone-handset"></i>-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="icon-box-text">-->
+                        <!--                                                +1 415-989-1002-->
+                        <!--                                            </div>-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </li>-->
 
-                                    <li>
-                                        <div class="icon-box-icon-block">
-                                            <a href="#">
-                                                <div class="icon-box-round">
-                                                    <i class="lni-envelope"></i>
-                                                </div>
-                                                <div class="icon-box-text">
-                                                    helpsupport.com@finding.com
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
+                        <!--                                <li>-->
+                        <!--                                    <div class="icon-box-icon-block">-->
+                        <!--                                        <a href="#">-->
+                        <!--                                            <div class="icon-box-round">-->
+                        <!--                                                <i class="lni-envelope"></i>-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="icon-box-text">-->
+                        <!--                                                helpsupport.com@finding.com-->
+                        <!--                                            </div>-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </li>-->
 
-                                    <li>
-                                        <div class="icon-box-icon-block">
-                                            <a href="#">
-                                                <div class="icon-box-round">
-                                                    <i class="lni-world"></i>
-                                                </div>
-                                                <div class="icon-box-text">
-                                                    www.myfinding.com
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
+                        <!--                                <li>-->
+                        <!--                                    <div class="icon-box-icon-block">-->
+                        <!--                                        <a href="#">-->
+                        <!--                                            <div class="icon-box-round">-->
+                        <!--                                                <i class="lni-world"></i>-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="icon-box-text">-->
+                        <!--                                                www.myfinding.com-->
+                        <!--                                            </div>-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </li>-->
 
-                                </ul>
-                            </div>
+                        <!--                            </ul>-->
+                        <!--                        </div>-->
 
-                        </div>
-
+                        <!--                    </div>-->
+                    </span>
                         <!-- Share this -->
-                        <div class="tr-single-box">
-                            <div class="tr-single-header">
-                                <h4><i class="ti-share"></i> Share this Job</h4>
-                            </div>
+                        <span>
+                        <!--                    <div class="tr-single-box">-->
+                        <!--                        <div class="tr-single-header">-->
+                        <!--                            <h4><i class="ti-share"></i> Share this Job</h4>-->
+                        <!--                        </div>-->
 
-                            <div class="tr-single-body">
-                                <ul class="extra-service half">
-                                    <li>
-                                        <div class="icon-box-icon-block">
-                                            <a href="#">
-                                                <div class="icon-box-round">
-                                                    <i class="lni-facebook"></i>
-                                                </div>
-                                                <div class="icon-box-text">
-                                                    Facebook
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
+                        <!--                        <div class="tr-single-body">-->
+                        <!--                            <ul class="extra-service half">-->
+                        <!--                                <li>-->
+                        <!--                                    <div class="icon-box-icon-block">-->
+                        <!--                                        <a href="#">-->
+                        <!--                                            <div class="icon-box-round">-->
+                        <!--                                                <i class="lni-facebook"></i>-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="icon-box-text">-->
+                        <!--                                                Facebook-->
+                        <!--                                            </div>-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </li>-->
 
-                                    <li>
-                                        <div class="icon-box-icon-block">
-                                            <a href="#">
-                                                <div class="icon-box-round">
-                                                    <i class="lni-google-plus"></i>
-                                                </div>
-                                                <div class="icon-box-text">
-                                                    Google plus
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
+                        <!--                                <li>-->
+                        <!--                                    <div class="icon-box-icon-block">-->
+                        <!--                                        <a href="#">-->
+                        <!--                                            <div class="icon-box-round">-->
+                        <!--                                                <i class="lni-google-plus"></i>-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="icon-box-text">-->
+                        <!--                                                Google plus-->
+                        <!--                                            </div>-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </li>-->
 
-                                    <li>
-                                        <div class="icon-box-icon-block">
-                                            <a href="#">
-                                                <div class="icon-box-round">
-                                                    <i class="lni-twitter"></i>
-                                                </div>
-                                                <div class="icon-box-text">
-                                                    Twitter
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
+                        <!--                                <li>-->
+                        <!--                                    <div class="icon-box-icon-block">-->
+                        <!--                                        <a href="#">-->
+                        <!--                                            <div class="icon-box-round">-->
+                        <!--                                                <i class="lni-twitter"></i>-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="icon-box-text">-->
+                        <!--                                                Twitter-->
+                        <!--                                            </div>-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </li>-->
 
-                                    <li>
-                                        <div class="icon-box-icon-block">
-                                            <a href="#">
-                                                <div class="icon-box-round">
-                                                    <i class="lni-linkedin"></i>
-                                                </div>
-                                                <div class="icon-box-text">
-                                                    LinkedIn
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
+                        <!--                                <li>-->
+                        <!--                                    <div class="icon-box-icon-block">-->
+                        <!--                                        <a href="#">-->
+                        <!--                                            <div class="icon-box-round">-->
+                        <!--                                                <i class="lni-linkedin"></i>-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="icon-box-text">-->
+                        <!--                                                LinkedIn-->
+                        <!--                                            </div>-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </li>-->
 
-                                    <li>
-                                        <div class="icon-box-icon-block">
-                                            <a href="#">
-                                                <div class="icon-box-round">
-                                                    <i class="lni-instagram"></i>
-                                                </div>
-                                                <div class="icon-box-text">
-                                                    Instagram
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
+                        <!--                                <li>-->
+                        <!--                                    <div class="icon-box-icon-block">-->
+                        <!--                                        <a href="#">-->
+                        <!--                                            <div class="icon-box-round">-->
+                        <!--                                                <i class="lni-instagram"></i>-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="icon-box-text">-->
+                        <!--                                                Instagram-->
+                        <!--                                            </div>-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </li>-->
 
-                                    <li>
-                                        <div class="icon-box-icon-block">
-                                            <a href="#">
-                                                <div class="icon-box-round">
-                                                    <i class="fa fa-pinterest"></i>
-                                                </div>
-                                                <div class="icon-box-text">
-                                                    Pinterest
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
+                        <!--                                <li>-->
+                        <!--                                    <div class="icon-box-icon-block">-->
+                        <!--                                        <a href="#">-->
+                        <!--                                            <div class="icon-box-round">-->
+                        <!--                                                <i class="fa fa-pinterest"></i>-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="icon-box-text">-->
+                        <!--                                                Pinterest-->
+                        <!--                                            </div>-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </li>-->
 
-                                </ul>
-                            </div>
+                        <!--                            </ul>-->
+                        <!--                        </div>-->
 
-                        </div>
+                        <!--                    </div>-->
+                    </span>
 
                     </div>
                     <!-- /col-md-4 -->
@@ -476,28 +488,30 @@
         </section>
         <!-- ============== Job Detail ====================== -->
 
-        <!-- ============================ Newsletter Start ================================== -->
-        <section class="alert-wrap pt-5 pb-5" style="background: #3a72bc url(assets/img/bg2.png);">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="jobalert-sec">
-                            <h3 class="mb-1 text-light">Get New Jobs Notification!</h3>
-                            <p class="text-light">Subscribe & get all related jobs notification.</p>
-                        </div>
-                    </div>
+        <!-- ============================ Newsletter Start(此段为向用户邮箱发送工作招募提醒，暂缓) ================================== -->
+        <span>
+    <!--    <section class="alert-wrap pt-5 pb-5" style="background: #00a94f url(assets/img/bg2.png);">-->
+        <!--        <div class="container">-->
+        <!--            <div class="row">-->
+        <!--                <div class="col-lg-6 col-md-6">-->
+        <!--                    <div class="jobalert-sec">-->
+        <!--                        <h3 class="mb-1 text-light">Get New Jobs Notification!</h3>-->
+        <!--                        <p class="text-light">Subscribe & get all related jobs notification.</p>-->
+        <!--                    </div>-->
+        <!--                </div>-->
 
-                    <div class="col-lg-6 col-md-6">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Enter Your Email">
-                            <div class="input-group-append">
-                                <button type="button" class="btn btn-black black">Subscribe</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!--                <div class="col-lg-6 col-md-6">-->
+        <!--                    <div class="input-group">-->
+        <!--                        <input type="text" class="form-control" placeholder="Enter Your Email">-->
+        <!--                        <div class="input-group-append">-->
+        <!--                            <button type="button" class="btn btn-black black">Subscribe</button>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--    </section>-->
+    </span>
         <!-- ============================ Newsletter Start ================================== -->
 
         <!-- ============================ Footer Start ================================== -->
@@ -506,83 +520,67 @@
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-lg-3 col-md-3">
+                        <div class="col-lg-4 col-md-4">
                             <div class="footer-widget">
                                 <img src="assets/img/logo-light.png" class="img-footer" alt="" />
                                 <div class="footer-add">
-                                    <p>Collins Street West, Victoria,</br> Australia (AU4578).</p>
-                                    <p><strong>Email:</strong></br><a href="#">hello@workstock.com</a></p>
-                                    <p><strong>Call:</strong></br>91 855 742 62548</p>
+                                    <p>BEIHANG UNIVERSITY XUEYUAN ROAD<br> NO.37,HAIDIAN DISTRICT</br> China</p>
+                                    <p><strong>Email:</strong></br><a href="mailto:mokoghost@gmail.com">mokoghost@gmail.com</a></p>
+                                    <!--                                <p><strong>Call:</strong></br></p>-->
                                 </div>
 
                             </div>
                         </div>
-                        <div class="col-lg-2 col-md-2">
+                        <div class="col-lg-4 col-md-4">
                             <div class="footer-widget">
-                                <h4 class="widget-title">Navigations</h4>
+                                <h4 class="widget-title">导航</h4>
                                 <ul class="footer-menu">
-                                    <li><a href="#">New Home Design</a></li>
-                                    <li><a href="#">Browse Candidates</a></li>
-                                    <li><a href="#">Browse Employers</a></li>
-                                    <li><a href="#">Advance Search</a></li>
-                                    <li><a href="#">Job With Map</a></li>
+                                    <li><a href="blog.html">全部博客</a></li>
+                                    <li><a href="employers-full-width.html">浏览全部用户</a></li>
+                                    <li><a href="all-jobs.html">浏览全部招募</a></li>
+                                    <li><a href="#">回到顶部</a></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="col-lg-2 col-md-2">
+                        <div class="col-lg-4 col-md-4">
                             <div class="footer-widget">
-                                <h4 class="widget-title">The Highlights</h4>
+                                <h4 class="widget-title">我的账号</h4>
                                 <ul class="footer-menu">
-                                    <li><a href="#">Home Page 2</a></li>
-                                    <li><a href="#">Home Page 3</a></li>
-                                    <li><a href="#">Home Page 4</a></li>
-                                    <li><a href="#">Home Page 5</a></li>
-                                    <li><a href="#">LogIn</a></li>
+                                    <li><a href="candidate-dashboard.html#profile">个人资料</a></li>
+                                    <li><a href="https://www.bilibili.com">看会B站</a></li>
+                                    <li><a href="javascript:void(0)" data-toggle="modal" data-target="#signup" data-dismiss="modal">注册</a></li>
                                 </ul>
                             </div>
                         </div>
-
-                        <div class="col-lg-2 col-md-2">
-                            <div class="footer-widget">
-                                <h4 class="widget-title">My Account</h4>
-                                <ul class="footer-menu">
-                                    <li><a href="#">Dashboard</a></li>
-                                    <li><a href="#">Applications</a></li>
-                                    <li><a href="#">Packages</a></li>
-                                    <li><a href="#">resume.html</a></li>
-                                    <li><a href="#">SignUp Page</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-3">
-                            <div class="footer-widget">
-                                <h4 class="widget-title">Download Apps</h4>
-                                <a href="#" class="other-store-link">
-                                    <div class="other-store-app">
-                                        <div class="os-app-icon">
-                                            <i class="ti-android theme-cl"></i>
-                                        </div>
-                                        <div class="os-app-caps">
-                                            Google Play
-                                            <span>Get It Now</span>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#" class="other-store-link">
-                                    <div class="other-store-app">
-                                        <div class="os-app-icon">
-                                            <i class="ti-apple theme-cl"></i>
-                                        </div>
-                                        <div class="os-app-caps">
-                                            App Store
-                                            <span>Now it Available</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        <!--APP下载-->
+                        <!--                    <div class="col-lg-3 col-md-3">-->
+                        <!--                        <div class="footer-widget">-->
+                        <!--                            <h4 class="widget-title">Download Apps</h4>-->
+                        <!--                            <a href="#" class="other-store-link">-->
+                        <!--                                <div class="other-store-app">-->
+                        <!--                                    <div class="os-app-icon">-->
+                        <!--                                        <i class="ti-android theme-cl"></i>-->
+                        <!--                                    </div>-->
+                        <!--                                    <div class="os-app-caps">-->
+                        <!--                                        Google Play-->
+                        <!--                                        <span>Get It Now</span>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                            </a>-->
+                        <!--                            <a href="#" class="other-store-link">-->
+                        <!--                                <div class="other-store-app">-->
+                        <!--                                    <div class="os-app-icon">-->
+                        <!--                                        <i class="ti-apple theme-cl"></i>-->
+                        <!--                                    </div>-->
+                        <!--                                    <div class="os-app-caps">-->
+                        <!--                                        App Store-->
+                        <!--                                        <span>Now it Available</span>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                            </a>-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
 
                     </div>
                 </div>
@@ -593,15 +591,12 @@
                     <div class="row align-items-center">
 
                         <div class="col-lg-6 col-md-6">
-                            <p class="mb-0">Copyright &copy; 2020.Company name All rights reserved.</p>
+                            <p class="mb-0">Copyright &copy; 2020 www.jianmu.com All rights reserved.</p>
                         </div>
 
                         <div class="col-lg-6 col-md-6 text-right">
                             <ul class="footer-bottom-social">
-                                <li><a href="#"><i class="ti-facebook"></i></a></li>
-                                <li><a href="#"><i class="ti-twitter"></i></a></li>
-                                <li><a href="#"><i class="ti-instagram"></i></a></li>
-                                <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                                <li><a href="#"><i class="lni-wechat"></i></a></li>
                             </ul>
                         </div>
 
@@ -621,30 +616,30 @@
                     </button>
                     </div>
                     <div class="modal-body">
-                        <h4 class="modal-header-title">SignIn</h4>
-                        <div class="social-login">
-                            <ul>
-                                <li><a href="#" class="btn connect-fb"><i class="ti-facebook"></i>Login with Facebook</a>
-                                </li>
-                                <li><a href="#" class="btn connect-gplus"><i class="ti-google"></i>Login with Gmail</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="devide-wrap"><span>OR</span></div>
+                        <h4 class="modal-header-title">登录</h4>
+                        <!--使用其他社交软件登录，暂无-->
+                        <!--                    <div class="social-login">-->
+                        <!--                        <ul>-->
+                        <!--                            <li><a href="#" class="btn connect-fb"><i class="ti-facebook"></i>使用QQ登录</a>-->
+                        <!--                            </li>-->
+                        <!--                            <li><a href="#" class="btn connect-gplus"><i class="ti-google"></i>使用微信登录</a></li>-->
+                        <!--                        </ul>-->
+                        <!--                    </div>-->
+                        <!--                    <div class="devide-wrap"><span>OR</span></div>-->
 
                         <div class="login-form">
                             <form>
 
                                 <div class="form-group">
-                                    <label>User Name</label>
+                                    <label>电子邮箱</label>
                                     <div class="input-with-gray">
-                                        <input type="text" class="form-control" placeholder="Username">
+                                        <input type="text" class="form-control" placeholder="Email ID">
                                         <i class="ti-user theme-cl"></i>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Password</label>
+                                    <label>密码</label>
                                     <div class="input-with-gray">
                                         <input type="password" class="form-control" placeholder="*******">
                                         <i class="ti-unlock theme-cl"></i>
@@ -652,16 +647,16 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary btn-md full-width pop-login">Login</button>
+                                    <button type="submit" class="btn btn-primary btn-md full-width pop-login">登录</button>
                                 </div>
 
                             </form>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <div class="mf-link"><i class="ti-user"></i>Haven't An Account?<a href="javascript:void(0)" data-toggle="modal" data-target="#signup" data-dismiss="modal"> Sign Up</a>
+                        <div class="mf-link"><i class="ti-user"></i>还没有账号？<a href="javascript:void(0)" data-toggle="modal" data-target="#signup" data-dismiss="modal">注册</a>
                         </div>
-                        <div class="mf-forget"><a href="#"><i class="ti-help"></i>Forget Password</a></div>
+                        <div class="mf-forget"><a href="find-back-my-code.html"><i class="ti-help"></i>忘记密码？</a></div>
                     </div>
                 </div>
             </div>
@@ -678,25 +673,25 @@
                     </button>
                     </div>
                     <div class="modal-body">
-                        <h4 class="modal-header-title">Sign Up</h4>
-                        <div class="social-login">
-                            <ul>
-                                <li><a href="#" class="btn connect-fb"><i class="ti-facebook"></i>Login with Facebook</a>
-                                </li>
-                                <li><a href="#" class="btn connect-gplus"><i class="ti-google"></i>Login with Gmail</a></li>
-                            </ul>
-                        </div>
+                        <h4 class="modal-header-title">注册</h4>
+                        <!--                    <div class="social-login">-->
+                        <!--                        <ul>-->
+                        <!--                            <li><a href="#" class="btn connect-fb"><i class="ti-facebook"></i>Login with Facebook</a>-->
+                        <!--                            </li>-->
+                        <!--                            <li><a href="#" class="btn connect-gplus"><i class="ti-google"></i>Login with Gmail</a></li>-->
+                        <!--                        </ul>-->
+                        <!--                    </div>-->
 
-                        <div class="devide-wrap"><span>OR</span></div>
+                        <!--                    <div class="devide-wrap"><span>OR</span></div>-->
 
                         <div class="login-form">
                             <form>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <div class="form-group">
-                                            <label>Full Name</label>
+                                            <label>您的姓名</label>
                                             <div class="input-with-gray">
-                                                <input type="text" class="form-control" placeholder="Your Name">
+                                                <input type="text" class="form-control" placeholder="您的姓名">
                                                 <i class="ti-user theme-cl"></i>
                                             </div>
                                         </div>
@@ -704,9 +699,9 @@
 
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <div class="form-group">
-                                            <label>Email</label>
+                                            <label>您的学号（教职工号）</label>
                                             <div class="input-with-gray">
-                                                <input type="email" class="form-control" placeholder="Email ID">
+                                                <input type="email" class="form-control" placeholder="School ID">
                                                 <i class="ti-user theme-cl"></i>
                                             </div>
                                         </div>
@@ -716,16 +711,16 @@
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <div class="form-group">
-                                            <label>User Name</label>
+                                            <label>电子邮箱</label>
                                             <div class="input-with-gray">
-                                                <input type="text" class="form-control" placeholder="Username">
+                                                <input type="text" class="form-control" placeholder="Email ID">
                                                 <i class="ti-user theme-cl"></i>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <div class="form-group">
-                                            <label>Password</label>
+                                            <label>设置密码</label>
                                             <div class="input-with-gray">
                                                 <input type="password" class="form-control" placeholder="*******">
                                                 <i class="ti-unlock theme-cl"></i>
@@ -738,7 +733,7 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary btn-md full-width pop-login">
-                                            Login
+                                            注册
                                         </button>
                                         </div>
                                     </div>
@@ -748,9 +743,9 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <div class="mf-link"><i class="ti-user"></i>Already Have Account? Sign In</a>
+                        <div class="mf-link"><i class="ti-user"></i>已有账户？<a href="javascript:void(0)" data-toggle="modal" data-target="#login" data-dismiss="modal">登录</a>
                         </div>
-                        <div class="mf-forget"><a href="#"><i class="ti-help"></i>Need Help</a></div>
+                        <div class="mf-forget"><a href="need-help.html"><i class="ti-help"></i>需要帮助</a></div>
                     </div>
                 </div>
             </div>

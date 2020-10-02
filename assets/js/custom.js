@@ -336,6 +336,16 @@
         allowClear: true
     });
 
+    $('#category1').select2({
+        placeholder: "选择院系...",
+        allowClear: true
+    });
+
+    $('#category2').select2({
+        placeholder: "选择校区...",
+        allowClear: true
+    });
+
     // All Select Category
     $('#category-side').select2({
         placeholder: "选择院系...",
@@ -350,7 +360,7 @@
 
     // Filter Sidebar Category
     $('#category-3').select2({
-        placeholder: "选择院系...",
+        placeholder: "选择校区...",
         allowClear: true
     });
 
