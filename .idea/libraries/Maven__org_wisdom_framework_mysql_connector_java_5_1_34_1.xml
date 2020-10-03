@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.wisdom-framework:mysql-connector-java:5.1.34_1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wisdom-framework/mysql-connector-java/5.1.34_1/mysql-connector-java-5.1.34_1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wisdom-framework/mysql-connector-java/5.1.34_1/mysql-connector-java-5.1.34_1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wisdom-framework/mysql-connector-java/5.1.34_1/mysql-connector-java-5.1.34_1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
