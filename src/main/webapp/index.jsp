@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html lang="zh">
 
@@ -17,7 +15,9 @@
     <link href="assets/css/styles.css" rel="stylesheet">
 
     <!-- Custom Color -->
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
     <link href="assets/css/skin/default.css" rel="stylesheet">
+    <script src="assets/js/ajax/index.js"></script>
 </head>
 
 <body class="blue-skin">
@@ -50,7 +50,7 @@
                             <ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">
                                 <li><a href="search-full-width.html">搜索职位</a></li>
                                 <li><a href="employers-list.html">搜索招募人</a></li>
-                                <li><a href="candidate-dashboard.html">个人资料</a></li>
+                                <li><a href="candidate-dashboard.html#profile">个人资料</a></li>
                             </ul>
                         </li>
 
@@ -646,7 +646,7 @@
                         <div class="footer-widget">
                             <h4 class="widget-title">我的账号</h4>
                             <ul class="footer-menu">
-                                <li><a href="candidate-dashboard.html">个人资料</a></li>
+                                <li><a href="candidate-dashboard.html#profile">个人资料</a></li>
                                 <li><a href="https://www.bilibili.com">看会B站</a></li>
                                 <li><a href="javascript:void(0)" data-toggle="modal" data-target="#signup"
                                        data-dismiss="modal">注册</a></li>
@@ -731,9 +731,9 @@
                         <form>
 
                             <div class="form-group">
-                                <label>用户名</label>
+                                <label>电子邮箱</label>
                                 <div class="input-with-gray">
-                                    <input type="text" class="form-control" placeholder="用户名">
+                                    <input id="emailID" type="text" class="form-control" placeholder="Email ID">
                                     <i class="ti-user theme-cl"></i>
                                 </div>
                             </div>
@@ -747,7 +747,7 @@
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-md full-width pop-login">登录</button>
+                                <button id="login-submit" type="submit" class="btn btn-primary btn-md full-width pop-login" disabled>登录</button>
                             </div>
 
                         </form>
@@ -801,9 +801,9 @@
 
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="form-group">
-                                        <label>电子邮箱</label>
+                                        <label>您的学号（教职工号）</label>
                                         <div class="input-with-gray">
-                                            <input type="email" class="form-control" placeholder="Email ID">
+                                            <input type="email" class="form-control" placeholder="School ID">
                                             <i class="ti-user theme-cl"></i>
                                         </div>
                                     </div>
@@ -813,9 +813,9 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
-                                        <label>用户昵称</label>
+                                        <label>电子邮箱</label>
                                         <div class="input-with-gray">
-                                            <input type="text" class="form-control" placeholder="Username">
+                                            <input type="text" class="form-control" placeholder="Email ID">
                                             <i class="ti-user theme-cl"></i>
                                         </div>
                                     </div>
@@ -835,7 +835,7 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary btn-md full-width pop-login">
-                                            登录
+                                            注册
                                         </button>
                                     </div>
                                 </div>
@@ -876,9 +876,9 @@
 <script src="assets/js/isotope.min.js"></script>
 <script src="assets/js/summernote.js"></script>
 <script src="assets/js/jQuery.style.switcher.js"></script>
-
 <script src="assets/js/counterup.min.js"></script>
 <script src="assets/js/custom.js"></script>
+
 <!-- ============================================================== -->
 <!-- This page plugins -->
 <!-- ============================================================== -->
