@@ -17,15 +17,15 @@ $(function () {
         // alert("username: " + $username + ", password: " + $password);
         $.ajax({
             type: "post",
-            url: "http://localhost:63342/JianMu/sign_in",
-            data:{"name":"$username","password":"$password"},
-            success:function (msg) {
-                var object=JSON.parse(msg);
+            url: "http://localhost:8080/JianMu_war/sign_in",
+            data: {"name": "$username", "password": "$password"},
+            dataType: "json",
+            success: function (msg) {
+                var object = JSON.parse(msg);
                 alert(msg);
                 alert("username: " + $username + ", password: " + $password);
             },
-            dataType:"json",
-            error:function (xhr) {
+            error: function (xhr) {
                 alert(xhr.status);
             }
         });
