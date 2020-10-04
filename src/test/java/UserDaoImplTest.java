@@ -10,7 +10,7 @@ public class UserDaoImplTest {
     public void queryUserByUsernameTest() {
         User user = userDao.queryUserByUsername("lkl");
         System.out.println("user: " + user.getName());
-        System.out.println("id: " + user.getId());
+        System.out.println("id: " + user.getSchoolId());
         System.out.println("password: " + user.getPassword());
         user = userDao.queryUserByUsername("iii");
         assert user == null;
@@ -20,7 +20,7 @@ public class UserDaoImplTest {
     public void queryByUsernameAndPasswordTest() {
         User user = userDao.queryByUsernameAndPassword("lkl", "lklnblklnb");
         System.out.println("user: " + user.getName());
-        System.out.println("id: " + user.getId());
+        System.out.println("id: " + user.getSchoolId());
         System.out.println("password: " + user.getPassword());
         user = userDao.queryByUsernameAndPassword("lkl", "lklnb");
         assert user == null;
@@ -35,7 +35,7 @@ public class UserDaoImplTest {
         user = userDao.queryByUsernameAndPassword("wyx", "wyxwyxwyx");
         assert user != null;
         System.out.println("user: " + user.getName());
-        System.out.println("id: " + user.getId());
+        System.out.println("id: " + user.getSchoolId());
         System.out.println("password: " + user.getPassword());
     }
 }

@@ -1,49 +1,25 @@
 package com.webapp.pojo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.net.URL;
 import java.sql.Timestamp;
 import java.util.Date;
 
+@Setter @Getter
 public class User implements Serializable {
     private int id;
+    private int schoolId;
     private String name;
     private String password;
+    private String email;
 
     private int major;
-    private int grade;
     private int campus;
     private String profile;
-    private URL avatar_url;
-
-    private Timestamp update_at;
-    private Timestamp create_at;
-    private Timestamp last_login_at;
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    private URL avatarUrl;
 
     public User() {
     }
@@ -53,8 +29,8 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public User(int id, String name, String password) {
-        this.id = id;
+    public User(int schoolId, String name, String password) {
+        this.schoolId = schoolId;
         this.name = name;
         this.password = password;
     }
