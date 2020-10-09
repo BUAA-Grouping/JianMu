@@ -7,5 +7,5 @@ public interface SignService {
 
     public boolean existUser(String username);
 
-    public int registUser(String name,String password);
+    public int registerUser(String name, String password);
 }

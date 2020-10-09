@@ -28,7 +28,7 @@ public abstract class BaseDao {
     public <T> T queryForOne(Class<T> type, String sql, Object... args) {
         Connection connection = JdbcUtils.getConnection();
         try {
-            queryRunner.query(connection, sql, new BeanHandler<T>(type), args);
+            return queryRunner.query(connection, sql, new BeanHandler<T>(type), args);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
@@ -40,7 +40,7 @@ public abstract class BaseDao {
     public <T> List<T> queryForList(Class<T> type, String sql, Object... args) {
         Connection connection = JdbcUtils.getConnection();
         try {
-            queryRunner.query(connection, sql, new BeanListHandler<T>(type), args);
+            return queryRunner.query(connection, sql, new BeanListHandler<T>(type), args);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
@@ -52,7 +52,7 @@ public abstract class BaseDao {
     public Object queryForSingleValue(String sql, Object... args) {
         Connection connection = JdbcUtils.getConnection();
         try {
-            queryRunner.query(connection, sql, new ScalarHandler(), args);
+            return queryRunner.query(connection, sql, new ScalarHandler(), args);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {

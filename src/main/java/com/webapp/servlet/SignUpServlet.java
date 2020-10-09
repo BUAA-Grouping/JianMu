@@ -19,7 +19,7 @@ public class SignUpServlet extends HttpServlet {
         String password = request.getParameter("password");
         SignService signService = new SignServiceImpl();
         JsonObject jsonObject = new JsonObject();
-        switch (signService.registUser(name, password)) {
+        switch (signService.registerUser(name, password)) {
             case 0:
                 jsonObject.addProperty("message", "注册成功");
                 break;

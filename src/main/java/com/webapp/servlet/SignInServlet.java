@@ -25,7 +25,6 @@ public class SignInServlet extends HttpServlet {
         String password = request.getParameter("password");
         SignService signService = new SignServiceImpl();
         JsonObject jsonObject = new JsonObject();
-        System.out.println(name);
         switch (signService.signIn(name, password)) {
             case -1:
                 jsonObject.addProperty("message", "用户名不存在");

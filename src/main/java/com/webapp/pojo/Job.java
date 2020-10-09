@@ -1,18 +1,38 @@
 package com.webapp.pojo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Date;
 
+@Setter @Getter
 public class Job implements Serializable {
+    private int id;
+    private String title;
     private int college;
     private int campus;
-    private int excepted_num_of_member;
+    private int exceptedNumOfMember;
     private int state;
     private String profile;
-    private Timestamp create_at;
-    private Timestamp update_at;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public int getCollege() {
         return college;
@@ -30,12 +50,12 @@ public class Job implements Serializable {
         this.campus = campus;
     }
 
-    public int getExcepted_num_of_member() {
-        return excepted_num_of_member;
+    public int getExceptedNumOfMember() {
+        return exceptedNumOfMember;
     }
 
-    public void setExcepted_num_of_member(int excepted_num_of_member) {
-        this.excepted_num_of_member = excepted_num_of_member;
+    public void setExceptedNumOfMember(int exceptedNumOfMember) {
+        this.exceptedNumOfMember = exceptedNumOfMember;
     }
 
     public int getState() {
@@ -52,21 +72,5 @@ public class Job implements Serializable {
 
     public void setProfile(String profile) {
         this.profile = profile;
-    }
-
-    public Timestamp getCreate_at() {
-        return create_at;
-    }
-
-    public void setCreate_at(Timestamp create_at) {
-        this.create_at = create_at;
-    }
-
-    public Timestamp getUpdate_at() {
-        return update_at;
-    }
-
-    public void setUpdate_at(Timestamp update_at) {
-        this.update_at = update_at;
     }
 }

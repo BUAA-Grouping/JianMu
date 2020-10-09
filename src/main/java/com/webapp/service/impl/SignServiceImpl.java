@@ -13,7 +13,7 @@ public class SignServiceImpl implements SignService {
     public int signIn(String name, String password) {
         if (userDao.queryUserByUsername(name) == null) {
             return -1;
-        } else if (userDao.queryByUserameAndPassWord(name, password) == null) {
+        } else if (userDao.queryByUsernameAndPassword(name, password) == null) {
             return -2;
         }
         return 0;
@@ -21,12 +21,12 @@ public class SignServiceImpl implements SignService {
 
 
     @Override
-    public int registUser(String name, String password) {
+    public int registerUser(String name, String password) {
         User user = new User(name, password);
         if (userDao.queryUserByUsername(name) != null) {
             return -1;
         }
-        userDao.saveUer(user);
+        userDao.saveUser(user);
         return 0;
     }
 
