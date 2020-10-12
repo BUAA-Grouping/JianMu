@@ -42,8 +42,4 @@ public class SignInServlet extends HttpServlet {
         writer.write(jsonObject.toString());
         writer.flush();
     }
-
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-    }
 }
