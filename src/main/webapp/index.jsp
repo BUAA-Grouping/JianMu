@@ -1,7 +1,7 @@
-<%@ page contentType="text/html;charset=UTF-8" trimDirectiveWhitespaces="true" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zh">
-
+<%--trimDirectiveWhitespaces="true" --%>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,7 +17,8 @@
     <!-- Custom Color -->
     <script src="assets/js/jquery-1.12.4.min.js"></script>
     <link href="assets/css/skin/default.css" rel="stylesheet">
-    <script src="assets/js/ajax/index.js"></script>
+    <script src="assets/js/ajax/signin.js"></script>
+    <script src="assets/js/ajax/signup.js"></script>
 </head>
 
 <body class="blue-skin">
@@ -741,13 +742,16 @@
                             <div class="form-group">
                                 <label>密码</label>
                                 <div class="input-with-gray">
-                                    <input type="password" class="form-control" placeholder="*******">
+                                    <input id="putin-password" type="password" class="form-control"
+                                           placeholder="*******">
                                     <i class="ti-unlock theme-cl"></i>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <button id="login-submit" type="submit" class="btn btn-primary btn-md full-width pop-login" disabled>登录</button>
+                                <button id="login-submit" type="submit"
+                                        class="btn btn-primary btn-md full-width pop-login" disabled>登录
+                                </button>
                             </div>
 
                         </form>
@@ -793,7 +797,7 @@
                                     <div class="form-group">
                                         <label>您的姓名</label>
                                         <div class="input-with-gray">
-                                            <input type="text" class="form-control" placeholder="您的姓名">
+                                            <input id="real-name" type="text" class="form-control" placeholder="您的姓名">
                                             <i class="ti-user theme-cl"></i>
                                         </div>
                                     </div>
@@ -803,7 +807,8 @@
                                     <div class="form-group">
                                         <label>您的学号（教职工号）</label>
                                         <div class="input-with-gray">
-                                            <input type="email" class="form-control" placeholder="School ID">
+                                            <input id="school-id" type="text" class="form-control"
+                                                   placeholder="School ID">
                                             <i class="ti-user theme-cl"></i>
                                         </div>
                                     </div>
@@ -815,7 +820,8 @@
                                     <div class="form-group">
                                         <label>电子邮箱</label>
                                         <div class="input-with-gray">
-                                            <input type="text" class="form-control" placeholder="Email ID">
+                                            <input id="email-id" type="text" class="form-control"
+                                                   placeholder="Email ID">
                                             <i class="ti-user theme-cl"></i>
                                         </div>
                                     </div>
@@ -824,7 +830,8 @@
                                     <div class="form-group">
                                         <label>设置密码</label>
                                         <div class="input-with-gray">
-                                            <input type="password" class="form-control" placeholder="*******">
+                                            <input id="set-password" type="password" class="form-control"
+                                                   placeholder="*******">
                                             <i class="ti-unlock theme-cl"></i>
                                         </div>
                                     </div>
@@ -834,8 +841,8 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-md full-width pop-login">
-                                            注册
+                                        <button id="signup-submit" type="submit"
+                                                class="btn btn-primary btn-md full-width pop-login" disabled>注册
                                         </button>
                                     </div>
                                 </div>
