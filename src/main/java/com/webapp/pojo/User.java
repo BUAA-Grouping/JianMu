@@ -5,8 +5,6 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.net.URL;
-import java.sql.Timestamp;
-import java.util.Date;
 
 @Setter @Getter
 public class User implements Serializable {
@@ -14,7 +12,7 @@ public class User implements Serializable {
     private int schoolId;
     private String name;
     private String password;
-    private String email;
+    private String emailID;
 
     private int major;
     private int campus;
@@ -52,12 +50,12 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailID() {
+        return emailID;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailID(String emailID) {
+        this.emailID = emailID;
     }
 
     public int getMajor() {
@@ -104,6 +102,13 @@ public class User implements Serializable {
 
     public User(int schoolId, String name, String password) {
         this.schoolId = schoolId;
+        this.name = name;
+        this.password = password;
+    }
+
+    public User( String name, String password,String emailID,int schoolId){
+        this.schoolId = schoolId;
+        this.emailID = emailID;
         this.name = name;
         this.password = password;
     }
