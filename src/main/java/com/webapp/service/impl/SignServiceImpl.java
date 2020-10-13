@@ -25,7 +25,7 @@ public class SignServiceImpl implements SignService {
     @Override
     public int registerUser(String realname, String password, String emailId, int SchoolId) {
         User user = new User(realname, password, emailId, SchoolId);
-        if (userDao.queryUserByUsername(realname) != null) {
+        if (userDao.queryByEmail(emailId) == null) {
             return -1;
         }
         userDao.saveUser(user);
