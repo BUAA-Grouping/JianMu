@@ -14,17 +14,18 @@ $(function () {
     $("#login-submit").click(function () {
         var $emailID = $("#emailID").val();
         var $password = $("#putin-password").val();
-        // alert("username: " + $username + ", password: " + $password);
+        // alert("username: " + $emailID + ", password: " + $password);
         $.ajax({
             type: "post",
             url: "http://localhost:8080/JianMu_war/sign_in",
-            data: {"emailID": "$username", "password": "$password"},
+            data: {"emailID": $emailID, "password": $password},
             dataType: "json",
+            async: false,
             success: function (msg) {
                 // var object = JSON.parse(msg);
-                console.log("success");
-                console.log(msg);
-                // alert(msg);
+                // console.log("success");
+                // console.log(msg);
+                alert(msg.message);
                 // alert("username: " + $username + ", password: " + $password);
             },
             error: function (xhr) {
