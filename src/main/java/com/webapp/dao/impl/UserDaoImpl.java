@@ -26,21 +26,21 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     @Override
     public boolean saveUser(User user) {
         String sql = "INSERT INTO user(`email`,`school_id`,`name`,`password`) values(?,?,?,?)";
-        if (user.getEmail() == null || user.getSchoolId() == 0 || user.getName() == null
-                || user.getPassword() == null || this.queryByEmail(user.getEmail()) != null) {
+        if (user.getEmailID() == null || user.getSchoolId() == 0 || user.getName() == null
+                || user.getPassword() == null || this.queryByEmail(user.getEmailID()) != null) {
             return false;
         }
-        return update(sql, user.getEmail(), user.getSchoolId(), user.getName(), user.getPassword()) > 0;
+        return update(sql, user.getEmailID(), user.getSchoolId(), user.getName(), user.getPassword()) > 0;
     }
 
     @Override
     public boolean modifyUser(User user) {
-        if (user.getEmail() == null || user.getSchoolId() == 0 || user.getName() == null
+        if (user.getEmailID() == null || user.getSchoolId() == 0 || user.getName() == null
                 || user.getPassword() == null || this.queryInfoById(user.getId()) == null) {
             return false;
         }
         String sql = "UPDATE user SET `email`=?,`name`=?,`password`=?,`school_id`=?,`major`=?,`campus`=?,`profile`=?";
-        return update(sql, user.getEmail(), user.getName(), user.getPassword(), user.getSchoolId(),
+        return update(sql, user.getEmailID(), user.getName(), user.getPassword(), user.getSchoolId(),
                 user.getMajor(), user.getCampus(), user.getProfile()) >= 0;
     }
 
