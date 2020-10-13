@@ -1,0 +1,63 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>DeleteJobServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.DeleteJobServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ModifyUserServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.ModifyUserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SignInServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.SignInServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SignUpServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.SignUpServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchUserServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.SearchUserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchJobServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.SearchJobServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteUserServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.DeleteUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteUserServlet</servlet-name>
+        <url-pattern>/user_delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteJobServlet</servlet-name>
+        <url-pattern>/job_delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModifyUserServlet</servlet-name>
+        <url-pattern>/user_modify</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignInServlet</servlet-name>
+        <url-pattern>/sign_in</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignUpServlet</servlet-name>
+        <url-pattern>/sign_up</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchUserServlet</servlet-name>
+        <url-pattern>/user_search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchJobServlet</servlet-name>
+        <url-pattern>/job_search</url-pattern>
+    </servlet-mapping>
+</web-app>
