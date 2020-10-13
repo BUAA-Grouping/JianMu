@@ -25,7 +25,6 @@ public class SignInServlet extends HttpServlet {
         String password = request.getParameter("password");
         SignService signService = new SignServiceImpl();
         JsonObject jsonObject = new JsonObject();
-        System.out.println("emailID: " + emailID + " password: " + password);
         switch (signService.signIn(emailID, password)) {
             case -1:
                 jsonObject.addProperty("message", "用户名不存在");
@@ -35,12 +34,12 @@ public class SignInServlet extends HttpServlet {
                 break;
             case 0:
                 jsonObject.addProperty("message", "登陆成功");
+                break;
             default:
                 jsonObject.addProperty("message", "服务器异常");
         }
         response.setContentType("text/html;charset=utf-8");
         PrintWriter writer = response.getWriter();
-        System.out.println(jsonObject.toString());////
         writer.write(jsonObject.toString());
         writer.flush();
     }

@@ -1,8 +1,0 @@
-<<<<<<< HEAD
-./target/*
-=======
-target/
-.idea/
-*.sql
-src/test/
->>>>>>> 5a19c4769d7aad1fb37cbe2404bbfad72e4a14c3
