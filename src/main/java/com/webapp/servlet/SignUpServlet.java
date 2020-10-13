@@ -16,7 +16,7 @@ import java.io.PrintWriter;
 public class SignUpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String realname = request.getParameter("realname");
-        String schoolId = request.getParameter("schoolId");
+        String schoolId = request.getParameter("schoolID");
         String emailID = request.getParameter("emailID");
         String password = request.getParameter("password");
         SignService signService = new SignServiceImpl();

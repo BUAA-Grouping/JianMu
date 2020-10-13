@@ -14,21 +14,22 @@ $(function () {
     $("#signup-submit").click(function () {
         var $realname = $("#real-name").val();
         var $schoolID = $("#school-id").val();
-        var $emailID = $("#emailID").val();
+        var $emailID = $("#email-id").val();
         var $password = $("#set-password").val();
         // alert("username: " + $username + ", password: " + $password);
         $.ajax({
             type: "post",
             url: "http://localhost:8080/JianMu_war/sign_up",
             data: {
-                "realname": "$realname",
-                "schoolID": "$schoolID",
-                "emailID": "$emailID",
-                "password": "$password"
+                "realname": $realname,
+                "schoolID": $schoolID,
+                "emailID": $emailID,
+                "password": $password
             },
             dataType: "json",
+            async: false,
             success: function (msg) {
-                console.log(msg);
+                alert(msg.message);
             },
             error: function (xhr) {
                 alert(xhr.status);
