@@ -20,10 +20,11 @@ $(function () {
             url: "http://localhost:8080/JianMu_war/sign_in",
             data: {"name": "$username", "password": "$password"},
             dataType: "json",
+            async:false,
             success: function (msg) {
                 var object = JSON.parse(msg);
-                alert(msg);
-                alert("username: " + $username + ", password: " + $password);
+                alert(object.message);
+                // alert("username: " + $username + ", password: " + $password);
             },
             error: function (xhr) {
                 alert(xhr.status);
