@@ -1,0 +1,4 @@
+*.sql
+.gitignore
+target/
+.idea/
