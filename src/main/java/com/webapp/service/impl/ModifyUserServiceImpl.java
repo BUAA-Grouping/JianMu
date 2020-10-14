@@ -6,14 +6,15 @@ import com.webapp.pojo.User;
 import com.webapp.service.ModifyUserService;
 
 public class ModifyUserServiceImpl implements ModifyUserService {
+    private UserDao userDao = new UserDaoImpl();
+
     @Override
     public User getUser(String emailId) {
-        return null;
+        return userDao.queryByEmail(emailId);
     }
 
     @Override
     public boolean modify(User user) {
-        UserDao userDao = new UserDaoImpl();
         return userDao.modifyUser(user);
     }
 }
