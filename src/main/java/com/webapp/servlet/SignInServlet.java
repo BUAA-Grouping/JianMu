@@ -54,6 +54,7 @@ public class SignInServlet extends HttpServlet {
                 session.setAttribute("username", user.getName());
                 session.setAttribute("emailID", emailID);
                 session.setAttribute("password", user.getPassword());
+                session.setAttribute("id",user.getId());
             }
         }
 

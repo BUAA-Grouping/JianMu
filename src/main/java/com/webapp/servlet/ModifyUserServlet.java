@@ -19,9 +19,12 @@ import java.io.PrintWriter;
 @WebServlet(name = "ModifyMemberServlet")
 public class ModifyUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        int id = (int) session.getAttribute("id");
         String userdata = request.getParameter("userdata");
         Gson gson = new Gson();
         User reqUser = gson.fromJson(userdata, User.class);
+        reqUser.setId(id);
         ModifyUserService modifyUserService = new ModifyUserServiceImpl();
         JsonObject jsonObject = new JsonObject();
         if (modifyUserService.modify(reqUser)) {

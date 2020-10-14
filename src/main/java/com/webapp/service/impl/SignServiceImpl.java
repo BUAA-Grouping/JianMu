@@ -21,6 +21,7 @@ public class SignServiceImpl implements SignService {
         retUser.setName(user.getName());
         retUser.setPassword(password);
         retUser.setEmailID(emailId);
+        retUser.setId(user.getId());
         userDao.logIn(emailId);
         return 0;
     }
