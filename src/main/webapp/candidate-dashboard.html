@@ -205,7 +205,7 @@
                                             <div class="col-lg-12 col-md-12 col-sm-12">
                                                 <div class="form-group">
                                                     <label>您的姓名</label>
-                                                    <input class="form-control" type="text" value="梁朝伟">
+                                                    <input id="user-real-name" class="form-control" type="text" value="梁朝伟">
                                                     <!--记得修改-->
                                                 </div>
                                             </div>
@@ -221,7 +221,7 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12">
                                                 <div class="form-group">
                                                     <label>电子邮箱</label>
-                                                    <input class="form-control" type="text" value="">
+                                                    <input id="emailID" class="form-control" type="text" value="">
                                                     <!--记得修改-->
                                                 </div>
                                             </div>
@@ -229,7 +229,7 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12">
                                                 <div class="form-group">
                                                     <label>学号</label>
-                                                    <input class="form-control" type="text" value="">
+                                                    <input id="schoolId" class="form-control" type="text" value="">
                                                     <!--记得修改-->
                                                 </div>
                                             </div>
@@ -251,11 +251,12 @@
                                                     <label>学院</label>
                                                     <select id="category" class="js-states form-control">
                                                     <option value="">&nbsp;</option>
-                                                    <option value="1">计算机学院</option>
-                                                    <option value="2">软件学院</option>
-                                                    <option value="3">电子信息学院</option>
-                                                    <option value="4">自动化学院</option>
-                                                    <option value="5">网安学院</option>
+                                                    <option value="6">计算机学院</option>
+                                                    <option value="21">软件学院</option>
+                                                    <option value="2">电子信息学院</option>
+                                                    <option value="3">自动化学院</option>
+                                                    <option value="39">网安学院</option>
+                                                    <option value="23">高等理工学院</option>
                                                 </select>
                                                     <!--记得修改-->
                                                 </div>
@@ -265,7 +266,7 @@
                                                 <div class="form-group">
                                                     <label>个人介绍</label>
                                                     <div id="summernote">
-                                                        <p>快来完善你的介绍吧！</p>
+                                                        快来完善你的介绍吧!
                                                     </div>
                                                 </div>
                                             </div>
@@ -484,7 +485,7 @@
                                 <!-- /Advance Information -->
                             </span>
 
-                                <a href="#" class="btn btn-info btn-md full-width">保存并更新<i
+                                <a href="#" id="save-update" class="btn btn-info btn-md full-width">保存并更新<i
                                     class="ml-2 ti-arrow-right"></i></a>
 
                             </div>
