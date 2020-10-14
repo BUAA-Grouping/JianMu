@@ -13,7 +13,7 @@ public class SignServiceImpl implements SignService {
     public int signIn(String emailId, String password,User retUser) {
         User user = userDao.queryByEmail(emailId);
         if(user == null){
-            return  -1;
+            return -1;
         }
         if(!user.getPassword().equals(password)){
             return -2;

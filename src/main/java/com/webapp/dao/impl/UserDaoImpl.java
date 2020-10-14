@@ -19,7 +19,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
     @Override
     public User queryByEmail(String email) {
-        String sql = "SELECT `id`,`name`,`email`,`password` FROM user WHERE `email`=?";
+        String sql = "SELECT `id`,`name`,`email` `emailID`,`password` FROM user WHERE `email`=?";
         return queryForOne(User.class, sql, email);
     }
 
@@ -46,13 +46,13 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
     @Override
     public User queryInfoById(int id) {
-        String sql = "SELECT `id`,`email`,`name`,`school_id` AS schoolId,`password`,`major`,`campus`,`profile` FROM user WHERE `id`=?";
+        String sql = "SELECT `id`,`email` `emailID`,`name`,`school_id` schoolId,`password`,`major`,`campus`,`profile` FROM user WHERE `id`=?";
         return queryForOne(User.class, sql, id);
     }
 
     @Override
     public User queryInfoByEmail(String email) {
-        String sql = "SELECT `id`,`email`,`name`,`school_id` AS schoolId,`password`,`major`,`campus`,`profile` FROM user WHERE `email`=?";
+        String sql = "SELECT `id`,`email` `emailID`,`name`,`school_id` AS schoolId,`password`,`major`,`campus`,`profile` FROM user WHERE `email`=?";
         return queryForOne(User.class, sql, email);
     }
 
