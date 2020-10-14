@@ -19,6 +19,7 @@
     <link href="assets/css/skin/default.css" rel="stylesheet">
     <script src="assets/js/ajax/signin.js"></script>
     <script src="assets/js/ajax/signup.js"></script>
+    <script src="assets/js/ajax/init.js"></script>
 </head>
 
 <body class="blue-skin">
@@ -891,7 +892,11 @@
 <script src="assets/js/jQuery.style.switcher.js"></script>
 <script src="assets/js/counterup.min.js"></script>
 <script src="assets/js/custom.js"></script>
-
+<script>
+    $(window).load( function(){
+        initData()
+    } );
+</script>
 <!-- ============================================================== -->
 <!-- This page plugins -->
 <!-- ============================================================== -->
