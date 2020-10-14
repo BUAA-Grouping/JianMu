@@ -68,4 +68,9 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         return update(sql, email);
     }
 
+    @Override
+    public boolean delete(String emailId) {
+        return false;
+    }
+
 }

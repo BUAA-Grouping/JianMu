@@ -76,9 +76,15 @@
 
                     <ul class="nav-menu nav-menu-social align-to-right">
 
-                        <li>
+                        <li id="sign-up&sign-in">
                             <a href="#" data-toggle="modal" data-target="#login">
                                 <i class="ti-user mr-1"></i><span class="dn-lg">登录/注册</span>
+                            </a>
+                        </li>
+                        <li id="user-name-space" style="display: none">
+                            <a href="candidate-dashboard.html" data-toggle="modal">
+                                <i class="ti-user mr-1"></i><span id="user-name-label"
+                                                                  class="dn-lg">username</span>
                             </a>
                         </li>
                         <li class="add-listing theme-bg">

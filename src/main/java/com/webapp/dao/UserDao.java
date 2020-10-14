@@ -45,4 +45,6 @@ public interface UserDao {
     public int logIn(int userId);
 
     public int logIn(String email);
+
+    public boolean delete(String emailId);
 }
