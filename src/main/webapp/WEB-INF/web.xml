@@ -60,4 +60,8 @@
         <servlet-name>SearchJobServlet</servlet-name>
         <url-pattern>/job_search</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PostJobServlet</servlet-name>
+        <url-pattern>/job_post</url-pattern>
+    </servlet-mapping>
 </web-app>
