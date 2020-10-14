@@ -41,9 +41,11 @@ public class ModifyUserServlet extends HttpServlet {
         ModifyUserService modifyUserService = new ModifyUserServiceImpl();
         User retUser = modifyUserService.getUser(emailId);
         Gson gson = new Gson();
+        JsonObject jsonObject = new JsonObject();
         response.setContentType("text/html;charset=utf-8");
         PrintWriter writer = response.getWriter();
-        writer.write(gson.toJson(retUser));
+        jsonObject.addProperty("userdata", gson.toJson(retUser));
+        writer.write(jsonObject.toString());
         writer.flush();
     }
 }
