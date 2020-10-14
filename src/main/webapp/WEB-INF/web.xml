@@ -28,6 +28,14 @@
         <servlet-name>SearchJobServlet</servlet-name>
         <servlet-class>com.webapp.servlet.SearchJobServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteUserServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.DeleteUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteUserServlet</servlet-name>
+        <url-pattern>/user_delete</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeleteJobServlet</servlet-name>
         <url-pattern>/job_delete</url-pattern>
