@@ -20,6 +20,9 @@ public class DeleteUserServlet extends javax.servlet.http.HttpServlet {
                 jsonObject.addProperty("message", "服务器错误");
             } else {
                 jsonObject.addProperty("message", "成功删除");
+                session.removeAttribute("emailID");
+                session.removeAttribute("password");
+                session.removeAttribute("username");
             }
         } else {
             jsonObject.addProperty("message", "服务器错误");
