@@ -13,12 +13,29 @@
 
     <!-- Custom CSS -->
     <link href="assets/css/styles.css" rel="stylesheet">
-
     <!-- Custom Color -->
     <link href="assets/css/skin/default.css" rel="stylesheet">
     <script src="assets/js/jquery-1.12.4.min.js"></script>
     <script src="assets/js/ajax/delete-account.js"></script>
     <script src="assets/js/ajax/modify-user-info.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script>
+        datepicker.init('.datepicker');
+    </script>
+    <style>
+        .datepicker {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            /*width: 230px;*/
+            padding: 5px;
+            line-height: 24px;
+        }
+        .datepicker:focus {
+            outline: none;
+            border: 1px solid #1abc9c;
+        }
+    </style>
 </head>
 
 <body class="green-skin">
@@ -1197,6 +1214,14 @@
                                                 </div>
                                             </div>
 
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <div class="form-group">
+                                                    <label>请选择截止日期</label>
+                                                    <input type="text" class="datepicker form-control" type="text" value="">
+                                                    <!--记得修改-->
+                                                </div>
+                                            </div>
+
                                             <span>
 <!--                                        <div class="col-lg-6 col-md-6 col-sm-12">-->
                                             <!--                                            <div class="form-group">-->
@@ -1363,7 +1388,7 @@
                                 </div>
                                 <!-- /CV -->
 
-                                <a href="#" class="btn btn-info btn-md full-width">保存并更新<i
+                                <a href="#" id="post-job-save-update" class="btn btn-info btn-md full-width">保存并更新<i
                                     class="ml-2 ti-arrow-right"></i></a>
 
                             </div>
@@ -1828,7 +1853,6 @@
             });
         });
     </script>
-
 </body>
 
 </html>
