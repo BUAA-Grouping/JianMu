@@ -14,6 +14,7 @@ $(function () {
     $("#login-submit").click(function () {
         var $emailID = $("#emailID").val();
         var $password = $("#putin-password").val();
+
         // alert("username: " + $emailID + ", password: " + $password);
         $.ajax({
             type: "post",
@@ -21,11 +22,16 @@ $(function () {
             data: {"emailID": $emailID, "password": $password},
             dataType: "json",
             async: false,
-            success: function (msg) {
+            success: function (msg, realname) {
                 // var object = JSON.parse(msg);
                 // console.log("success");
                 // console.log(msg);
                 alert(msg.message);
+                if (msg.message === "登陆成功") {
+                    document.getElementById("sign-up&sign-in").style.display = "none";
+                    document.getElementById("user-name-space").innerText = realname;
+                    document.getElementById("user-name-space").style.display = "block";
+                }
                 // alert("username: " + $username + ", password: " + $password);
             },
             error: function (xhr) {
