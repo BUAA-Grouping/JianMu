@@ -1,5 +1,5 @@
 *.sql
 target/
 .idea/
-src/main/webapp/test-index.html
+src/main/webapp/test-index.jsp
 out/

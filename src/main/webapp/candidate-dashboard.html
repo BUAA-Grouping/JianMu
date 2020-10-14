@@ -37,7 +37,7 @@
             <div class="container-fluid">
                 <nav id="navigation" class="navigation navigation-landscape">
                     <div class="nav-header">
-                        <a class="nav-brand" href="index.html">
+                        <a class="nav-brand" href="index.jsp">
                             <img src="assets/img/logo.png" class="logo" alt="" />
                         </a>
                         <div class="nav-toggle"></div>
@@ -45,7 +45,7 @@
                     <div class="nav-menus-wrapper" style="transition-property: none;">
                         <ul class="nav-menu">
 
-                            <li><a href="index.html" class="active">首页</a></li>
+                            <li><a href="index.jsp" class="active">首页</a></li>
 
                             <li><a href="#">我要找事做<span class="submenu-indicator"></span></a>
                                 <ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">
@@ -1801,14 +1801,15 @@
         // console.log(ur);
         var type = ur.split('#')[1];
         // console.log(type);
-        if (type == "manage-jobs") {
+        if (type === "manage-jobs") {
             $('#manage-jobs').tab('show')
+        } else if (type === "post-new-job") {
+            $('#post-new-job').tab('show')
         } else {
             $('#profile').tab('show')
         }
     </script>
     <script>
-
     </script>
     <script src="assets/js/counterup.min.js"></script>
     <script src="assets/js/custom.js"></script>

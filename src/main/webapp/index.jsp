@@ -77,7 +77,7 @@
                     <ul class="nav-menu nav-menu-social align-to-right">
 
                         <li id="user-name-space" style="display: none">
-                            <a href="candidate-dashboard.html" data-toggle="modal">
+                            <a href="candidate-dashboard.html">
                                 <i class="ti-user mr-1"></i><span id="user-name-label"
                                                                   class="dn-lg">username</span>
                             </a>
@@ -88,7 +88,7 @@
                             </a>
                         </li>
                         <li class="add-listing theme-bg">
-                            <a href="candidate-dashboard.html">
+                            <a href="candidate-dashboard.html#post-new-job">
                                 <i class="ti-plus"></i> 发布任务
                             </a>
                         </li>
