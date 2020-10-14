@@ -52,7 +52,7 @@ public class SignInServlet extends HttpServlet {
             }
             if (success) {
                 session.setAttribute("username", user.getName());
-                session.setAttribute("emailId", emailID);
+                session.setAttribute("emailID", emailID);
                 session.setAttribute("password", user.getPassword());
             }
         }
