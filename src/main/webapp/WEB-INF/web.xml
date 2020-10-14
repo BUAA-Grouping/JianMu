@@ -44,6 +44,10 @@
         <servlet-name>ModifyUserServlet</servlet-name>
         <url-pattern>/user_modify</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>PostJobServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.PostJobServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignInServlet</servlet-name>
         <url-pattern>/sign_in</url-pattern>
