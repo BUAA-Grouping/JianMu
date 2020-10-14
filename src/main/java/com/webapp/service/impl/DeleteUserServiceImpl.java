@@ -9,17 +9,10 @@ public class DeleteUserServiceImpl implements DeleteUserService {
     private final UserDao userDao = new UserDaoImpl();
 
     @Override
-    public int deleteUser(String emailID, String password) {
-        User user = userDao.queryByEmail(emailID);
-        if (user == null) {
-            return -1;
-        }
-        if (!user.getPassword().equals(password)) {
-            return -2;
-        }
+    public int deleteUser(String emailID) {
         if (userDao.delete(emailID)) {
             return 0;
         }
-        return -3;
+        return -1;
     }
 }

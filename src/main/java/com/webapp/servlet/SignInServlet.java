@@ -8,10 +8,8 @@ import com.webapp.service.impl.SignServiceImpl;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
+import javax.swing.text.html.Option;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -21,25 +19,44 @@ public class SignInServlet extends HttpServlet {
     SignService signService = new SignServiceImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String emailID = request.getParameter("emailID");
-        String password = request.getParameter("password");
-        SignService signService = new SignServiceImpl();
+
+        request.setCharacterEncoding("utf-8");
         JsonObject jsonObject = new JsonObject();
-        User user = new User();
-        switch (signService.signIn(emailID, password,user)) {
-            case -1:
-                jsonObject.addProperty("message", "用户名不存在");
-                break;
-            case -2:
-                jsonObject.addProperty("message", "用户名或密码错误");
-                break;
-            case 0:
-                jsonObject.addProperty("message", "登陆成功");
-                jsonObject.addProperty("username",user.getName());
-                break;
-            default:
-                jsonObject.addProperty("message", "服务器异常");
+
+        HttpSession session = request.getSession();
+        Object s = session.getAttribute("username");
+        if (s != null) {
+            jsonObject.addProperty("message", "登陆成功");
+            jsonObject.addProperty("username", (String) s);
+        } else {
+            String emailID = request.getParameter("emailID");
+            String password = request.getParameter("password");
+            SignService signService = new SignServiceImpl();
+
+            boolean success = true;
+            User user = new User();
+            switch (signService.signIn(emailID, password, user)) {
+                case -1:
+                    jsonObject.addProperty("message", "用户名不存在");
+                    break;
+                case -2:
+                    jsonObject.addProperty("message", "用户名或密码错误");
+                    break;
+                case 0:
+                    jsonObject.addProperty("message", "登陆成功");
+                    jsonObject.addProperty("username", user.getName());
+                    break;
+                default:
+                    jsonObject.addProperty("message", "服务器异常");
+                    success = false;
+            }
+            if (success) {
+                session.setAttribute("username", user.getName());
+                session.setAttribute("emailId", emailID);
+                session.setAttribute("password", user.getPassword());
+            }
         }
+
         response.setContentType("text/html;charset=utf-8");
         PrintWriter writer = response.getWriter();
         writer.write(jsonObject.toString());
