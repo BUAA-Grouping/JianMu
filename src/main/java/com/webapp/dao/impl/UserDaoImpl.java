@@ -36,7 +36,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     @Override
     public boolean modifyUser(User user) {
         if (user.getEmailID() == null || user.getSchoolId() == 0 || user.getName() == null
-                || queryInfoById(user.getId()) != null) {
+                || queryInfoById(user.getId()) == null) {
             return false;
         }
         String sql = "UPDATE user SET `email`=?,`name`=?,`school_id`=?,`major`=?,`campus`=?,`profile`=? WHERE `id`=?";
