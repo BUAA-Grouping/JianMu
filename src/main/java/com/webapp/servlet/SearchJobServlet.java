@@ -1,13 +1,9 @@
 package com.webapp.servlet;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.webapp.dao.JobDao;
-import com.webapp.dao.impl.JobDaoImpl;
 import com.webapp.pojo.Job;
-import com.webapp.pojo.JobsResponse;
+import com.webapp.pojo.JobsSearchResponse;
 import com.webapp.service.SearchJobService;
 import com.webapp.service.impl.SearchJobServiceImpl;
 
@@ -19,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.List;
 
 @WebServlet(name = "SearchJobServlet")
 public class SearchJobServlet extends HttpServlet {
@@ -39,14 +34,10 @@ public class SearchJobServlet extends HttpServlet {
                 writer.flush();
                 break;
             case 0:
-                JobsResponse jobsResponse = new JobsResponse(jobList);
-                writer.write(new Gson().toJson(jobsResponse));
+                JobsSearchResponse jobsSearchResponse = new JobsSearchResponse(jobList);
+                writer.write(new Gson().toJson(jobsSearchResponse));
                 writer.flush();
                 break;
         }
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

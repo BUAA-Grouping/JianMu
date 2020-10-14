@@ -7,6 +7,7 @@ public class DeleteJobServiceImpl implements DeleteJobService {
     @Override
     public int delete(int job_id, int user_id) {
         JobDaoImpl jobDao = new JobDaoImpl();
-        return jobDao.delete(user_id, job_id) ? 0 : -1;
+        jobDao.delete(job_id, user_id);
+        return 0;
     }
 }

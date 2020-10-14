@@ -21,11 +21,11 @@ public class SignInServlet extends HttpServlet {
     SignService signService = new SignServiceImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name = request.getParameter("name");
+        String emailID = request.getParameter("emailID");
         String password = request.getParameter("password");
         SignService signService = new SignServiceImpl();
         JsonObject jsonObject = new JsonObject();
-        switch (signService.signIn(name, password)) {
+        switch (signService.signIn(emailID, password)) {
             case -1:
                 jsonObject.addProperty("message", "用户名不存在");
                 break;
@@ -34,6 +34,7 @@ public class SignInServlet extends HttpServlet {
                 break;
             case 0:
                 jsonObject.addProperty("message", "登陆成功");
+                break;
             default:
                 jsonObject.addProperty("message", "服务器异常");
         }
@@ -41,9 +42,5 @@ public class SignInServlet extends HttpServlet {
         PrintWriter writer = response.getWriter();
         writer.write(jsonObject.toString());
         writer.flush();
-    }
-
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
     }
 }

@@ -1,7 +1,7 @@
 package com.webapp.dao;
 
 import com.webapp.pojo.User;
-import org.omg.CORBA.PUBLIC_MEMBER;
+
 
 public interface UserDao {
     public User queryUserByUsername(String username);
@@ -24,6 +24,7 @@ public interface UserDao {
     /**
      * Used to modify personal information
      * Just update email, name, schoolId, password, major, campus, profile.
+     *
      * @return false when user does not exists or some infos is not complete.
      */
     public boolean modifyUser(User user);
@@ -31,9 +32,10 @@ public interface UserDao {
     /**
      * Used to get user's info.
      * Return null when it fails. Return user with id, email, name, schoolId, password,
-     *  major, campus, profile when it succeeds.
+     * major, campus, profile when it succeeds.
      */
     public User queryInfoById(int id);
+
     public User queryInfoByEmail(String email);
 
     /**
@@ -41,5 +43,6 @@ public interface UserDao {
      * It is used when it succeeds in logging in.
      */
     public int logIn(int userId);
+
     public int logIn(String email);
 }

@@ -10,10 +10,12 @@ public class SignServiceImpl implements SignService {
     private final UserDao userDao = new UserDaoImpl();
 
     @Override
-    public int signIn(String name, String password) {
-        if (userDao.queryUserByUsername(name) == null) {
-            return -1;
-        } else if (userDao.queryByUsernameAndPassword(name, password) == null) {
+    public int signIn(String emailId, String password) {
+        User user = userDao.queryByEmail(emailId);
+        if(user == null){
+            return  -1;
+        }
+        if(!user.getPassword().equals(password)){
             return -2;
         }
         return 0;
@@ -21,10 +23,10 @@ public class SignServiceImpl implements SignService {
 
 
     @Override
-    public int registerUser(String name, String password) {
-        User user = new User(name, password);
-        if (userDao.queryUserByUsername(name) != null) {
-            return -1;
+    public int registerUser(String realname, String password, String emailId, int SchoolId) {
+        User user = new User(realname, password, emailId, SchoolId);
+        if (userDao.queryByEmail(emailId) != null) {
+            return 1;
         }
         userDao.saveUser(user);
         return 0;
