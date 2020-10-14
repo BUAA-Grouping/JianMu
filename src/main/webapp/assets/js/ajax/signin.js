@@ -23,15 +23,12 @@ $(function () {
             dataType: "json",
             async: false,
             success: function (msg) {
-                // var object = JSON.parse(msg);
-                // console.log("success");
-                // console.log(msg);
                 alert(msg.message);
                 if (msg.message === "登陆成功") {
                     document.getElementById("sign-up&sign-in").style.display = "none";
                     document.getElementById("user-name-label").innerText = msg.username;
-                    // alert(msg.name);
                     document.getElementById("user-name-space").style.display = "inline";
+                    $('#login').modal('hide');
                 }
                 // alert("username: " + $username + ", password: " + $password);
             },
