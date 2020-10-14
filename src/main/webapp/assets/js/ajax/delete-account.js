@@ -3,7 +3,7 @@ $(function () {
     $("#delete-account").click(function (message) {
         $.ajax({
             type: "post",
-            url: "http://localhost:8080/JianMu_war/delete_user",
+            url: "http://localhost:8080/JianMu_war/user_delete",
             async: false,
             success: function (msg) {
                 alert(msg.message);

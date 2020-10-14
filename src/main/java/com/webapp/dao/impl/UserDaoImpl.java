@@ -70,7 +70,8 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
     @Override
     public boolean delete(String emailId) {
-        return false;
+        String sql = "DELETE FROM `user` WHERE `email`=?";
+        return update(sql, emailId) > 0;
     }
 
 }
