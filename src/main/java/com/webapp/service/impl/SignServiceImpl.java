@@ -10,7 +10,7 @@ public class SignServiceImpl implements SignService {
     private final UserDao userDao = new UserDaoImpl();
 
     @Override
-    public int signIn(String emailId, String password) {
+    public int signIn(String emailId, String password,User retUser) {
         User user = userDao.queryByEmail(emailId);
         if(user == null){
             return  -1;
@@ -18,6 +18,7 @@ public class SignServiceImpl implements SignService {
         if(!user.getPassword().equals(password)){
             return -2;
         }
+        retUser.setName(user.getName());
         return 0;
     }
 
