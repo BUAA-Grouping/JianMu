@@ -1,30 +1,28 @@
 package com.webapp.servlet;
 
 import com.google.gson.JsonObject;
+import com.mysql.cj.Session;
 import com.webapp.service.DeleteUserService;
 import com.webapp.service.impl.DeleteUserServiceImpl;
 
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 public class DeleteUserServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-        String emailID = request.getParameter("emailID");
-        String password = request.getParameter("password");
-        DeleteUserService deleteUserService = new DeleteUserServiceImpl();
+        HttpSession session = request.getSession(false);
+        String emailId = (String) session.getAttribute("emailID");
         JsonObject jsonObject = new JsonObject();
-        switch (deleteUserService.deleteUser(emailID, password)) {
-            case -1:
-                jsonObject.addProperty("message", "用户名不存在");
-                break;
-            case -2:
-                jsonObject.addProperty("message", "用户名或密码错误");
-                break;
-            case -3:
-                jsonObject.addProperty("message", "成功删除");
-                break;
-            default:
+        if (emailId != null) {
+            DeleteUserService deleteUserService = new DeleteUserServiceImpl();
+            if (deleteUserService.deleteUser(emailId) != 0) {
                 jsonObject.addProperty("message", "服务器错误");
+            } else {
+                jsonObject.addProperty("message", "成功删除");
+            }
+        } else {
+            jsonObject.addProperty("message", "服务器错误");
         }
         response.setContentType("text/html;charset=utf-8");
         PrintWriter writer = response.getWriter();
