@@ -755,7 +755,7 @@
                             </div>
 
                             <div class="form-group">
-                                <button id="login-submit" type="submit"
+                                <button id="login-submit" type="button"
                                         class="btn btn-primary btn-md full-width pop-login" disabled>登录
                                 </button>
                             </div>
@@ -847,7 +847,7 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
-                                        <button id="signup-submit" type="submit"
+                                        <button id="signup-submit" type="button"
                                                 class="btn btn-primary btn-md full-width pop-login" disabled>注册
                                         </button>
                                     </div>

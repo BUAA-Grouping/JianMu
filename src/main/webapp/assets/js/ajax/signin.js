@@ -11,7 +11,7 @@ $(function () {
         }
     });
     //监听提交按钮的点击
-    $("#login-submit").click(function () {
+    $("#login-submit").click(function (message) {
         var $emailID = $("#emailID").val();
         var $password = $("#putin-password").val();
 
@@ -29,8 +29,9 @@ $(function () {
                 alert(msg.message);
                 if (msg.message === "登陆成功") {
                     document.getElementById("sign-up&sign-in").style.display = "none";
-                    document.getElementById("user-name-space").innerText = msg.username;
-                    document.getElementById("user-name-space").style.display = "block";
+                    document.getElementById("user-name-label").innerText = msg.username;
+                    // alert(msg.name);
+                    document.getElementById("user-name-space").style.display = "inline";
                 }
                 // alert("username: " + $username + ", password: " + $password);
             },
