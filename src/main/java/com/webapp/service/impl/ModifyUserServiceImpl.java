@@ -10,7 +10,7 @@ public class ModifyUserServiceImpl implements ModifyUserService {
 
     @Override
     public User getUser(String emailId) {
-        return userDao.queryByEmail(emailId);
+        return userDao.queryInfoByEmail(emailId);
     }
 
     @Override

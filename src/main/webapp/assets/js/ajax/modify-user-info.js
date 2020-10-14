@@ -26,16 +26,17 @@ $(function () {
         var $campus = $("#category-2").val();
         var userdata = {
             "emailID": $emailID,
-            "user": $username,
+            "name": $username,
             "schoolId": $schoolId,
             "profile": $profile,
             "major": $major,
             "campus": $campus
         };
+        userdata=JSON.stringify(userdata);
         $.ajax({
             type: "post",
-            url: "http://localhost:8080/JianMu_war/sign_in",
-            data: userdata,
+            url: "http://localhost:8080/JianMu_war/user_modify",
+            data: {"userdata": userdata},
             dataType: "json",
             async: false,
             success: function (msg) {

@@ -23,7 +23,7 @@ public interface UserDao {
 
     /**
      * Used to modify personal information
-     * Just update email, name, schoolId, password, major, campus, profile.
+     * Just update email, name, schoolId, major, campus, profile.
      *
      * @return false when user does not exists or some infos is not complete.
      */
