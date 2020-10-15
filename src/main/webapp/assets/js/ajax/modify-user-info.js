@@ -10,8 +10,10 @@ $(function () {
             $("#emailID").attr("value", object.emailID);
             $("#schoolId").attr("value", object.schoolId);
             $("#summernote").attr("value", object.profile);
-            $("#category").val(object.major);
-            $("#category-2").val(object.campus);
+            // $("#category").val(object.major);
+            $('#category option:eq(object.major)').attr('selected','selected');
+            // $("#category-2").val(object.campus);
+            $('#category-2 option:eq(object.campus)').attr('selected','selected');
         },
         error: function (xhr) {
             alert(xhr.status);

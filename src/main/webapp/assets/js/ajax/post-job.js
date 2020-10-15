@@ -1,7 +1,7 @@
 $(function () {
     $("#post-job-save-update").click(function (message) {
         let $title = $("#job-title").val();
-        let $profile = document.getElementsByClassName("note-editable").innerHTML;
+        let $profile = $("#jb-description").summernote('code');
         let $exceptedNumOfMember = $("#exceptedNumOfMember").val();
         let $college = $("#category1").val();
         let $campus = $("#category2").val();
