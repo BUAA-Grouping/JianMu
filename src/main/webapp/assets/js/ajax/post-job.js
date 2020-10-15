@@ -1,7 +1,7 @@
 $(function () {
     $("#post-job-save-update").click(function (message) {
         let $title = $("#job-title").val();
-        let $profile = $("#jb-description").val();
+        let $profile = document.getElementsByClassName("note-editable").innerHTML;
         let $exceptedNumOfMember = $("#exceptedNumOfMember").val();
         let $college = $("#category1").val();
         let $campus = $("#category2").val();
@@ -16,13 +16,15 @@ $(function () {
             "college": $college,
             "campus": $campus,
             "exceptedNumOfMember": $exceptedNumOfMember,
-            "expected_end_time": $expected_end_time
         };
         jobdata = JSON.stringify(jobdata);
         $.ajax({
             type: "post",
             url: "http://localhost:8080/JianMu_war/job_post",
-            data: {"jobdata": jobdata},
+            data: {
+                "jobdata": jobdata,
+                "expected_end_time": $expected_end_time
+            },
             dataType: "json",
             async: false,
             success: function (msg) {
