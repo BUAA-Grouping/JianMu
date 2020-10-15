@@ -12,8 +12,8 @@ $(function () {
     });
     //监听提交按钮的点击
     $("#login-submit").click(function (message) {
-        var $emailID = $("#emailID").val();
-        var $password = $("#putin-password").val();
+        let $emailID = $("#emailID").val();
+        let $password = $("#putin-password").val();
 
         // alert("username: " + $emailID + ", password: " + $password);
         $.ajax({

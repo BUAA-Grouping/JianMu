@@ -18,13 +18,13 @@ $(function () {
         }
     });
     $("#save-update").click(function (message) {
-        var $emailID = $("#emailID").val();
-        var $username = $("#user-real-name").val();
-        var $schoolId = $("#schoolId").val();
-        var $profile = $("#summernote").val();
-        var $major = $("#category").val();
-        var $campus = $("#category-2").val();
-        var userdata = {
+        let $emailID = $("#emailID").val();
+        let $username = $("#user-real-name").val();
+        let $schoolId = $("#schoolId").val();
+        let $profile = $("#summernote").val();
+        let $major = $("#category").val();
+        let $campus = $("#category-2").val();
+        let userdata = {
             "emailID": $emailID,
             "name": $username,
             "schoolId": $schoolId,
