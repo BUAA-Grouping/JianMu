@@ -81,12 +81,10 @@ public class JobDaoImpl extends BaseDao implements JobDao {
 
     @Override
     public List<Job> getJobByPoster(int userId) {
-        String sql = "SELECT `job_id` id FROM post WHERE `user_id`=?";
-        List<Job> jobIds = queryForList(Job.class, sql, userId);
-        List<Job> jobs = new ArrayList<>();
-        for (Job jobId : jobIds) {
-            jobs.add(queryInfoByJobId(jobId.getId()));
-        }
-        return jobs;
+        String sql = "SELECT job.id, `title`,`college`,`campus`,`expected_num_of_member` AS `exceptedNumOfMember`," +
+                "`state`,`profile`,`telephone`,`email` " +
+                "FROM post,job " +
+                "WHERE `user_id`=? AND job.id=post.job_id";
+        return queryForList(Job.class, sql, userId);
     }
 }
