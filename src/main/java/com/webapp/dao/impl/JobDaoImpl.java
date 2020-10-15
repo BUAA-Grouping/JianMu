@@ -62,11 +62,11 @@ public class JobDaoImpl extends BaseDao implements JobDao {
         String sql = "SELECT `id`,`title`,`college`,`campus`,`expected_num_of_member` AS `exceptedNumOfMember`," +
                 "`state`,`profile`,`telephone`,`email`" +
                 " FROM job";
-        if (keyword == null && college == 0 && campus == 0) {
+        if ((keyword == null || keyword.isEmpty()) && college == 0 && campus == 0) {
             return queryForList(Job.class, sql);
         }
         sql += " WHERE ";
-        if (keyword != null) {
+        if (keyword != null && !keyword.isEmpty()) {
             sql += " `title` LIKE '%" + keyword + "%' AND ";
         }
         if (college != 0) {
