@@ -80,7 +80,7 @@ public class JobDaoImpl extends BaseDao implements JobDao {
     }
 
     @Override
-    public List<Job> getJobByPoster(int userId) {
+    public List<Job> queryJobByPoster(int userId) {
         String sql = "SELECT job.id, `title`,`college`,`campus`,`expected_num_of_member` AS `exceptedNumOfMember`," +
                 "`state`,`profile`,`telephone`,`email` " +
                 "FROM post,job " +

@@ -15,8 +15,8 @@ $(function () {
             async: false,
             success: function (msg) {
                 if (msg.message === "成功找到相关项目") {
-                    for (let i = 0; i < msg.joblist.length; i++) {
-                        let job = msg.joblist[i];
+                    for (let i = 0; i < msg.jobList.length; i++) {
+                        let job = msg.jobList[i];
                         $('#jobs').append('                <div class="col-lg-4 col-md-6 col-sm-6">\n' +
                             '                    <div class="classic-joblist ultimate-center">\n' +
                             '                        <div class="cl-job-employer">\n' +
