@@ -115,7 +115,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-12 p-0">
                         <div class="form-group">
                             <i class="ti-search"></i>
-                            <input type="text" class="form-control b-r" placeholder="任务关键字">
+                            <input id="key-words" type="text" class="form-control b-r" placeholder="任务关键字">
                         </div>
                     </div>
 
@@ -134,18 +134,23 @@
                         <div class="form-group">
                             <select id="category" class="js-states form-control">
                                 <option value="">&nbsp;</option>
-                                <option value="1">计算机学院</option>
-                                <option value="2">软件学院</option>
-                                <option value="3">电子信息学院</option>
-                                <option value="4">自动化学院</option>
-                                <option value="5">网安学院</option>
+                                <option value="6">计算机学院</option>
+                                <option value="21">软件学院</option>
+                                <option value="2">电子信息学院</option>
+                                <option value="3">自动化学院</option>
+                                <option value="39">网安学院</option>
+                                <option value="23">高等理工学院</option>
                             </select>
                             <i class="ti-layers"></i>
                         </div>
                     </div>
 
                     <div class="col-lg-2 col-md-2 col-sm-12 p-0">
-                        <button type="button" class="btn btn-primary full-width">出发！</button>
+                        <button onclick="javascript:window.location.href='search-full-width.html'
+                        +'#'+$('#key-words').val()+'#'
+                        + $('#category').val()+'#'+$('#category-2').val()"
+                                type="button" class="btn btn-primary full-width">出发！
+                        </button>
                     </div>
                 </div>
             </form>
@@ -893,9 +898,9 @@
 <script src="assets/js/counterup.min.js"></script>
 <script src="assets/js/custom.js"></script>
 <script>
-    $(window).load( function(){
+    $(window).load(function () {
         initData()
-    } );
+    });
 </script>
 <!-- ============================================================== -->
 <!-- This page plugins -->
