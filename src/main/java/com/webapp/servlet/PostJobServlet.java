@@ -2,7 +2,6 @@ package com.webapp.servlet;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import com.mysql.cj.Session;
 import com.webapp.pojo.Job;
 import com.webapp.service.PostJobService;
 import com.webapp.service.impl.PostJobServiceImpl;
@@ -16,11 +15,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Timestamp;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.TimeoutException;
 
 @WebServlet(name = "PostJobServlet")
 public class PostJobServlet extends HttpServlet {
@@ -29,10 +26,10 @@ public class PostJobServlet extends HttpServlet {
         PostJobService postJobService = new PostJobServiceImpl();
         HttpSession session = request.getSession();
         int user_id = (int) session.getAttribute("id");
-        String jobdata = String.valueOf(request.getAttribute("jobdata"));
+        String jobdata = (String) request.getParameter("jobdata");
         Job req_job = gson.fromJson(jobdata, Job.class);
 
-        String datestr = (String) request.getAttribute("expectedEndtime");
+        String datestr = (String) request.getAttribute("expected_end_time");
         SimpleDateFormat sf = new SimpleDateFormat("MM-dd-yyyy");
         Timestamp expectedEndTime;
         Date date = null;

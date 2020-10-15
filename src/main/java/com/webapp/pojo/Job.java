@@ -19,7 +19,7 @@ public class Job implements Serializable {
     private int state;
     private String profile;
     private String telephone;
-    private String email;
+    private String emailID;
 
     public int getId() {
         return id;

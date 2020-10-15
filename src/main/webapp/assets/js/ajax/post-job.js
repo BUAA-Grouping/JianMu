@@ -22,7 +22,7 @@ $(function () {
         $.ajax({
             type: "post",
             url: "http://localhost:8080/JianMu_war/job_post",
-            data: {"jobdata": jobdata},
+            data: {"jobdata": "jobdata"},
             dataType: "json",
             async: false,
             success: function (msg) {
