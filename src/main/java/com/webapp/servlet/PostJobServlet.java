@@ -28,7 +28,7 @@ public class PostJobServlet extends HttpServlet {
         int user_id = (int) session.getAttribute("id");
         String jobdata = (String) request.getParameter("jobdata");
         Job req_job = gson.fromJson(jobdata, Job.class);
-
+        req_job.setProfile(req_job.getProfile().trim());
         String datestr = (String) request.getParameter("expected_end_time");
         SimpleDateFormat sf = new SimpleDateFormat("MM-dd-yyyy");
         Timestamp expectedEndTime;

@@ -20,15 +20,15 @@ import java.util.ArrayList;
 public class SearchJobServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String keyword = request.getParameter("keyword");
-        int college = Integer.parseInt(request.getParameter("College"));
-        int campus = Integer.parseInt(request.getParameter("Campus"));
+        int college = Integer.parseInt(request.getParameter("college"));
+        int campus = Integer.parseInt(request.getParameter("campus"));
         ArrayList<Job> jobList = new ArrayList<>();
         SearchJobService searchJobService = new SearchJobServiceImpl();
         response.setContentType("text/html;charset=utf-8");
         PrintWriter writer = response.getWriter();
+        JsonObject jsonObject = new JsonObject();
         switch (searchJobService.searchJob(keyword, college, campus, jobList)) {
             case -1:
-                JsonObject jsonObject = new JsonObject();
                 jsonObject.addProperty("message", "没有符合条件的项目");
                 writer.write(jsonObject.toString());
                 writer.flush();
@@ -38,6 +38,10 @@ public class SearchJobServlet extends HttpServlet {
                 writer.write(new Gson().toJson(jobsSearchResponse));
                 writer.flush();
                 break;
+            default:
+                jsonObject.addProperty("message", "服务器错误");
+                writer.write(jsonObject.toString());
+                writer.flush();
         }
     }
 }
