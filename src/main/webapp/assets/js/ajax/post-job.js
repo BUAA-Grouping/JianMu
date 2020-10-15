@@ -1,25 +1,30 @@
 $(function () {
     $("#post-job-save-update").click(function (message) {
-        var $emailID = $("#emailID").val();
-        var $username = $("#user-real-name").val();
-        var $schoolId = $("#schoolId").val();
-        var $profile = $("#summernote").val();
-        var $major = $("#category").val();
-        var $campus = $("#category-2").val();
-
-        var userdata = {
+        let $title = $("#job-title").val();
+        let $profile = $("#jb-description").summernote('code');
+        let $exceptedNumOfMember = $("#exceptedNumOfMember").val();
+        let $college = $("#category1").val();
+        let $campus = $("#category2").val();
+        let $telephone = $("#job-telephone").val();
+        let $emailID = $("#job-email").val();
+        let $expected_end_time = $("#expected-end-time").val();
+        let jobdata = {
             "emailID": $emailID,
-            "name": $username,
-            "schoolId": $schoolId,
+            "title": $title,
+            "telephone": $telephone,
             "profile": $profile,
-            "major": $major,
-            "campus": $campus
+            "college": $college,
+            "campus": $campus,
+            "exceptedNumOfMember": $exceptedNumOfMember,
         };
-        userdata=JSON.stringify(userdata);
+        jobdata = JSON.stringify(jobdata);
         $.ajax({
             type: "post",
             url: "http://localhost:8080/JianMu_war/job_post",
-            data: {"userdata": userdata},
+            data: {
+                "jobdata": jobdata,
+                "expected_end_time": $expected_end_time
+            },
             dataType: "json",
             async: false,
             success: function (msg) {

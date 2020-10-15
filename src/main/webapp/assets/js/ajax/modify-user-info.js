@@ -10,21 +10,23 @@ $(function () {
             $("#emailID").attr("value", object.emailID);
             $("#schoolId").attr("value", object.schoolId);
             $("#summernote").attr("value", object.profile);
-            $("#category").val(object.major);
-            $("#category-2").val(object.campus);
+            // $("#category").val(object.major);
+            $('#category option:eq(object.major)').attr('selected','selected');
+            // $("#category-2").val(object.campus);
+            $('#category-2 option:eq(object.campus)').attr('selected','selected');
         },
         error: function (xhr) {
             alert(xhr.status);
         }
     });
     $("#save-update").click(function (message) {
-        var $emailID = $("#emailID").val();
-        var $username = $("#user-real-name").val();
-        var $schoolId = $("#schoolId").val();
-        var $profile = $("#summernote").val();
-        var $major = $("#category").val();
-        var $campus = $("#category-2").val();
-        var userdata = {
+        let $emailID = $("#emailID").val();
+        let $username = $("#user-real-name").val();
+        let $schoolId = $("#schoolId").val();
+        let $profile = $("#summernote").val();
+        let $major = $("#category").val();
+        let $campus = $("#category-2").val();
+        let userdata = {
             "emailID": $emailID,
             "name": $username,
             "schoolId": $schoolId,

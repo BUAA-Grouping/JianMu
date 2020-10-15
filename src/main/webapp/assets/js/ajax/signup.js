@@ -12,10 +12,10 @@ $(function () {
     });
     //监听提交按钮的点击
     $("#signup-submit").click(function () {
-        var $realname = $("#real-name").val();
-        var $schoolID = $("#school-id").val();
-        var $emailID = $("#email-id").val();
-        var $password = $("#set-password").val();
+        let $realname = $("#real-name").val();
+        let $schoolID = $("#school-id").val();
+        let $emailID = $("#email-id").val();
+        let $password = $("#set-password").val();
         // alert("username: " + $username + ", password: " + $password);
         $.ajax({
             type: "post",

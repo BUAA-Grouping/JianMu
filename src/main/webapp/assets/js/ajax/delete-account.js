@@ -1,5 +1,4 @@
 $(function () {
-    //监听提交按钮的点击
     $("#delete-account").click(function (message) {
         $.ajax({
             type: "post",
