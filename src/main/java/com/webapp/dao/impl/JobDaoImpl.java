@@ -14,19 +14,19 @@ public class JobDaoImpl extends BaseDao implements JobDao {
 
     @Override
     public boolean post(int userId, Job job, Timestamp expectedEndTime) {
-        if (job == null || userDao.queryInfoById(userId) == null) {
-            return false;
-        }
-        job.setState(1);
-        String sql = "INSERT INTO job(`title`,`college`,`campus`,`expected_number_of_member`,`state`,`profile`) VALUES (?,?,?,?,?,?)";
-        update(sql, job.getTitle(), job.getCollege(), job.getCampus(), job.getExceptedNumOfMember(), job.getState(), job.getProfile());
-        if (expectedEndTime == null) {
-            sql = "INSERT INTO post(`user_id`,`job_id`) VALUES (?,?)";
-            update(sql, userId, job.getId());
-        } else {
-            sql = "INSERT INTO post(`user_id`,`job_id`,`expected_end_time`) VALUES (?,?,?)";
-            update(sql, userId, job.getId(), expectedEndTime);
-        }
+//        if (job == null || userDao.queryInfoById(userId) == null) {
+//            return false;
+//        }
+//        job.setState(1);
+//        String sql = "INSERT INTO job(`title`,`college`,`campus`,`expected_number_of_member`,`state`,`profile`) VALUES (?,?,?,?,?,?)";
+//        update(sql, job.getTitle(), job.getCollege(), job.getCampus(), job.getExceptedNumOfMember(), job.getState(), job.getProfile());
+//        if (expectedEndTime == null) {
+//            sql = "INSERT INTO post(`user_id`,`job_id`) VALUES (?,?)";
+//            update(sql, userId, job.getId());
+//        } else {
+//            sql = "INSERT INTO post(`user_id`,`job_id`,`expected_end_time`) VALUES (?,?,?)";
+//            update(sql, userId, job.getId(), expectedEndTime);
+//        }
         return true;
     }
 
