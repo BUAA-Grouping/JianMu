@@ -37,4 +37,10 @@ public interface JobDao {
      * @return a List of job.
      */
     List<Job> queryJobByConditions(String keyword,int college,int campus);
+
+    /**
+     * get jobs the person post
+     * @param userId poster's id
+     */
+    List<Job> getJobByPoster(int userId);
 }

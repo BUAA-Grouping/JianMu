@@ -9,6 +9,7 @@ import org.apache.commons.dbutils.handlers.ScalarHandler;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class BaseDao {
     private final QueryRunner queryRunner = new QueryRunner();
@@ -23,6 +24,18 @@ public abstract class BaseDao {
             JdbcUtils.close(connection);
         }
         return -1;
+    }
+
+    public Object insert(String sql, Object... args) {
+        Connection connection = JdbcUtils.getConnection();
+        try {
+            return queryRunner.insert(connection, sql, new ScalarHandler<>(), args);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            JdbcUtils.close(connection);
+        }
+        return null;
     }
 
     public <T> T queryForOne(Class<T> type, String sql, Object... args) {
@@ -60,4 +73,5 @@ public abstract class BaseDao {
         }
         return null;
     }
+
 }

@@ -6,7 +6,9 @@ import com.webapp.dao.UserDao;
 import com.webapp.pojo.Job;
 import com.webapp.pojo.User;
 
+import java.math.BigInteger;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 public class JobDaoImpl extends BaseDao implements JobDao {
@@ -18,15 +20,12 @@ public class JobDaoImpl extends BaseDao implements JobDao {
             return false;
         }
         job.setState(1);
-        String sql = "INSERT INTO job(`title`,`college`,`campus`,`expected_number_of_member`,`state`,`profile`) VALUES (?,?,?,?,?,?)";
-        update(sql, job.getTitle(), job.getCollege(), job.getCampus(), job.getExceptedNumOfMember(), job.getState(), job.getProfile());
-        if (expectedEndTime == null) {
-            sql = "INSERT INTO post(`user_id`,`job_id`) VALUES (?,?)";
-            update(sql, userId, job.getId());
-        } else {
-            sql = "INSERT INTO post(`user_id`,`job_id`,`expected_end_time`) VALUES (?,?,?)";
-            update(sql, userId, job.getId(), expectedEndTime);
-        }
+        String sql = "INSERT INTO job(`title`,`college`,`campus`,`expected_num_of_member`,`state`,`profile`,`email`,`telephone`)" +
+                " VALUES (?,?,?,?,?,?,?,?)";
+        int jobId = ((BigInteger) insert(sql, job.getTitle(), job.getCollege(), job.getCampus(), job.getExceptedNumOfMember(),
+                job.getState(), job.getProfile(), job.getEmail(), job.getTelephone())).intValue();
+        sql = "INSERT INTO post(`user_id`,`job_id`,`expected_end_time`) VALUES (?,?,?)";
+        update(sql, userId, jobId, expectedEndTime);
         return true;
     }
 
@@ -45,7 +44,8 @@ public class JobDaoImpl extends BaseDao implements JobDao {
 
     @Override
     public Job queryInfoByJobId(int jobId) {
-        String sql = "SELECT `id`,`title`,`college`,`campus`,`expected_number_of_member` AS `exceptedNumOfMember`,`state`,`profile`" +
+        String sql = "SELECT `id`,`title`,`college`,`campus`,`expected_num_of_member` AS `exceptedNumOfMember`," +
+                "`state`,`profile`,`telephone`,`email`" +
                 " FROM job WHERE `id`=?";
         return queryForOne(Job.class, sql, jobId);
     }
@@ -59,9 +59,10 @@ public class JobDaoImpl extends BaseDao implements JobDao {
 
     @Override
     public List<Job> queryJobByConditions(String keyword, int college, int campus) {
-        String sql = "SELECT `id`,`college`,`campus`,`expected_number_of_member` AS `exceptedNumOfMember`,`state`,`profile`" +
+        String sql = "SELECT `id`,`title`,`college`,`campus`,`expected_num_of_member` AS `exceptedNumOfMember`," +
+                "`state`,`profile`,`telephone`,`email`" +
                 " FROM job";
-        if (keyword != null && college != 0 && campus != 0) {
+        if (keyword == null && college == 0 && campus == 0) {
             return queryForList(Job.class, sql);
         }
         sql += " WHERE ";
@@ -76,5 +77,16 @@ public class JobDaoImpl extends BaseDao implements JobDao {
         }
         sql = sql.replaceAll(" AND $", "");
         return queryForList(Job.class, sql);
+    }
+
+    @Override
+    public List<Job> getJobByPoster(int userId) {
+        String sql = "SELECT `job_id` id FROM post WHERE `user_id`=?";
+        List<Job> jobIds = queryForList(Job.class, sql, userId);
+        List<Job> jobs = new ArrayList<>();
+        for (Job jobId : jobIds) {
+            jobs.add(queryInfoByJobId(jobId.getId()));
+        }
+        return jobs;
     }
 }
