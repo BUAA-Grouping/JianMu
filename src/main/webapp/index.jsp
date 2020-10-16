@@ -134,15 +134,15 @@
                                     <div class="form-group">
                                         <select id="category" class="js-states form-control">
                                 <option value="">&nbsp;</option>
-                                <option value="01">[01]材料科学与工程学院</option>
-                                <option value="02">[02]电子信息工程学院</option>
-                                <option value="03">[03]自动化科学与电气工程学院</option>
-                                <option value="04">[04]能源与动力工程学院</option>
-                                <option value="05">[05]航空科学与工程学院</option>
-                                <option value="06">[06]计算机学院</option>
-                                <option value="07">[07]机械工程及自动化学院</option>
-                                <option value="08">[08]经济管理学院</option>
-                                <option value="09">[09]数学科学学院</option>
+                                <option value="1">[01]材料科学与工程学院</option>
+                                <option value="2">[02]电子信息工程学院</option>
+                                <option value="3">[03]自动化科学与电气工程学院</option>
+                                <option value="4">[04]能源与动力工程学院</option>
+                                <option value="5">[05]航空科学与工程学院</option>
+                                <option value="6">[06]计算机学院</option>
+                                <option value="7">[07]机械工程及自动化学院</option>
+                                <option value="8">[08]经济管理学院</option>
+                                <option value="9">[09]数学科学学院</option>
                                 <option value="10">[10]生物与医学工程学院</option>
                                 <option value="11">[11]人文社会科学学院</option>
                                 <option value="12">[12]外国语学院</option>

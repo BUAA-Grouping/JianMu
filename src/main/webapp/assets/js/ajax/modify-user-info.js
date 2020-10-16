@@ -10,18 +10,15 @@ $(function () {
             $("#emailID").attr("value", object.emailID);
             $("#schoolId").attr("value", object.schoolId);
             $("#summernote").attr("value", object.profile);
-            document.getElementById("#user-name-big").innerHTML = object.name;
-            document.getElementById("user-greeting").innerHTML = "您好！" + object.name;
+            $("#user-name-big").attr("value", object.name);
+            $("#user-name-big").text(object.name);
+            $("#user-greeting").text("您好！" + object.name);
             let majorNameSelect = $("#category").select2();
-            majorNameSelect.val(object.major).trigger("change");
+            majorNameSelect.val(object.major.toString()).trigger("change");
             majorNameSelect.change();
-            // $("#category").val(object.major);
-            // $('#category option:eq(object.major)').attr('selected','selected');
-            let campusNameSelect = $("#category").select2();
-            campusNameSelect.val(object.campus).trigger("change");
+           let campusNameSelect = $("#category-2").select2();
+            campusNameSelect.val(object.campus.toString()).trigger("change");
             campusNameSelect.change();
-            // $("#category-2").val(object.campus);
-            // $('#category-2 option:eq(object.campus)').attr('selected','selected');
         },
         error: function (xhr) {
             alert(xhr.status);
