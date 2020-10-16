@@ -53,14 +53,14 @@
                             <ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">
                                 <li><a href="search-full-width.html">搜索职位</a></li>
                                 <li><a href="employers-list.html">搜索招募人</a></li>
-                                <li><a href="candidate-dashboard.html#profile">个人资料</a></li>
+                                <li><a id="personal-info" href="candidate-dashboard.html#profile">个人资料</a></li>
                             </ul>
                         </li>
 
                         <li><a href="#">我要找队友<span class="submenu-indicator"></span></a>
                             <ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">
                                 <li><a href="candidate-grid.html">搜索候选人</a></li>
-                                <li><a href="candidate-dashboard.html#manage-jobs">招募管理</a></li>
+                                <li><a id="recruit-manage" href="candidate-dashboard.html#manage-jobs">招募管理</a></li>
                             </ul>
                         </li>
 
@@ -88,7 +88,7 @@
                                 <i class="ti-user mr-1"></i><span class="dn-lg">登录/注册</span>
                             </a>
                         </li>
-                        <li class="add-listing theme-bg">
+                        <li id="post-job-after-login" class="add-listing theme-bg">
                             <a href="candidate-dashboard.html#post-new-job">
                                 <i class="ti-plus"></i> 发布任务
                             </a>
