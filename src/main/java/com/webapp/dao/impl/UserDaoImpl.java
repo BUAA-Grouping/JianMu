@@ -84,7 +84,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
             return false;
         }
         int userId = user.getId();
-        String sql = "SELECT `job_id` FROM `post` WHERE user_id=?";
+        String sql = "SELECT `job_id` `id` FROM `post` WHERE user_id=?";
         List<Job> jobs = queryForList(Job.class, sql, userId);
         sql = "DELETE FROM `post` WHERE user_id=?";
         update(sql, userId);
