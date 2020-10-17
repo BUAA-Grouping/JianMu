@@ -1,7 +1,7 @@
 $(function () {
     let ur = location.href;
     if (ur.search("#") !== -1) {
-        let key_words = ur.split('#')[1];
+        let key_words = decodeURI(ur.split('#')[1]);
         let major = ur.split('#')[2];
         let campus = ur.split('#')[3];
         $('#key-words').attr("value", key_words);
