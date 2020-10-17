@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,18 +36,19 @@ public class SearchJobServlet extends HttpServlet {
         }
         ArrayList<Job> jobList = new ArrayList<>();
         List<User> poster = new ArrayList<>();
+        List<Timestamp> expected_end_time = new ArrayList<>();
         SearchJobService searchJobService = new SearchJobServiceImpl();
         response.setContentType("text/html;charset=utf-8");
         PrintWriter writer = response.getWriter();
         JsonObject jsonObject = new JsonObject();
-        switch (searchJobService.searchJob(keyword, college, campus, jobList, poster)) {
+        switch (searchJobService.searchJob(keyword, college, campus, jobList, poster, expected_end_time)) {
             case -1:
                 jsonObject.addProperty("message", "没有符合条件的项目");
                 writer.write(jsonObject.toString());
                 writer.flush();
                 break;
             case 0:
-                JobsSearchResponse jobsSearchResponse = new JobsSearchResponse(jobList, poster);
+                JobsSearchResponse jobsSearchResponse = new JobsSearchResponse(jobList, poster,expected_end_time);
                 writer.write(new Gson().toJson(jobsSearchResponse));
                 writer.flush();
                 break;
