@@ -41,7 +41,7 @@
             <div class="container-fluid">
                 <nav id="navigation" class="navigation navigation-landscape">
                     <div class="nav-header">
-                        <a class="nav-brand" href="index.jsp">
+                        <a class="nav-brand" href="#">
                             <img src="assets/img/logo.png" class="logo" alt="" />
                         </a>
                         <div class="nav-toggle"></div>
@@ -52,14 +52,14 @@
                                 <ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">
                                     <li><a href="search-full-width.html">搜索职位</a></li>
                                     <li><a href="employers-list.html">搜索招募人</a></li>
-                                    <li><a href="candidate-dashboard.html#profile">个人资料</a></li>
+                                    <li><a id="personal-info" href="candidate-dashboard.html#profile">个人资料</a></li>
                                 </ul>
                             </li>
 
                             <li><a href="#">我要找队友<span class="submenu-indicator"></span></a>
                                 <ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">
                                     <li><a href="candidate-grid.html">搜索候选人</a></li>
-                                    <li><a href="candidate-dashboard.html#manage-jobs">招募管理</a></li>
+                                    <li><a id="recruit-manage" href="candidate-dashboard.html#manage-jobs">招募管理</a></li>
                                 </ul>
                             </li>
 
@@ -77,13 +77,18 @@
 
                         <ul class="nav-menu nav-menu-social align-to-right">
 
-                            <li>
+                            <li id="user-name-space" style="display: none">
+                                <a href="candidate-dashboard.html">
+                                    <i class="ti-user mr-1"></i><span id="user-name-label" class="dn-lg">username</span>
+                                </a>
+                            </li>
+                            <li id="sign-up&sign-in">
                                 <a href="#" data-toggle="modal" data-target="#login">
                                     <i class="ti-user mr-1"></i><span class="dn-lg">登录/注册</span>
                                 </a>
                             </li>
-                            <li class="add-listing theme-bg">
-                                <a href="candidate-dashboard.html">
+                            <li id="post-job-after-login" class="add-listing theme-bg">
+                                <a href="candidate-dashboard.html#post-new-job">
                                     <i class="ti-plus"></i> 发布任务
                                 </a>
                             </li>
@@ -857,8 +862,8 @@
                 <div class="modal-content" id="registermodal">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true"><i class="ti-close"></i></span>
-                        </button>
+                        <span aria-hidden="true"><i class="ti-close"></i></span>
+                    </button>
                     </div>
                     <div class="modal-body">
                         <h4 class="modal-header-title">登录</h4>
@@ -878,7 +883,7 @@
                                 <div class="form-group">
                                     <label>电子邮箱</label>
                                     <div class="input-with-gray">
-                                        <input type="text" class="form-control" placeholder="Email ID">
+                                        <input id="emailID" type="text" class="form-control" placeholder="Email ID">
                                         <i class="ti-user theme-cl"></i>
                                     </div>
                                 </div>
@@ -886,13 +891,14 @@
                                 <div class="form-group">
                                     <label>密码</label>
                                     <div class="input-with-gray">
-                                        <input type="password" class="form-control" placeholder="*******">
+                                        <input id="putin-password" type="password" class="form-control" placeholder="*******">
                                         <i class="ti-unlock theme-cl"></i>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary btn-md full-width pop-login">登录</button>
+                                    <button id="login-submit" type="button" class="btn btn-primary btn-md full-width pop-login" disabled>登录
+                                </button>
                                 </div>
 
                             </form>
@@ -914,8 +920,8 @@
                 <div class="modal-content" id="sign-up">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true"><i class="ti-close"></i></span>
-                        </button>
+                        <span aria-hidden="true"><i class="ti-close"></i></span>
+                    </button>
                     </div>
                     <div class="modal-body">
                         <h4 class="modal-header-title">注册</h4>
@@ -936,7 +942,7 @@
                                         <div class="form-group">
                                             <label>您的姓名</label>
                                             <div class="input-with-gray">
-                                                <input type="text" class="form-control" placeholder="您的姓名">
+                                                <input id="real-name" type="text" class="form-control" placeholder="您的姓名">
                                                 <i class="ti-user theme-cl"></i>
                                             </div>
                                         </div>
@@ -946,7 +952,7 @@
                                         <div class="form-group">
                                             <label>您的学号（教职工号）</label>
                                             <div class="input-with-gray">
-                                                <input type="email" class="form-control" placeholder="School ID">
+                                                <input id="school-id" type="text" class="form-control" placeholder="School ID">
                                                 <i class="ti-user theme-cl"></i>
                                             </div>
                                         </div>
@@ -958,7 +964,7 @@
                                         <div class="form-group">
                                             <label>电子邮箱</label>
                                             <div class="input-with-gray">
-                                                <input type="text" class="form-control" placeholder="Email ID">
+                                                <input id="email-id" type="text" class="form-control" placeholder="Email ID">
                                                 <i class="ti-user theme-cl"></i>
                                             </div>
                                         </div>
@@ -967,7 +973,7 @@
                                         <div class="form-group">
                                             <label>设置密码</label>
                                             <div class="input-with-gray">
-                                                <input type="password" class="form-control" placeholder="*******">
+                                                <input id="set-password" type="password" class="form-control" placeholder="*******">
                                                 <i class="ti-unlock theme-cl"></i>
                                             </div>
                                         </div>
@@ -977,9 +983,8 @@
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-md full-width pop-login">
-                                                注册
-                                            </button>
+                                            <button id="signup-submit" type="button" class="btn btn-primary btn-md full-width pop-login" disabled>注册
+                                        </button>
                                         </div>
                                     </div>
                                 </div>
