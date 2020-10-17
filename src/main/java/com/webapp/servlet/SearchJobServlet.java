@@ -20,8 +20,18 @@ import java.util.ArrayList;
 public class SearchJobServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String keyword = request.getParameter("keyword");
-        int college = Integer.parseInt(request.getParameter("college"));
-        int campus = Integer.parseInt(request.getParameter("campus"));
+        int college;
+        try {
+            college = Integer.parseInt(request.getParameter("college"));
+        } catch (Exception e) {
+            college = 0;
+        }
+        int campus;
+        try {
+            campus = Integer.parseInt(request.getParameter("campus"));
+        } catch (Exception e) {
+            campus = 0;
+        }
         ArrayList<Job> jobList = new ArrayList<>();
         SearchJobService searchJobService = new SearchJobServiceImpl();
         response.setContentType("text/html;charset=utf-8");

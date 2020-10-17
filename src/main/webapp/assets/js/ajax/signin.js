@@ -29,6 +29,7 @@ $(function () {
                     document.getElementById("user-name-label").innerText = msg.username;
                     document.getElementById("user-name-space").style.display = "inline";
                     $('#login').modal('hide');
+                    location.reload();
                 }
                 // alert("username: " + $username + ", password: " + $password);
             },

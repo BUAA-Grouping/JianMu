@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <%--trimDirectiveWhitespaces="true" --%>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -52,14 +53,14 @@
                             <ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">
                                 <li><a href="search-full-width.html">搜索职位</a></li>
                                 <li><a href="employers-list.html">搜索招募人</a></li>
-                                <li><a href="candidate-dashboard.html#profile">个人资料</a></li>
+                                <li><a id="personal-info" href="candidate-dashboard.html#profile">个人资料</a></li>
                             </ul>
                         </li>
 
                         <li><a href="#">我要找队友<span class="submenu-indicator"></span></a>
                             <ul class="nav-dropdown nav-submenu" style="right: auto; display: none;">
                                 <li><a href="candidate-grid.html">搜索候选人</a></li>
-                                <li><a href="candidate-dashboard.html#manage-jobs">招募管理</a></li>
+                                <li><a id="recruit-manage" href="candidate-dashboard.html#manage-jobs">招募管理</a></li>
                             </ul>
                         </li>
 
@@ -79,8 +80,7 @@
 
                         <li id="user-name-space" style="display: none">
                             <a href="candidate-dashboard.html">
-                                <i class="ti-user mr-1"></i><span id="user-name-label"
-                                                                  class="dn-lg">username</span>
+                                <i class="ti-user mr-1"></i><span id="user-name-label" class="dn-lg">username</span>
                             </a>
                         </li>
                         <li id="sign-up&sign-in">
@@ -88,7 +88,7 @@
                                 <i class="ti-user mr-1"></i><span class="dn-lg">登录/注册</span>
                             </a>
                         </li>
-                        <li class="add-listing theme-bg">
+                        <li id="post-job-after-login" class="add-listing theme-bg">
                             <a href="candidate-dashboard.html#post-new-job">
                                 <i class="ti-plus"></i> 发布任务
                             </a>
@@ -122,7 +122,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                         <div class="form-group">
                             <select id="category-2" class="js-states form-control">
-                                <option value="">&nbsp;</option>
+                                <option value="0">不指定校区</option>
                                 <option value="1">南校区（学院路）</option>
                                 <option value="2">北校区（沙河）</option>
                             </select>
@@ -133,13 +133,60 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                         <div class="form-group">
                             <select id="category" class="js-states form-control">
-                                <option value="">&nbsp;</option>
-                                <option value="6">计算机学院</option>
-                                <option value="21">软件学院</option>
-                                <option value="2">电子信息学院</option>
-                                <option value="3">自动化学院</option>
-                                <option value="39">网安学院</option>
-                                <option value="23">高等理工学院</option>
+                                <option value="0">不指定学院</option>
+                                <option value="1">[01]材料科学与工程学院</option>
+                                <option value="2">[02]电子信息工程学院</option>
+                                <option value="3">[03]自动化科学与电气工程学院</option>
+                                <option value="4">[04]能源与动力工程学院</option>
+                                <option value="5">[05]航空科学与工程学院</option>
+                                <option value="6">[06]计算机学院</option>
+                                <option value="7">[07]机械工程及自动化学院</option>
+                                <option value="8">[08]经济管理学院</option>
+                                <option value="9">[09]数学科学学院</option>
+                                <option value="10">[10]生物与医学工程学院</option>
+                                <option value="11">[11]人文社会科学学院</option>
+                                <option value="12">[12]外国语学院</option>
+                                <option value="13">[13]交通科学与工程学院</option>
+                                <option value="14">[14]可靠性与系统工程学院</option>
+                                <option value="15">[15]宇航学院</option>
+                                <option value="16">[16]飞行学院</option>
+                                <option value="17">[17]仪器科学与光电工程学院</option>
+                                <option value="18">[18]北京学院</option>
+                                <option value="19">[19]物理学院</option>
+                                <option value="20">[20]法学院</option>
+                                <option value="21">[21]软件学院</option>
+                                <option value="22">[22]现代远程教育学院</option>
+                                <option value="23">[23]高等理工学院</option>
+                                <option value="24">[24]中法工程师学院</option>
+                                <option value="25">[25]国际学院</option>
+                                <option value="26">[26]新媒体艺术与设计学院</option>
+                                <option value="27">[27]化学学院</option>
+                                <option value="28">[28]马克思主义学院</option>
+                                <option value="29">[29]人文与社会科学高等研究院</option>
+                                <option value="30">[30]空间与环境学院</option>
+                                <option value="31">[31]武装部</option>
+                                <option value="32">[32]工程训练中心</option>
+                                <option value="33">[33]体育部</option>
+                                <option value="34">[34]图书馆</option>
+                                <option value="35">[35]国际通用工程学院</option>
+                                <option value="36">[36]校医院</option>
+                                <option value="37">[37]招生就业处</option>
+                                <option value="38">[38]无人机所</option>
+                                <option value="39">[39]网络空间安全学院</option>
+                                <option value="40">[40]校机关</option>
+                                <option value="41">[41]继续教育学院</option>
+                                <option value="42">[42]人工智能研究院</option>
+                                <option value="44">[44]研究生院</option>
+                                <option value="45">[45]北航暑期学校</option>
+                                <option value="49">[49]微电子学院</option>
+                                <option value="50">[50]校际</option>
+                                <option value="51">[51]学生处武装部</option>
+                                <option value="53">[53]团委</option>
+                                <option value="56">[56]校内其它单位</option>
+                                <option value="60">[60]校外单位</option>
+                                <option value="61">[61]学生发展服务中心</option>
+                                <option value="70">[70]北航学院</option>
+                                <option value="231">[231]高等理工学院（华罗庚班）</option>
                             </select>
                             <i class="ti-layers"></i>
                         </div>
@@ -148,8 +195,8 @@
                     <div class="col-lg-2 col-md-2 col-sm-12 p-0">
                         <button onclick="javascript:window.location.href='search-full-width.html'
                         +'#'+$('#key-words').val()+'#'
-                        + $('#category').val()+'#'+$('#category-2').val()"
-                                type="button" class="btn btn-primary full-width">出发！
+                        + $('#category').val()+'#'+$('#category-2').val()" type="button"
+                                class="btn btn-primary full-width">出发！
                         </button>
                     </div>
                 </div>

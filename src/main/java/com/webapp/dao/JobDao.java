@@ -42,5 +42,5 @@ public interface JobDao {
      * get jobs the person post
      * @param userId poster's id
      */
-    List<Job> getJobByPoster(int userId);
+    List<Job> queryJobByPoster(int userId);
 }

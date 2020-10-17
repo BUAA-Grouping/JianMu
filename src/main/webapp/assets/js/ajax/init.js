@@ -10,6 +10,10 @@ $(function initData() {
                 document.getElementById("user-name-label").innerText = msg.username;
                 document.getElementById("user-name-space").style.display = "inline";
                 $('#login').modal('hide');
+            } else {
+                $('#personal-info').css("display","none");
+                $('#recruit-manage').css("display","none");
+                $('#post-job-after-login').css("display","none");
             }
         },
         error: function (xhr) {

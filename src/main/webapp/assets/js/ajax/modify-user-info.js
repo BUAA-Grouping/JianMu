@@ -10,10 +10,15 @@ $(function () {
             $("#emailID").attr("value", object.emailID);
             $("#schoolId").attr("value", object.schoolId);
             $("#summernote").attr("value", object.profile);
-            // $("#category").val(object.major);
-            $('#category option:eq(object.major)').attr('selected','selected');
-            // $("#category-2").val(object.campus);
-            $('#category-2 option:eq(object.campus)').attr('selected','selected');
+            $("#user-name-big").attr("value", object.name);
+            $("#user-name-big").text(object.name);
+            $("#user-greeting").text("您好！" + object.name);
+            let majorNameSelect = $("#category").select2();
+            majorNameSelect.val(object.major.toString()).trigger("change");
+            majorNameSelect.change();
+           let campusNameSelect = $("#category-2").select2();
+            campusNameSelect.val(object.campus.toString()).trigger("change");
+            campusNameSelect.change();
         },
         error: function (xhr) {
             alert(xhr.status);
