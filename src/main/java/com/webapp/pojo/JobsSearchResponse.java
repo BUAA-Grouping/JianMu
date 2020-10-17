@@ -19,7 +19,11 @@ public class JobsSearchResponse implements Serializable {
         this.poster = poster;
         SimpleDateFormat df = new SimpleDateFormat("MM--dd-yyyy");
         for (Timestamp timestamp : expected_end_time) {
-            this.expected_end_time.add(df.format(timestamp));
+            if (timestamp == null) {
+                this.expected_end_time.add("12--31-9999");
+            } else {
+                this.expected_end_time.add(df.format(timestamp));
+            }
         }
     }
 }
