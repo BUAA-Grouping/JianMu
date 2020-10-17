@@ -47,5 +47,5 @@ public interface JobDao {
 
     Timestamp queryEndTimeByJobId(int jobId);
 
-    Timestamp quetyStartTimeByJobId(int jobId);
+    Timestamp queryStartTimeByJobId(int jobId);
 }

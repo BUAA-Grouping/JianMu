@@ -96,7 +96,7 @@ public class JobDaoImpl extends BaseDao implements JobDao {
     }
 
     @Override
-    public Timestamp quetyStartTimeByJobId(int jobId) {
+    public Timestamp queryStartTimeByJobId(int jobId) {
         String sql = "SELECT create_at `startTime` FROM `job` WHERE id=?";
         return queryForOne(JobTime.class, sql, jobId).getStartTime();
     }
