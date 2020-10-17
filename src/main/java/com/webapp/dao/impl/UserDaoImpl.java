@@ -4,6 +4,8 @@ import com.webapp.dao.BaseDao;
 import com.webapp.dao.UserDao;
 import com.webapp.pojo.User;
 
+import java.sql.SQLException;
+
 public class UserDaoImpl extends BaseDao implements UserDao {
     @Override
     public User queryUserByUsername(String username) {
@@ -30,7 +32,12 @@ public class UserDaoImpl extends BaseDao implements UserDao {
                 || user.getPassword() == null || this.queryByEmail(user.getEmailID()) != null) {
             return false;
         }
-        return update(sql, user.getEmailID(), user.getSchoolId(), user.getName(), user.getPassword()) > 0;
+        try {
+            return update(sql, user.getEmailID(), user.getSchoolId(), user.getName(), user.getPassword()) > 0;
+        } catch (Exception e) {
+            return false;
+        }
+
     }
 
     @Override

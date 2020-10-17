@@ -28,6 +28,9 @@ public class SignUpServlet extends HttpServlet {
             case -1:
                 jsonObject.addProperty("message", "用户名已存在");
                 break;
+            case -2:
+                jsonObject.addProperty("message", "注册信息异常");
+                break;
             default:
                 jsonObject.addProperty("message", "服务器异常");
         }

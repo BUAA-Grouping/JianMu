@@ -33,7 +33,9 @@ public class SignServiceImpl implements SignService {
         if (userDao.queryByEmail(emailId) != null) {
             return -1;
         }
-        userDao.saveUser(user);
+        if (!userDao.saveUser(user)) {
+            return -2;
+        }
         return 0;
     }
 
