@@ -9,4 +9,20 @@ import java.sql.Timestamp;
 public class JobTime {
     private Timestamp startTime;
     private Timestamp expectedEndTime;
+
+    public Timestamp getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Timestamp startTime) {
+        this.startTime = startTime;
+    }
+
+    public Timestamp getExpectedEndTime() {
+        return expectedEndTime;
+    }
+
+    public void setExpectedEndTime(Timestamp expectedEndTime) {
+        this.expectedEndTime = expectedEndTime;
+    }
 }

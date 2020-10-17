@@ -16,7 +16,7 @@ public class SearchJobServiceImpl implements SearchJobService {
         jobList.addAll(jobDao.queryJobByConditions(keyword, college, campus));
         for (Job j : jobList) {
             poster.add(jobDao.queryPosterByJobId(j.getId()));
-            expectedEndTime.add(jobDao.queryEndTimebyJobId(j.getId()));
+            expectedEndTime.add(jobDao.queryEndTimeByJobId(j.getId()));
         }
         if (jobList.isEmpty()) {
             return -1;
