@@ -62,10 +62,10 @@ public abstract class BaseDao {
         return null;
     }
 
-    public Object queryForSingleValue(String sql, Object... args) {
+    public <T> T queryForSingleValue(String sql, Object... args) {
         Connection connection = JdbcUtils.getConnection();
         try {
-            return queryRunner.query(connection, sql, new ScalarHandler(), args);
+            return queryRunner.query(connection, sql, new ScalarHandler<T>(), args);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {

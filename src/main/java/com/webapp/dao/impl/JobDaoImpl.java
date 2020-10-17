@@ -4,12 +4,10 @@ import com.webapp.dao.BaseDao;
 import com.webapp.dao.JobDao;
 import com.webapp.dao.UserDao;
 import com.webapp.pojo.Job;
-import com.webapp.pojo.JobTime;
 import com.webapp.pojo.User;
 
 import java.math.BigInteger;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 
 public class JobDaoImpl extends BaseDao implements JobDao {
@@ -92,12 +90,12 @@ public class JobDaoImpl extends BaseDao implements JobDao {
     @Override
     public Timestamp queryEndTimeByJobId(int jobId) {
         String sql = "SELECT expected_end_time `expectedEndTime` FROM `post` WHERE job_id=?";
-        return queryForOne(JobTime.class, sql, jobId).getExpectedEndTime();
+        return queryForSingleValue(sql, jobId);
     }
 
     @Override
     public Timestamp queryStartTimeByJobId(int jobId) {
         String sql = "SELECT create_at `startTime` FROM `job` WHERE id=?";
-        return queryForOne(JobTime.class, sql, jobId).getStartTime();
+        return queryForSingleValue(sql, jobId);
     }
 }
