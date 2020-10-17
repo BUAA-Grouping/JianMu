@@ -19,6 +19,10 @@
     <link href="assets/css/skin/default.css" rel="stylesheet">
     <script src="assets/js/jquery-1.12.4.min.js"></script>
     <script src="assets/js/ajax/search-job.js"></script>
+    <script src="assets/js/ajax/search-from-index.js"></script>
+    <script src="assets/js/ajax/init.js"></script>
+    <script src="assets/js/ajax/signin.js"></script>
+    <script src="assets/js/ajax/signup.js"></script>
 </head>
 
 <body class="blue-skin bg-light">
@@ -118,7 +122,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                         <div class="form-group">
                             <select id="category-2" class="js-states form-control">
-                                <option value="">&nbsp;</option>
+                                <option value="0">不指定校区</option>
                                 <option value="1">南校区（学院路）</option>
                                 <option value="2">北校区（沙河）</option>
                             </select>
@@ -129,16 +133,16 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                         <div class="form-group">
                             <select id="category" class="js-states form-control">
-                                <option value="">&nbsp;</option>
-                                <option value="01">[01]材料科学与工程学院</option>
-                                <option value="02">[02]电子信息工程学院</option>
-                                <option value="03">[03]自动化科学与电气工程学院</option>
-                                <option value="04">[04]能源与动力工程学院</option>
-                                <option value="05">[05]航空科学与工程学院</option>
-                                <option value="06">[06]计算机学院</option>
-                                <option value="07">[07]机械工程及自动化学院</option>
-                                <option value="08">[08]经济管理学院</option>
-                                <option value="09">[09]数学科学学院</option>
+                                <option value="0">不指定学院</option>
+                                <option value="1">[01]材料科学与工程学院</option>
+                                <option value="2">[02]电子信息工程学院</option>
+                                <option value="3">[03]自动化科学与电气工程学院</option>
+                                <option value="4">[04]能源与动力工程学院</option>
+                                <option value="5">[05]航空科学与工程学院</option>
+                                <option value="6">[06]计算机学院</option>
+                                <option value="7">[07]机械工程及自动化学院</option>
+                                <option value="8">[08]经济管理学院</option>
+                                <option value="9">[09]数学科学学院</option>
                                 <option value="10">[10]生物与医学工程学院</option>
                                 <option value="11">[11]人文社会科学学院</option>
                                 <option value="12">[12]外国语学院</option>
@@ -228,24 +232,24 @@
             <!-- Pagination -->
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    <ul class="pagination mt-0">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span class="ti-arrow-left"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item active"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">...</a></li>
-                        <li class="page-item"><a class="page-link" href="#">18</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span class="ti-arrow-right"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </li>
+                    <ul id="pages" class="pagination mt-0">
+<!--                        <li class="page-item">-->
+<!--                            <a class="page-link" href="#" aria-label="Previous">-->
+<!--                                <span class="ti-arrow-left"></span>-->
+<!--                                <span class="sr-only">Previous</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li class="page-item"><a class="page-link" href="#">1</a></li>-->
+<!--                        <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+<!--                        <li class="page-item active"><a class="page-link" href="#">3</a></li>-->
+<!--                        <li class="page-item"><a class="page-link" href="#">...</a></li>-->
+<!--                        <li class="page-item"><a class="page-link" href="#">18</a></li>-->
+<!--                        <li class="page-item">-->
+<!--                            <a class="page-link" href="#" aria-label="Next">-->
+<!--                                <span class="ti-arrow-right"></span>-->
+<!--                                <span class="sr-only">Next</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
                     </ul>
                 </div>
             </div>
@@ -700,18 +704,6 @@
     function closeNav() {
         document.getElementById("filter-sidebar").style.width = "0";
     }
-</script>
-<script>
-    let ur = location.href;
-    let key_words = ur.split('#')[1];
-    let major = ur.split('#')[2];
-    let campus = ur.split('#')[3];
-    console.log(campus);
-    console.log(key_words);
-    $('#key-words').attr("value", key_words);
-    $('#category').attr("value", major);
-    $('#category-2').attr("value", campus);
-    $('#search-job').click();
 </script>
 
 

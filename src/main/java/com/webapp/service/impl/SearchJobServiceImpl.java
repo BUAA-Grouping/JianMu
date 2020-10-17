@@ -2,6 +2,7 @@ package com.webapp.service.impl;
 
 import com.webapp.dao.impl.JobDaoImpl;
 import com.webapp.pojo.Job;
+import com.webapp.pojo.User;
 import com.webapp.service.SearchJobService;
 
 import java.util.List;
@@ -9,9 +10,12 @@ import java.util.List;
 public class SearchJobServiceImpl implements SearchJobService {
 
     @Override
-    public int searchJob(String keyword, int college, int campus, List<Job> jobList) {
+    public int searchJob(String keyword, int college, int campus, List<Job> jobList, List<User> poster) {
         JobDaoImpl jobDao = new JobDaoImpl();
         jobList.addAll(jobDao.queryJobByConditions(keyword, college, campus));
+        for (Job j : jobList) {
+            poster.add(jobDao.queryPosterByJobId(j.getId()));
+        }
         if (jobList.isEmpty()) {
             return -1;
         }
