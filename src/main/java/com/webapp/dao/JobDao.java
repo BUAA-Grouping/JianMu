@@ -4,6 +4,7 @@ import com.webapp.pojo.Job;
 import com.webapp.pojo.User;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 public interface JobDao {
@@ -43,4 +44,8 @@ public interface JobDao {
      * @param userId poster's id
      */
     List<Job> queryJobByPoster(int userId);
+
+    Timestamp queryEndTimeByJobId(int jobId);
+
+    Timestamp queryStartTimeByJobId(int jobId);
 }

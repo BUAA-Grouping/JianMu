@@ -51,6 +51,7 @@ function addTab(msg) {
             let k = 0;
             for (; k < Math.min(12, length); num++, k++) {
                 let job = msg.jobList[num];
+                let poster = msg.poster[num];
                 $('#jobs').append('<div id="tab' + (num + 1).toString() + '" class="col-lg-4 col-md-6 col-sm-6">\n' +
                     '<div class="classic-joblist ultimate-center">\n' +
                     '<div class="cl-job-employer">\n' +
@@ -59,13 +60,13 @@ function addTab(msg) {
                     '</div>\n' +
                     '<div class="cljb-emp-detail">\n' +
                     '<h5><a href="employer-detail.html">' + job.campus + '</a></h5>\n' +
-                    '<span class="cljb-date">' + job.start_time + '</span>\n' +
+                    '<span class="cljb-date">' + "期望招收人数："+job.exceptedNumOfMember + '</span>\n' +
                     '</div>\n' +
                     '</div>\n' +
                     '<h4 class="job-title"><a href="job-detail.html">' + job.title + '</a>\n' +
                     '</h4>\n' +
                     '<div class="cl-job-intro">\n' +
-                    '<span class="cl-jb-loaction"><i class="ti-user"></i>' + job.poster + '</span>\n' +
+                    '<span class="cl-jb-loaction"><i class="ti-user"></i>' + poster.name + '</span>\n' +
                     '</div>\n' +
                     '</div>\n' +
                     '</div>');
