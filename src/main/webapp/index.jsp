@@ -18,6 +18,8 @@
     <!-- Custom Color -->
     <script src="assets/js/jquery-1.12.4.min.js"></script>
     <link href="assets/css/skin/default.css" rel="stylesheet">
+    <link href="assets/css/sweetalert.css" rel="stylesheet">
+    <script src="assets/js/sweetalert-dev.js"></script>
     <script src="assets/js/ajax/signin.js"></script>
     <script src="assets/js/ajax/signup.js"></script>
     <script src="assets/js/ajax/init.js"></script>
