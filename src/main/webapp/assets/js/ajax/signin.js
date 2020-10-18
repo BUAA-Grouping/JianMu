@@ -30,8 +30,9 @@ $(function () {
                     document.getElementById("user-name-space").style.display = "inline";
                     $('#login').modal('hide');
                     location.reload();
+                }else{
+                    swal(msg.message,"error");
                 }
-                swal(msg.message,"error");
                 // alert("username: " + $username + ", password: " + $password);
             },
             error: function (xhr) {
