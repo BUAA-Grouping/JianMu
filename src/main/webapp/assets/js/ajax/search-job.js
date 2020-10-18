@@ -59,14 +59,14 @@ function addTab(msg) {
                     '<a href="job-detail.html"><img src="assets/img/软件学院.png" alt=""/></a>\n' +
                     '</div>\n' +
                     '<div class="cljb-emp-detail">\n' +
-                    '<h5><a href="employer-detail.html">' + job.campus + '</a></h5>\n' +
-                    '<span class="cljb-date">' + "期望招收人数："+job.exceptedNumOfMember + '</span>\n' +
+                    '<h5><a href="javascript:void(0);">' + job.campus + '</a></h5>\n' +
+                    '<span class="cljb-date">' + "期望招收人数：" + job.exceptedNumOfMember + '</span>\n' +
                     '</div>\n' +
                     '</div>\n' +
-                    '<h4 class="job-title"><a href="job-detail.html">' + job.title + '</a>\n' +
+                    '<h4 class="job-title"><a href="job-detail.html' + '#' + job.id + '">' + job.title + '</a>\n' +
                     '</h4>\n' +
                     '<div class="cl-job-intro">\n' +
-                    '<span class="cl-jb-loaction"><i class="ti-user"></i>' + poster.name + '</span>\n' +
+                    '<a href="candidate-dashboard.html' + '#' + poster.id + '" class="cl-jb-loaction"><i class="ti-user"></i>' + poster.name + '</a>\n' +
                     '</div>\n' +
                     '</div>\n' +
                     '</div>');

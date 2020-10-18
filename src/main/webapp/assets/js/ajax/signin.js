@@ -23,18 +23,19 @@ $(function () {
             dataType: "json",
             async: false,
             success: function (msg) {
-                alert(msg.message);
                 if (msg.message === "登陆成功") {
+                    swal(msg.message,"success");
                     document.getElementById("sign-up&sign-in").style.display = "none";
                     document.getElementById("user-name-label").innerText = msg.username;
                     document.getElementById("user-name-space").style.display = "inline";
                     $('#login').modal('hide');
                     location.reload();
                 }
+                swal(msg.message,"error");
                 // alert("username: " + $username + ", password: " + $password);
             },
             error: function (xhr) {
-                alert(xhr.status);
+                swal(msg.message,"error");
             }
         });
         // console.log("submit");

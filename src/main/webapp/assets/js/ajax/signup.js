@@ -35,6 +35,7 @@ $(function () {
                     document.getElementById("user-name-label").innerText = $realname;
                     document.getElementById("user-name-space").style.display = "inline";
                     $('#signup').modal('hide');
+                    location.reload();
                 }
             },
             error: function (xhr) {
