@@ -24,19 +24,19 @@ $(function () {
             async: false,
             success: function (msg) {
                 if (msg.message === "登陆成功") {
-                    swal(msg.message,"success");
+                    // swal(msg.message,"success");
                     document.getElementById("sign-up&sign-in").style.display = "none";
                     document.getElementById("user-name-label").innerText = msg.username;
                     document.getElementById("user-name-space").style.display = "inline";
                     $('#login').modal('hide');
                     location.reload();
                 }else{
-                    swal(msg.message,"error");
+                    swal(msg.message,"Error!",'error');
                 }
                 // alert("username: " + $username + ", password: " + $password);
             },
             error: function (xhr) {
-                swal(msg.message,"error");
+                swal(msg.message,"Error!",'error');
             }
         });
         // console.log("submit");

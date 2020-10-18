@@ -29,17 +29,24 @@ $(function () {
             dataType: "json",
             async: false,
             success: function (msg) {
-                alert(msg.message);
                 if (msg.message === "注册成功") {
                     document.getElementById("sign-up&sign-in").style.display = "none";
                     document.getElementById("user-name-label").innerText = $realname;
                     document.getElementById("user-name-space").style.display = "inline";
                     $('#signup').modal('hide');
                     location.reload();
+                    swal({
+                        title: msg.message,
+                        text: "Success!",
+                        type: 'success',
+                        timer: 1000
+                    });
+                } else {
+                    swal(msg.message, "Error!", 'error');
                 }
             },
             error: function (xhr) {
-                alert(xhr.status);
+                swal(msg.message, "Error!", 'error');
             }
         });
         // console.log("submit");
