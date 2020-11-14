@@ -2,6 +2,7 @@ package com.webapp.service.impl;
 
 import com.webapp.dao.UserDao;
 import com.webapp.dao.impl.UserDaoImpl;
+import com.webapp.pojo.Student;
 import com.webapp.pojo.User;
 import com.webapp.service.SignService;
 
@@ -28,12 +29,16 @@ public class SignServiceImpl implements SignService {
 
 
     @Override
-    public int registerUser(String realname, String password, String emailId, int SchoolId) {
-        User user = new User(realname, password, emailId, SchoolId);
+    public int registerUser(String realname, String password, String emailId, int schoolId) {
+        Student student = new Student();
+        student.setName(realname);
+        student.setPassword(password);
+        student.setEmailID(emailId);
+        student.setStudentId(String.valueOf(schoolId));
         if (userDao.queryByEmail(emailId) != null) {
             return -1;
         }
-        if (!userDao.saveUser(user)) {
+        if (!userDao.saveUser(student)) {
             return -2;
         }
         return 0;

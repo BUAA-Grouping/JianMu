@@ -12,83 +12,12 @@ import java.util.Date;
 public class Job implements Serializable {
     private int id;
     private String title;
-    private int college;
-    private int campus;
+    private int collegeId;
     private int exceptedNumOfMember;
     private int state;
     private String profile;
     private String email;
     private String telephone;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public int getCollege() {
-        return college;
-    }
-
-    public void setCollege(int college) {
-        this.college = college;
-    }
-
-    public int getCampus() {
-        return campus;
-    }
-
-    public void setCampus(int campus) {
-        this.campus = campus;
-    }
-
-    public int getExceptedNumOfMember() {
-        return exceptedNumOfMember;
-    }
-
-    public void setExceptedNumOfMember(int exceptedNumOfMember) {
-        this.exceptedNumOfMember = exceptedNumOfMember;
-    }
-
-    public int getState() {
-        return state;
-    }
-
-    public void setState(int state) {
-        this.state = state;
-    }
-
-    public String getProfile() {
-        return profile;
-    }
-
-    public void setProfile(String profile) {
-        this.profile = profile;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
+    private College college;
 }
