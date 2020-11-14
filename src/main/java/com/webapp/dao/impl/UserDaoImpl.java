@@ -81,7 +81,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
     @Override
     public User queryInfoByEmail(String email) {
-        String sql = "SELECT `id`,`email` `emailID`,`name`,`school_id` AS schoolId,`password`,`major`,`campus`,`profile` FROM user WHERE `email`=?";
+        String sql = "SELECT `id`,`email` `emailID`,`name`,`password`,`college_id` collegeId,`profile` FROM user WHERE `email`=?";
         User user = queryForOne(User.class, sql, email);
         if (user == null) {
             return null;
@@ -104,14 +104,14 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
     @Override
     public boolean delete(String emailId) {
-        User user = queryInfoByEmail(emailId);
+        User user = queryByEmail(emailId);
         if (user == null) {
             return false;
         }
         int userId = user.getId();
-        String sql = "SELECT `job_id` `id` FROM `post` WHERE user_id=?";
+        String sql = "SELECT `job_id` `id` FROM `user_post_job` WHERE user_id=?";
         List<Job> jobs = queryForList(Job.class, sql, userId);
-        sql = "DELETE FROM `post` WHERE user_id=?";
+        sql = "DELETE FROM user_post_job WHERE user_id=?";
         update(sql, userId);
         sql = "DELETE FROM `job` WHERE job_id=?";
         for (Job job : jobs) {
