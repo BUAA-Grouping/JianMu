@@ -1,9 +1,11 @@
 $(function () {
+    let getType = 1;
     $.ajax({
         type: "get",
         url: "http://localhost:8080/JianMu_war/user_modify",
         dataType: "json",
         async: false,
+        data: {"getType": getType},
         success: function (msg) {
             var object = JSON.parse(msg.userdata);
             $("#user-real-name").attr("value", object.name);
@@ -16,7 +18,7 @@ $(function () {
             let majorNameSelect = $("#category").select2();
             majorNameSelect.val(object.major.toString()).trigger("change");
             majorNameSelect.change();
-           let campusNameSelect = $("#category-2").select2();
+            let campusNameSelect = $("#category-2").select2();
             campusNameSelect.val(object.campus.toString()).trigger("change");
             campusNameSelect.change();
         },
@@ -24,7 +26,30 @@ $(function () {
             alert(xhr.status);
         }
     });
-    $("#save-update").click(function (message) {
+    $('#category').on('select2:select', function () {
+        let getType = 2;
+        let college = $("#category").val();
+        $.ajax({
+            type: "get",
+            url: "http://localhost:8080/JianMu_war/user_modify",
+            dataType: "json",
+            async: false,
+            data: {
+                "getType": getType,
+                "college": college
+            },
+            success: function (msg) {
+                let object = JSON.parse(msg.userdata);
+                let campusNameSelect = $("#category-2").select2();
+                campusNameSelect.val(object.campus.toString()).trigger("change");
+                campusNameSelect.change();
+            },
+            error: function (xhr) {
+                alert(xhr.status);
+            }
+        });
+    });
+    $("#save-update").click(function () {
         let $emailID = $("#emailID").val();
         let $username = $("#user-real-name").val();
         let $schoolId = $("#schoolId").val();
