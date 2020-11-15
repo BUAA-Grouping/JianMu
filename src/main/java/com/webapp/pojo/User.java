@@ -20,6 +20,14 @@ public class User implements Serializable {
 
     private URL avatarUrl;
 
+    public int getCampus() {
+        return campus;
+    }
+
+    public void setCampus(int campus) {
+        this.campus = campus;
+    }
+
     public int getId() {
         return id;
     }
