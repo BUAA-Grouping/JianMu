@@ -10,7 +10,6 @@ import java.math.BigInteger;
 import java.util.List;
 
 public class UserDaoImpl extends BaseDao implements UserDao {
-    private static final CollegeDao COLLEGE_DAO = new CollegeDaoImpl();
 
     @Override
     public User queryByEmail(String email) {
@@ -19,7 +18,6 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         if (user == null) {
             return null;
         }
-        user.setCollege(COLLEGE_DAO.queryInfoByCollegeId(user.getCollegeId()));
         return user;
     }
 
@@ -64,7 +62,6 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         if (user == null) {
             return null;
         }
-        user.setCollege(COLLEGE_DAO.queryInfoByCollegeId(user.getCollegeId()));
         return user;
     }
 
@@ -76,7 +73,6 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         if (user == null) {
             return null;
         }
-        user.setCollege(COLLEGE_DAO.queryInfoByCollegeId(user.getCollegeId()));
         return user;
     }
 
