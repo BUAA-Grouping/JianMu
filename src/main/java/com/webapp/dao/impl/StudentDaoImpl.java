@@ -69,7 +69,6 @@ public class StudentDaoImpl extends UserDaoImpl implements StudentDao {
     @Override
     public Student queryByEmail(String email) {
         String sql = "SELECT `id`,`name`,`email` `emailID`,`password` FROM user WHERE `email`=?";
-        Student student = queryForOne(Student.class, sql, email);
-        return student;
+        return queryForOne(Student.class, sql, email);
     }
 }
