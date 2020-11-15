@@ -1,6 +1,6 @@
-$(function () {
+$(function() {
     //监听内容的实时输入
-    $("body").delegate("#set-password", "propertychange input", function () {
+    $("body").delegate("#set-password", "propertychange input", function() {
         //判断是否输入了内容
         if ($(this).val().length > 0) {
             //让按钮可用
@@ -11,12 +11,19 @@ $(function () {
         }
     });
     //监听提交按钮的点击
-    $("#signup-submit").click(function () {
-        let $realname = $("#real-name").val();
-        let $schoolID = $("#school-id").val();
+    $("#signup-submit").click(function() {
+        let currentTab = getCurrentTabIndex();
+        var $realname, $schoolID, type;
+        type = currentTab;
+        if (currentTab == 0) {
+            $realname = $("#student-real-name").val();
+            $schoolID = $("#student-id").val();
+        } else {
+            $realname = $("#teacher-real-name").val();
+            $schoolID = $("#teacher-id").val();
+        }
         let $emailID = $("#email-id").val();
         let $password = $("#set-password").val();
-        // alert("username: " + $username + ", password: " + $password);
         $.ajax({
             type: "post",
             url: "http://localhost:8080/JianMu_war/sign_up",
@@ -24,11 +31,12 @@ $(function () {
                 "realname": $realname,
                 "schoolID": $schoolID,
                 "emailID": $emailID,
-                "password": $password
+                "password": $password,
+                "type": type
             },
             dataType: "json",
             async: false,
-            success: function (msg) {
+            success: function(msg) {
                 if (msg.message === "注册成功") {
                     document.getElementById("sign-up&sign-in").style.display = "none";
                     document.getElementById("user-name-label").innerText = $realname;
@@ -45,10 +53,24 @@ $(function () {
                     swal(msg.message, "Error!", 'error');
                 }
             },
-            error: function (xhr) {
-                swal(msg.message, "Error!", 'error');
+            error: function(xhr) {
+                swal(xhr.message, "Error!", 'error');
             }
         });
         // console.log("submit");
     })
 })
+
+function getCurrentTabIndex() {
+    var $tabs = $('#signup-tab').children('div');
+    var i = 0;
+    $tabs.each(function() {
+        var $tab = $(this);
+        if ($tab.hasClass('active')) {
+            return false;
+        } else {
+            i++;
+        }
+    });
+    return i;
+}

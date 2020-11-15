@@ -1,15 +1,20 @@
-$(function () {
-    $("#delete-account").click(function (message) {
+$(function() {
+    $("#delete-account").click(function(message) {
         $.ajax({
             type: "post",
             url: "http://localhost:8080/JianMu_war/user_delete",
             async: false,
             dataType: "json",
-            success: function (msg) {
-                alert(msg.message);
+            success: function(msg) {
+                swal({
+                    title: msg.message,
+                    text: "Success!",
+                    type: 'success',
+                    timer: 1000
+                });
             },
-            error: function (xhr) {
-                alert(xhr.status);
+            error: function(xhr) {
+                swal(xhr.message, "Error!", 'error');
             }
         });
     })

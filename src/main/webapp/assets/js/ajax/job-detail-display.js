@@ -1,10 +1,10 @@
-$(function () {
+$(function() {
     $.ajax({
         type: "post",
         url: "http://localhost:8080/JianMu_war/job_detail",
         dataType: "json",
         async: false,
-        success: function (msg) {
+        success: function(msg) {
             $('#expected-end-time').text(msg.job.expected_end_time);
             $('#expected-num').text(msg.job.exceptedNumOfMember);
             $('#job-profile').text(msg.job.profile);
@@ -16,8 +16,8 @@ $(function () {
             $('#job-email').text(msg.job.email);
             $('#job-telephone').text(msg.job.telephone);
         },
-        error: function (xhr) {
-            alert(xhr.status);
+        error: function(xhr) {
+            swal(xhr.message, "Error!", 'error');
         }
     });
 })

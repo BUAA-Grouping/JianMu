@@ -1,5 +1,5 @@
-$(function () {
-    $("#post-job-save-update").click(function (message) {
+$(function() {
+    $("#post-job-save-update").click(function(message) {
         let $title = $("#job-title").val();
         let $profile = $("#jb-description").summernote('code');
         let $exceptedNumOfMember = $("#exceptedNumOfMember").val();
@@ -27,11 +27,16 @@ $(function () {
             },
             dataType: "json",
             async: false,
-            success: function (msg) {
-                alert(msg.message);
+            success: function(msg) {
+                swal({
+                    title: msg.message,
+                    text: "Success!",
+                    type: 'success',
+                    timer: 1000
+                });
             },
-            error: function (xhr) {
-                alert(xhr.status);
+            error: function(xhr) {
+                swal(xhr.message, "Error!", 'error');
             }
         });
     })

@@ -1,17 +1,17 @@
-$(function () {
+$(function() {
     $.ajax({
         type: "post",
         url: "http://localhost:8080/JianMu_war/job_search",
         dataType: "json",
         async: false,
-        success: function (msg) {
+        success: function(msg) {
             addTab(msg);
         },
-        error: function (xhr) {
-            alert(xhr.status);
+        error: function(xhr) {
+            swal(xhr.message, "Error!", 'error');
         }
     });
-    $("#search-job").click(function (message) {
+    $("#search-job").click(function(message) {
         $('#jobs').empty();
         $('#pages').empty();
         let $keyword = $('#key-words').val();
@@ -27,11 +27,11 @@ $(function () {
             },
             dataType: "json",
             async: false,
-            success: function (msg) {
+            success: function(msg) {
                 addTab(msg);
             },
-            error: function (xhr) {
-                alert(xhr.status);
+            error: function(xhr) {
+                swal(xhr.message, "Error!", 'error');
             }
         });
     });
@@ -91,8 +91,8 @@ function addTab(msg) {
     }
 }
 
-function jumpToPage(page) {//传入参数为当前的page
-    $('#page' + page).click(function (message) {
+function jumpToPage(page) { //传入参数为当前的page
+    $('#page' + page).click(function(message) {
         if ($('#page' + page).hasClass("active"))
             return;
         $('#page' + page).addClass('active');
