@@ -23,8 +23,8 @@ public class JobDaoImpl extends BaseDao implements JobDao {
         job.setState(1);
         String sql = "INSERT INTO job(`title`,`college_id`,`expected_num_of_member`,`state`,`profile`,`email`,`telephone`)" +
                 " VALUES (?,?,?,?,?,?,?)";
-        int jobId = ((BigInteger) insert(sql, job.getTitle(), job.getCollegeId(), job.getExceptedNumOfMember(),
-                job.getState(), job.getProfile(), job.getEmail(), job.getTelephone())).intValue();
+        int jobId = ((BigInteger) insert(sql, job.getTitle(), job.getCollege(), job.getExceptedNumOfMember(),
+                job.getState(), job.getProfile(), job.getEmailId(), job.getTelephone())).intValue();
         sql = "INSERT INTO user_post_job(`user_id`,`job_id`,`expected_end_time`) VALUES (?,?,?)";
         update(sql, userId, jobId, expectedEndTime);
         return true;
@@ -49,7 +49,7 @@ public class JobDaoImpl extends BaseDao implements JobDao {
                 "`state`,`profile`,`telephone`,`email`" +
                 " FROM job WHERE `id`=?";
         Job job = queryForOne(Job.class, sql, jobId);
-        job.setCollege(COLLEGE_DAO.queryInfoByCollegeId(job.getCollegeId()));
+        job.setCollege(COLLEGE_DAO.queryInfoByCollegeId(job.getCollege()));
         return job;
     }
 
@@ -81,7 +81,7 @@ public class JobDaoImpl extends BaseDao implements JobDao {
         sql = sql.replaceAll(" AND $", "");
         List<Job> jobs = queryForList(Job.class, sql);
         for (Job job : jobs) {
-            job.setCollege(COLLEGE_DAO.queryInfoByCollegeId(job.getCollegeId()));
+            job.setCollege(COLLEGE_DAO.queryInfoByCollegeId(job.getCollege()));
         }
         return jobs;
     }
@@ -94,7 +94,7 @@ public class JobDaoImpl extends BaseDao implements JobDao {
                 "WHERE `user_id`=? AND job.id=user_post_job.job_id";
         List<Job> jobs = queryForList(Job.class, sql, userId);
         for (Job job : jobs) {
-            job.setCollege(COLLEGE_DAO.queryInfoByCollegeId(job.getCollegeId()));
+            job.setCollege(COLLEGE_DAO.queryInfoByCollegeId(job.getCollege()));
         }
         return jobs;
     }

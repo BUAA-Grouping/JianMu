@@ -39,8 +39,6 @@ public class ModifyUserServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int type = Integer.parseInt(request.getParameter("getType"));
-        if (type == 1) {
             HttpSession session = request.getSession();
             String emailId = (String) session.getAttribute("emailID");
             ModifyUserService modifyUserService = new ModifyUserServiceImpl();
@@ -52,9 +50,5 @@ public class ModifyUserServlet extends HttpServlet {
             jsonObject.addProperty("userdata", gson.toJson(retUser));
             writer.write(jsonObject.toString());
             writer.flush();
-        } else if (type == 2) {
-            String college = request.getParameter("college");
-
-        }
     }
 }
