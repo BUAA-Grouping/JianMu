@@ -34,7 +34,7 @@ public class StudentDaoImpl extends UserDaoImpl implements StudentDao {
     @Override
     public Student queryInfoById(int id) {
         String sql = "SELECT `id`,`email` `emailID`,`name`,`college_id` collegeId," +
-                "`password`,`college_id` collegeId,`profile` FROM user WHERE `id`=?";
+                "campus,`password`,`college_id` collegeId,`profile` FROM user WHERE `id`=?";
         Student student = queryForOne(Student.class, sql, id);
         if (student == null) {
             return null;
@@ -47,7 +47,7 @@ public class StudentDaoImpl extends UserDaoImpl implements StudentDao {
 
     @Override
     public Student queryInfoByEmail(String email) {
-        String sql = "SELECT `id`,`email` `emailID`,`name`,`password`,`college_id` collegeId,`profile` FROM user WHERE `email`=?";
+        String sql = "SELECT `id`,`email` `emailID`,`name`,`password`,`college_id` collegeId,campus,`profile` FROM user WHERE `email`=?";
         Student student = queryForOne(Student.class, sql, email);
         if (student == null) {
             return null;
