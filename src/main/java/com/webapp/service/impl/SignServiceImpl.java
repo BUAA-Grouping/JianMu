@@ -1,13 +1,17 @@
 package com.webapp.service.impl;
 
+import com.webapp.dao.StudentDao;
 import com.webapp.dao.UserDao;
+import com.webapp.dao.impl.StudentDaoImpl;
 import com.webapp.dao.impl.UserDaoImpl;
+import com.webapp.pojo.Student;
 import com.webapp.pojo.User;
 import com.webapp.service.SignService;
 
 public class SignServiceImpl implements SignService {
 
     private final UserDao userDao = new UserDaoImpl();
+    private final StudentDao studentDao = new StudentDaoImpl();
 
     @Override
     public int signIn(String emailId, String password, User retUser) {
@@ -28,19 +32,18 @@ public class SignServiceImpl implements SignService {
 
 
     @Override
-    public int registerUser(String realname, String password, String emailId, int SchoolId) {
-        User user = new User(realname, password, emailId, SchoolId);
+    public int registerUser(String realname, String password, String emailId, String schoolId) {
+        Student student = new Student();
+        student.setName(realname);
+        student.setPassword(password);
+        student.setEmailID(emailId);
+        student.setStudentId(schoolId);
         if (userDao.queryByEmail(emailId) != null) {
             return -1;
         }
-        if (!userDao.saveUser(user)) {
+        if (!studentDao.saveStudent(student)) {
             return -2;
         }
         return 0;
-    }
-
-    @Override
-    public boolean existUser(String username) {
-        return userDao.queryUserByUsername(username) != null;
     }
 }

@@ -4,21 +4,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.sql.Time;
-import java.sql.Timestamp;
-import java.util.Date;
 
-@Setter @Getter
+@Setter
+@Getter
 public class Job implements Serializable {
     private int id;
     private String title;
     private int college;
-    private int campus;
     private int exceptedNumOfMember;
     private int state;
-    private String profile;
-    private String email;
-    private String telephone;
 
     public int getId() {
         return id;
@@ -42,14 +36,6 @@ public class Job implements Serializable {
 
     public void setCollege(int college) {
         this.college = college;
-    }
-
-    public int getCampus() {
-        return campus;
-    }
-
-    public void setCampus(int campus) {
-        this.campus = campus;
     }
 
     public int getExceptedNumOfMember() {
@@ -76,12 +62,12 @@ public class Job implements Serializable {
         this.profile = profile;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailId() {
+        return emailId;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
     }
 
     public String getTelephone() {
@@ -91,4 +77,18 @@ public class Job implements Serializable {
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
+
+    public int getCampus() {
+        return campus;
+    }
+
+    public void setCampus(int campus) {
+        this.campus = campus;
+    }
+
+    private String profile;
+    private String emailId;
+
+    private String telephone;
+    private int campus;
 }

@@ -1,16 +1,14 @@
-$(function() {
-    let getType = 1;
+$(function () {
     $.ajax({
         type: "get",
         url: "http://localhost:8080/JianMu_war/user_modify",
         dataType: "json",
         async: false,
-        data: { "getType": getType },
-        success: function(msg) {
+        success: function (msg){
             var object = JSON.parse(msg.userdata);
             $("#user-real-name").attr("value", object.name);
             $("#emailID").attr("value", object.emailID);
-            $("#schoolId").attr("value", object.schoolId);
+            $("#schoolId").attr("value", object.studentId);
             $("#summernote").attr("value", object.profile);
             $("#user-name-big").attr("value", object.name);
             $("#user-name-big").text(object.name);
@@ -26,30 +24,7 @@ $(function() {
             swal(xhr.message, "Error!", 'error');
         }
     });
-    $('#category').on('select2:select', function() {
-        let getType = 2;
-        let college = $("#category").val();
-        $.ajax({
-            type: "get",
-            url: "http://localhost:8080/JianMu_war/user_modify",
-            dataType: "json",
-            async: false,
-            data: {
-                "getType": getType,
-                "college": college
-            },
-            success: function(msg) {
-                let object = JSON.parse(msg.userdata);
-                let campusNameSelect = $("#category-2").select2();
-                campusNameSelect.val(object.campus.toString()).trigger("change");
-                campusNameSelect.change();
-            },
-            error: function(xhr) {
-                swal(xhr.message, "Error!", 'error');
-            }
-        });
-    });
-    $("#save-update").click(function() {
+    $("#save-update").click(function (message) {
         let $emailID = $("#emailID").val();
         let $username = $("#user-real-name").val();
         let $schoolId = $("#schoolId").val();
@@ -59,7 +34,7 @@ $(function() {
         let userdata = {
             "emailID": $emailID,
             "name": $username,
-            "schoolId": $schoolId,
+            "studentId": $schoolId,
             "profile": $profile,
             "major": $major,
             "campus": $campus
@@ -68,7 +43,7 @@ $(function() {
         $.ajax({
             type: "post",
             url: "http://localhost:8080/JianMu_war/user_modify",
-            data: { "userdata": userdata },
+            data: {"userdata": userdata},
             dataType: "json",
             async: false,
             success: function(msg) {

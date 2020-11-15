@@ -22,7 +22,7 @@ public class JobInfoMap {
         college_map.put(12, "外国语学院");
         college_map.put(13, "交通科学与工程学院");
         college_map.put(14, "可靠性与系统工程学院");
-        college_map.put(15, "宇航学院<");
+        college_map.put(15, "宇航学院");
         college_map.put(16, "飞行学院");
         college_map.put(17, "仪器科学与光电工程学院");
         college_map.put(18, "北京学院");

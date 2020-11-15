@@ -9,14 +9,16 @@ import java.net.URL;
 @Setter @Getter
 public class User implements Serializable {
     private int id;
-    private int schoolId;
+//    private int schoolId;
     private String name;
     private String password;
     private String emailID;
 
-    private int major;
+    private int collegeId;
     private int campus;
     private String profile;
+
+    private URL avatarUrl;
 
     public int getId() {
         return id;
@@ -24,14 +26,6 @@ public class User implements Serializable {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getSchoolId() {
-        return schoolId;
-    }
-
-    public void setSchoolId(int schoolId) {
-        this.schoolId = schoolId;
     }
 
     public String getName() {
@@ -58,20 +52,12 @@ public class User implements Serializable {
         this.emailID = emailID;
     }
 
-    public int getMajor() {
-        return major;
+    public int getCollegeId() {
+        return collegeId;
     }
 
-    public void setMajor(int major) {
-        this.major = major;
-    }
-
-    public int getCampus() {
-        return campus;
-    }
-
-    public void setCampus(int campus) {
-        this.campus = campus;
+    public void setCollegeId(int collegeId) {
+        this.collegeId = collegeId;
     }
 
     public String getProfile() {
@@ -90,26 +76,13 @@ public class User implements Serializable {
         this.avatarUrl = avatarUrl;
     }
 
-    private URL avatarUrl;
-
-    public User() {
+    public College getCollege() {
+        return college;
     }
 
-    public User(String name, String password) {
-        this.name = name;
-        this.password = password;
+    public void setCollege(College college) {
+        this.college = college;
     }
 
-    public User(int schoolId, String name, String password) {
-        this.schoolId = schoolId;
-        this.name = name;
-        this.password = password;
-    }
-
-    public User( String name, String password,String emailID,int schoolId){
-        this.schoolId = schoolId;
-        this.emailID = emailID;
-        this.name = name;
-        this.password = password;
-    }
+    private College college;
 }

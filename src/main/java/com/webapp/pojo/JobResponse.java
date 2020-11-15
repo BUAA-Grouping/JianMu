@@ -15,11 +15,11 @@ public class JobResponse {
         this.id = job.getId();
         this.title = job.getTitle();
         this.college = JobInfoMap.college_map.get(job.getCollege());
-        this.campus = JobInfoMap.campus_map.get(job.getCampus());
+        this.campus = JobInfoMap.campus_map.get(job.getCollege());
         this.exceptedNumOfMember = job.getExceptedNumOfMember();
         this.state = job.getState();
         this.profile = job.getProfile();
-        this.email = job.getEmail();
+        this.email = job.getEmailId();
         this.telephone = job.getTelephone();
     }
 }

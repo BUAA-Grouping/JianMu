@@ -4,10 +4,6 @@ import com.webapp.pojo.User;
 
 
 public interface UserDao {
-    public User queryUserByUsername(String username);
-
-    public User queryByUsernameAndPassword(String username, String password);
-
     /**
      * Used to log in.
      * Return null when it fails. Return user with id, name, email, password.
