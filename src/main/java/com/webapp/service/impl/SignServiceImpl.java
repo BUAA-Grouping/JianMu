@@ -29,12 +29,12 @@ public class SignServiceImpl implements SignService {
 
 
     @Override
-    public int registerUser(String realname, String password, String emailId, int schoolId) {
+    public int registerUser(String realname, String password, String emailId, String schoolId) {
         Student student = new Student();
         student.setName(realname);
         student.setPassword(password);
         student.setEmailID(emailId);
-        student.setStudentId(String.valueOf(schoolId));
+        student.setStudentId(schoolId);
         if (userDao.queryByEmail(emailId) != null) {
             return -1;
         }

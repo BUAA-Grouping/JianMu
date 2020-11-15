@@ -10,6 +10,7 @@ public interface StudentDao extends UserDao {
     @Override
     public Student queryByEmail(String email);
 
+
     @Override
     public Student queryInfoByEmail(String email);
 }

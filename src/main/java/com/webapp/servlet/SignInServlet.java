@@ -6,19 +6,16 @@ import com.webapp.pojo.User;
 import com.webapp.service.SignService;
 import com.webapp.service.impl.SignServiceImpl;
 
-import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
-import javax.swing.text.html.Option;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 
 @WebServlet(name = "SignInServlet")
 public class SignInServlet extends HttpServlet {
     SignService signService = new SignServiceImpl();
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         request.setCharacterEncoding("utf-8");
         JsonObject jsonObject = new JsonObject();
@@ -33,7 +30,7 @@ public class SignInServlet extends HttpServlet {
             String password = request.getParameter("password");
             SignService signService = new SignServiceImpl();
 
-            boolean success = true;
+            boolean success = false;
             User user = new User();
             switch (signService.signIn(emailID, password, user)) {
                 case -1:
@@ -45,10 +42,10 @@ public class SignInServlet extends HttpServlet {
                 case 0:
                     jsonObject.addProperty("message", "登陆成功");
                     jsonObject.addProperty("username", user.getName());
+                    success = true;
                     break;
                 default:
                     jsonObject.addProperty("message", "服务器异常");
-                    success = false;
             }
             if (success) {
                 session.setAttribute("username", user.getName());
