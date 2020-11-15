@@ -14,7 +14,7 @@ $(function () {
             $("#user-name-big").text(object.name);
             $("#user-greeting").text("您好！" + object.name);
             let majorNameSelect = $("#category").select2();
-            majorNameSelect.val(object.major.toString()).trigger("change");
+            majorNameSelect.val(object.collegeId.toString()).trigger("change");
             majorNameSelect.change();
             let campusNameSelect = $("#category-2").select2();
             campusNameSelect.val(object.campus.toString()).trigger("change");
@@ -36,7 +36,7 @@ $(function () {
             "name": $username,
             "studentId": $schoolId,
             "profile": $profile,
-            "major": $major,
+            "collegeId": $major,
             "campus": $campus
         };
         userdata = JSON.stringify(userdata);
