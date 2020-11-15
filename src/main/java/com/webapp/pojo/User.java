@@ -83,14 +83,4 @@ public class User implements Serializable {
     public void setAvatarUrl(URL avatarUrl) {
         this.avatarUrl = avatarUrl;
     }
-
-    public College getCollege() {
-        return college;
-    }
-
-    public void setCollege(College college) {
-        this.college = college;
-    }
-
-    private College college;
 }

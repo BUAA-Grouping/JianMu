@@ -1,12 +1,9 @@
 package com.webapp.dao.impl;
 
-import com.webapp.dao.CollegeDao;
 import com.webapp.pojo.Student;
 import com.webapp.pojo.User;
 
 public class StudentDaoImpl extends UserDaoImpl {
-    private static final CollegeDao COLLEGE_DAO = new CollegeDaoImpl();
-
     @Override
     public boolean save(User user) {
         if (!(user instanceof Student)) {
@@ -42,28 +39,17 @@ public class StudentDaoImpl extends UserDaoImpl {
     @Override
     public Student queryInfoById(int id) {
         String sql = "SELECT `id`,`email` `emailID`,`name`,`college_id` collegeId," +
-                "campus,`password`,`college_id` collegeId,`profile` FROM user WHERE `id`=?";
-        Student student = queryForOne(Student.class, sql, id);
-        if (student == null) {
-            return null;
-        }
-        student.setCollege(COLLEGE_DAO.queryInfoByCollegeId(student.getCollegeId()));
-        sql = "SELECT `student_id` studentId FROM student WHERE `user_id`=?";
-        student.setStudentId(queryForOne(Student.class, sql, student.getId()).getStudentId());
-        return student;
+                "campus,`password`,`college_id` collegeId,`profile`,`student_id` studentId" +
+                " FROM user,student WHERE user.id=student.user_id AND user.`id`=?";
+        return queryForOne(Student.class, sql, id);
     }
 
     @Override
     public Student queryInfoByEmail(String email) {
-        String sql = "SELECT `id`,`email` `emailID`,`name`,`password`,`college_id` collegeId,campus,`profile` FROM user WHERE `email`=?";
-        Student student = queryForOne(Student.class, sql, email);
-        if (student == null) {
-            return null;
-        }
-        student.setCollege(COLLEGE_DAO.queryInfoByCollegeId(student.getCollegeId()));
-        sql = "SELECT `student_id` studentId FROM student WHERE `user_id`=?";
-        student.setStudentId(queryForOne(Student.class, sql, student.getId()).getStudentId());
-        return student;
+        String sql = "SELECT `id`,`email` `emailID`,`name`,`college_id` collegeId," +
+                "campus,`password`,`college_id` collegeId,`profile`,`student_id` studentId" +
+                " FROM user,student WHERE user.id=student.user_id AND user.email=?";
+        return queryForOne(Student.class, sql, email);
     }
 
     @Override
