@@ -13,19 +13,8 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     private static final CollegeDao COLLEGE_DAO = new CollegeDaoImpl();
 
     @Override
-    public User queryUserByUsername(String username) {
-        String sql = "SELECT `school_id` AS schoolID,`name`,`password` FROM user WHERE `name` = ?";
-        User user = queryForOne(User.class, sql, username);
-        if (user == null) {
-            return null;
-        }
-        user.setCollege(COLLEGE_DAO.queryInfoByCollegeId(user.getCollegeId()));
-        return user;
-    }
-
-    @Override
     public User queryByEmail(String email) {
-        String sql = "SELECT `id`,`name`,`email` `emailID`,`password` FROM user WHERE `email`=?";
+        String sql = "SELECT `id`,`name`,`email` `emailID`,`password`,campus FROM user WHERE `email`=?";
         User user = queryForOne(User.class, sql, email);
         if (user == null) {
             return null;
@@ -62,14 +51,14 @@ public class UserDaoImpl extends BaseDao implements UserDao {
                 || queryInfoById(user.getId()) == null) {
             return false;
         }
-        String sql = "UPDATE user SET `email`=?,`name`=?,`college_id`=?,`profile`=? WHERE `id`=?";
+        String sql = "UPDATE user SET `email`=?,`name`=?,`college_id`=?,`profile`=?,campus=? WHERE `id`=?";
         return update(sql, user.getEmailID(), user.getName(),
-                user.getCollegeId(), user.getProfile(), user.getId()) >= 0;
+                user.getCollegeId(), user.getProfile(), user.getCampus(), user.getId()) >= 0;
     }
 
     @Override
     public User queryInfoById(int id) {
-        String sql = "SELECT `id`,`email` `emailID`,`name`,`college_id` collegeId," +
+        String sql = "SELECT `id`,`email` `emailID`,`name`,`college_id` collegeId,campus," +
                 "`password`,`college_id` collegeId,`profile` FROM user WHERE `id`=?";
         User user = queryForOne(User.class, sql, id);
         if (user == null) {
@@ -81,7 +70,8 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
     @Override
     public User queryInfoByEmail(String email) {
-        String sql = "SELECT `id`,`email` `emailID`,`name`,`password`,`college_id` collegeId,`profile` FROM user WHERE `email`=?";
+        String sql = "SELECT `id`,`email` `emailID`,`name`,`password`,`college_id` collegeId," +
+                "campus,`profile` FROM user WHERE `email`=?";
         User user = queryForOne(User.class, sql, email);
         if (user == null) {
             return null;

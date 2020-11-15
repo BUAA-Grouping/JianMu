@@ -43,9 +43,4 @@ public class SignServiceImpl implements SignService {
         }
         return 0;
     }
-
-    @Override
-    public boolean existUser(String username) {
-        return userDao.queryUserByUsername(username) != null;
-    }
 }

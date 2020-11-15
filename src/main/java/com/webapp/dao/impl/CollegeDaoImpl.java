@@ -7,7 +7,7 @@ import com.webapp.pojo.College;
 public class CollegeDaoImpl extends BaseDao implements CollegeDao {
     @Override
     public College queryInfoByCollegeId(int collegeId) {
-        String sql = "SELECT `id`,`title`,`campus` FROM college WHERE `id`=?";
+        String sql = "SELECT `id`,`title` FROM college WHERE `id`=?";
         return queryForOne(College.class, sql, collegeId);
     }
 }

@@ -15,7 +15,7 @@ public class User implements Serializable {
     private String emailID;
 
     private int collegeId;
-//    private int campus;
+    private int campus;
     private String profile;
 
     private URL avatarUrl;
