@@ -1,7 +1,6 @@
 package com.webapp.dao.impl;
 
 import com.webapp.dao.BaseDao;
-import com.webapp.dao.CollegeDao;
 import com.webapp.dao.UserDao;
 import com.webapp.pojo.Job;
 import com.webapp.pojo.User;
@@ -14,11 +13,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     @Override
     public User queryByEmail(String email) {
         String sql = "SELECT `id`,`name`,`email` `emailID`,`password`,campus FROM user WHERE `email`=?";
-        User user = queryForOne(User.class, sql, email);
-        if (user == null) {
-            return null;
-        }
-        return user;
+        return queryForOne(User.class, sql, email);
     }
 
     @Override
@@ -58,22 +53,14 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     public User queryInfoById(int id) {
         String sql = "SELECT `id`,`email` `emailID`,`name`,`college_id` collegeId,campus," +
                 "`password`,`college_id` collegeId,`profile` FROM user WHERE `id`=?";
-        User user = queryForOne(User.class, sql, id);
-        if (user == null) {
-            return null;
-        }
-        return user;
+        return queryForOne(User.class, sql, id);
     }
 
     @Override
     public User queryInfoByEmail(String email) {
         String sql = "SELECT `id`,`email` `emailID`,`name`,`password`,`college_id` collegeId," +
                 "campus,`profile` FROM user WHERE `email`=?";
-        User user = queryForOne(User.class, sql, email);
-        if (user == null) {
-            return null;
-        }
-        return user;
+        return queryForOne(User.class, sql, email);
     }
 
     @Override
