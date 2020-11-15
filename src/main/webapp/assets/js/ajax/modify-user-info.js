@@ -8,7 +8,7 @@ $(function () {
             var object = JSON.parse(msg.userdata);
             $("#user-real-name").attr("value", object.name);
             $("#emailID").attr("value", object.emailID);
-            $("#schoolId").attr("value", object.schoolId);
+            $("#schoolId").attr("value", object.studentId);
             $("#summernote").attr("value", object.profile);
             $("#user-name-big").attr("value", object.name);
             $("#user-name-big").text(object.name);
@@ -24,7 +24,7 @@ $(function () {
             alert(xhr.status);
         }
     });
-    $("#save-update").click(function () {
+    $("#save-update").click(function (message) {
         let $emailID = $("#emailID").val();
         let $username = $("#user-real-name").val();
         let $schoolId = $("#schoolId").val();
@@ -34,7 +34,7 @@ $(function () {
         let userdata = {
             "emailID": $emailID,
             "name": $username,
-            "schoolId": $schoolId,
+            "studentId": $schoolId,
             "profile": $profile,
             "major": $major,
             "campus": $campus
