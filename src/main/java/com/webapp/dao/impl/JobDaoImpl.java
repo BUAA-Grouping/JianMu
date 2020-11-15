@@ -49,7 +49,6 @@ public class JobDaoImpl extends BaseDao implements JobDao {
                 "`state`,`profile`,`telephone`,`email`" +
                 " FROM job WHERE `id`=?";
         Job job = queryForOne(Job.class, sql, jobId);
-        job.setCollege(COLLEGE_DAO.queryInfoByCollegeId(job.getCollege()));
         return job;
     }
 
@@ -80,9 +79,6 @@ public class JobDaoImpl extends BaseDao implements JobDao {
         }
         sql = sql.replaceAll(" AND $", "");
         List<Job> jobs = queryForList(Job.class, sql);
-        for (Job job : jobs) {
-            job.setCollege(COLLEGE_DAO.queryInfoByCollegeId(job.getCollege()));
-        }
         return jobs;
     }
 
@@ -93,9 +89,6 @@ public class JobDaoImpl extends BaseDao implements JobDao {
                 "FROM user_post_job,job " +
                 "WHERE `user_id`=? AND job.id=user_post_job.job_id";
         List<Job> jobs = queryForList(Job.class, sql, userId);
-        for (Job job : jobs) {
-            job.setCollege(COLLEGE_DAO.queryInfoByCollegeId(job.getCollege()));
-        }
         return jobs;
     }
 

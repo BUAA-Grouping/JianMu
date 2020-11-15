@@ -15,6 +15,11 @@ public class Job implements Serializable {
     private int state;
     private String profile;
     private String emailId;
+
+    public int getCollege() {
+        return college;
+    }
+
     private String telephone;
     private int campus;
 
