@@ -54,7 +54,7 @@ public class JobDaoImpl extends BaseDao implements JobDao {
 
     @Override
     public User queryPosterByJobId(int jobId) {
-        String sql = "SELECT post.user_id `id`,`email` emailID,`name`,`password`," +
+        String sql = "SELECT user.`id`,`email` emailID,`name`,`password`," +
                 "`college_id` collegeId,`profile`,campus" +
                 " FROM user_post_job INNER JOIN user ON user_post_job.user_id=user.id WHERE `job_id`=?";
         User user = queryForOne(User.class, sql, jobId);
