@@ -15,7 +15,7 @@ $(function() {
         let currentTab = getCurrentTabIndex();
         var $realname, $schoolID, type;
         type = currentTab;
-        if (currentTab == 0) {
+        if (currentTab === 2) {
             $realname = $("#student-real-name").val();
             $schoolID = $("#student-id").val();
         } else {
