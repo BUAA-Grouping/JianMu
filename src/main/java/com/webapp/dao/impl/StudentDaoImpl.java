@@ -1,11 +1,10 @@
 package com.webapp.dao.impl;
 
 import com.webapp.dao.CollegeDao;
-import com.webapp.dao.StudentDao;
 import com.webapp.pojo.Student;
 import com.webapp.pojo.User;
 
-public class StudentDaoImpl extends UserDaoImpl implements StudentDao {
+public class StudentDaoImpl extends UserDaoImpl {
     private static final CollegeDao COLLEGE_DAO = new CollegeDaoImpl();
 
     @Override
