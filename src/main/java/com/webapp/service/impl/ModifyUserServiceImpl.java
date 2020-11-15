@@ -19,6 +19,6 @@ public class ModifyUserServiceImpl implements ModifyUserService {
 
     @Override
     public boolean modify(Student student) {
-        return studentDao.modifyStudent(student);
+        return studentDao.modify(student);
     }
 }

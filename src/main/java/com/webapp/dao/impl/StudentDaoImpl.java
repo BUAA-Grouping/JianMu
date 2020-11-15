@@ -3,13 +3,18 @@ package com.webapp.dao.impl;
 import com.webapp.dao.CollegeDao;
 import com.webapp.dao.StudentDao;
 import com.webapp.pojo.Student;
+import com.webapp.pojo.User;
 
 public class StudentDaoImpl extends UserDaoImpl implements StudentDao {
     private static final CollegeDao COLLEGE_DAO = new CollegeDaoImpl();
 
     @Override
-    public boolean saveStudent(Student student) {
-        if (student.getStudentId() == null || !saveUser(student)) {
+    public boolean save(User user) {
+        if (!(user instanceof Student)) {
+            return false;
+        }
+        Student student = (Student) user;
+        if (student.getStudentId() == null || !super.save(student)) {
             return false;
         }
 
@@ -22,8 +27,12 @@ public class StudentDaoImpl extends UserDaoImpl implements StudentDao {
     }
 
     @Override
-    public boolean modifyStudent(Student student) {
-        if (student.getStudentId() == null || !modifyUser(student)) {
+    public boolean modify(User user) {
+        if (!(user instanceof Student)) {
+            return false;
+        }
+        Student student = (Student) user;
+        if (student.getStudentId() == null || !super.modify(student)) {
             return false;
         }
 

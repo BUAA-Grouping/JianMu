@@ -34,10 +34,10 @@ public class SignInServlet extends HttpServlet {
             User user = new User();
             switch (signService.signIn(emailID, password, user)) {
                 case -1:
-                    jsonObject.addProperty("message", "用户名不存在");
+                    jsonObject.addProperty("message", "用户不存在");
                     break;
                 case -2:
-                    jsonObject.addProperty("message", "用户名或密码错误");
+                    jsonObject.addProperty("message", "邮箱或密码错误");
                     break;
                 case 0:
                     jsonObject.addProperty("message", "登陆成功");

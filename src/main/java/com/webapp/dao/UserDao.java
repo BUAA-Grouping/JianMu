@@ -15,7 +15,7 @@ public interface UserDao {
      * Ensure that user.email, user.name, user.schoolId, user.password were not null.
      * Return false when user exists or info is not complete.
      */
-    public boolean saveUser(User user);
+    public boolean save(User user);
 
     /**
      * Used to modify personal information
@@ -23,7 +23,7 @@ public interface UserDao {
      *
      * @return false when user does not exists or some infos is not complete.
      */
-    public boolean modifyUser(User user);
+    public boolean modify(User user);
 
     /**
      * Used to get user's info.

@@ -24,7 +24,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     }
 
     @Override
-    public boolean saveUser(User user) {
+    public boolean save(User user) {
         String sql = "INSERT INTO user(`email`,`name`,`password`) values(?,?,?)";
         if (user.getEmailID() == null || user.getName() == null
                 || user.getPassword() == null || this.queryByEmail(user.getEmailID()) != null) {
@@ -46,7 +46,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     }
 
     @Override
-    public boolean modifyUser(User user) {
+    public boolean modify(User user) {
         if (user.getEmailID() == null || user.getName() == null
                 || queryInfoById(user.getId()) == null) {
             return false;
