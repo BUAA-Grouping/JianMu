@@ -88,7 +88,8 @@ public class JobDaoImpl extends BaseDao implements JobDao {
                 "`state`,`profile`,`telephone`,`email`,campus " +
                 "FROM user_post_job,job " +
                 "WHERE `user_id`=? AND job.id=user_post_job.job_id";
-        return queryForList(Job.class, sql, userId);
+        List<Job> jobs = queryForList(Job.class, sql, userId);
+        return jobs;
     }
 
     @Override

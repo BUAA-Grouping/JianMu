@@ -608,45 +608,76 @@
                 <div class="modal-content" id="sign-up">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="ti-close"></i></span>
-                    </button>
+                            <span aria-hidden="true"><i class="ti-close"></i></span>
+                        </button>
                     </div>
                     <div class="modal-body">
                         <h4 class="modal-header-title">注册</h4>
-                        <!--                    <div class="social-login">-->
-                        <!--                        <ul>-->
-                        <!--                            <li><a href="#" class="btn connect-fb"><i class="ti-facebook"></i>Login with Facebook</a>-->
-                        <!--                            </li>-->
-                        <!--                            <li><a href="#" class="btn connect-gplus"><i class="ti-google"></i>Login with Gmail</a></li>-->
-                        <!--                        </ul>-->
-                        <!--                    </div>-->
 
-                        <!--                    <div class="devide-wrap"><span>OR</span></div>-->
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="nav nav-tabs col-lg-12 col-md-12 col-sm-12" style="display: inline-block; padding-left: inherit" id="signup-tab" role="tablist">
+                                <div class="nav-item">
+                                    <a class="nav-link active" id="student-info-tab" data-toggle="pill" href="#student-info" role="tab" aria-controls="student-info" aria-selected="true">我是学生</a>
+                                </div>
+                                <div class="nav-item">
+                                    <a class="nav-link" id="teacher-info-tab" data-toggle="pill" href="#teacher-info" role="tab" aria-controls="teacher-info" aria-selected="false">我是老师</a>
+                                </div>
+                            </div>
+                            <div class="tab-content" id="signup-tabContent">
+                                <div class="tab-pane fade show active" id="student-info" role="tabpanel" aria-labelledby="student-info-tab">
+                                    <div class="login-form">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>您的姓名</label>
+                                                        <div class="input-with-gray">
+                                                            <input id="student-real-name" type="text" class="form-control" placeholder="您的姓名">
+                                                            <i class="ti-user theme-cl"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                        <div class="login-form">
-                            <form>
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <div class="form-group">
-                                            <label>您的姓名</label>
-                                            <div class="input-with-gray">
-                                                <input id="real-name" type="text" class="form-control" placeholder="您的姓名">
-                                                <i class="ti-user theme-cl"></i>
+                                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>您的学号</label>
+                                                        <div class="input-with-gray">
+                                                            <input id="student-id" type="text" class="form-control" placeholder="School ID">
+                                                            <i class="ti-user theme-cl"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <div class="form-group">
-                                            <label>您的学号（教职工号）</label>
-                                            <div class="input-with-gray">
-                                                <input id="school-id" type="text" class="form-control" placeholder="School ID">
-                                                <i class="ti-user theme-cl"></i>
-                                            </div>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
+                                <div class="tab-pane fade" id="teacher-info" role="tabpanel" aria-labelledby="teacher-info-tab">
+                                    <div class="login-form">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>您的姓名</label>
+                                                        <div class="input-with-gray">
+                                                            <input id="teacher-real-name" type="text" class="form-control" placeholder="您的姓名">
+                                                            <i class="ti-user theme-cl"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
+                                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>您的职工号</label>
+                                                        <div class="input-with-gray">
+                                                            <input id="teacher-id" type="text" class="form-control" placeholder="School ID">
+                                                            <i class="ti-user theme-cl"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <div class="form-group">
@@ -667,7 +698,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <div class="form-group">
@@ -676,8 +706,7 @@
                                         </div>
                                     </div>
                                 </div>
-
-                            </form>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">

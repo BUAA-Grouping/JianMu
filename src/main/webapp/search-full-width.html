@@ -441,45 +441,76 @@
                 <div class="modal-content" id="sign-up">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="ti-close"></i></span>
-                    </button>
+                            <span aria-hidden="true"><i class="ti-close"></i></span>
+                        </button>
                     </div>
                     <div class="modal-body">
                         <h4 class="modal-header-title">注册</h4>
-                        <!--                    <div class="social-login">-->
-                        <!--                        <ul>-->
-                        <!--                            <li><a href="#" class="btn connect-fb"><i class="ti-facebook"></i>Login with Facebook</a>-->
-                        <!--                            </li>-->
-                        <!--                            <li><a href="#" class="btn connect-gplus"><i class="ti-google"></i>Login with Gmail</a></li>-->
-                        <!--                        </ul>-->
-                        <!--                    </div>-->
 
-                        <!--                    <div class="devide-wrap"><span>OR</span></div>-->
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="nav nav-tabs col-lg-12 col-md-12 col-sm-12" style="display: inline-block; padding-left: inherit" id="signup-tab" role="tablist">
+                                <div class="nav-item">
+                                    <a class="nav-link active" id="student-info-tab" data-toggle="pill" href="#student-info" role="tab" aria-controls="student-info" aria-selected="true">我是学生</a>
+                                </div>
+                                <div class="nav-item">
+                                    <a class="nav-link" id="teacher-info-tab" data-toggle="pill" href="#teacher-info" role="tab" aria-controls="teacher-info" aria-selected="false">我是老师</a>
+                                </div>
+                            </div>
+                            <div class="tab-content" id="signup-tabContent">
+                                <div class="tab-pane fade show active" id="student-info" role="tabpanel" aria-labelledby="student-info-tab">
+                                    <div class="login-form">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>您的姓名</label>
+                                                        <div class="input-with-gray">
+                                                            <input id="student-real-name" type="text" class="form-control" placeholder="您的姓名">
+                                                            <i class="ti-user theme-cl"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                        <div class="login-form">
-                            <form>
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <div class="form-group">
-                                            <label>您的姓名</label>
-                                            <div class="input-with-gray">
-                                                <input id="real-name" type="text" class="form-control" placeholder="您的姓名">
-                                                <i class="ti-user theme-cl"></i>
+                                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>您的学号</label>
+                                                        <div class="input-with-gray">
+                                                            <input id="student-id" type="text" class="form-control" placeholder="School ID">
+                                                            <i class="ti-user theme-cl"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <div class="form-group">
-                                            <label>您的学号（教职工号）</label>
-                                            <div class="input-with-gray">
-                                                <input id="school-id" type="text" class="form-control" placeholder="School ID">
-                                                <i class="ti-user theme-cl"></i>
-                                            </div>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
+                                <div class="tab-pane fade" id="teacher-info" role="tabpanel" aria-labelledby="teacher-info-tab">
+                                    <div class="login-form">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>您的姓名</label>
+                                                        <div class="input-with-gray">
+                                                            <input id="teacher-real-name" type="text" class="form-control" placeholder="您的姓名">
+                                                            <i class="ti-user theme-cl"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
+                                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>您的职工号</label>
+                                                        <div class="input-with-gray">
+                                                            <input id="teacher-id" type="text" class="form-control" placeholder="School ID">
+                                                            <i class="ti-user theme-cl"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <div class="form-group">
@@ -500,7 +531,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                         <div class="form-group">
@@ -509,8 +539,7 @@
                                         </div>
                                     </div>
                                 </div>
-
-                            </form>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -522,148 +551,6 @@
             </div>
         </div>
         <!-- End Modal -->
-
-        <!-- Filter Job Option -->
-        <span>
-    <!--        看起来本来是有一个筛选栏的，但是大概被其他css层盖住了-->
-        <!--        <div id="filter-sidebar" class="filter-sidebar">-->
-        <!--            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="ti-close"></i></a>-->
-        <!--            <div class="show-hide-sidebar">-->
-
-        <!--                &lt;!&ndash; Keyword &ndash;&gt;-->
-        <!--                <div class="sidebar-widget">-->
-        <!--                    <div class="form-group">-->
-        <!--                        <h5 class="mb-3">Keyword</h5>-->
-        <!--                        <div class="input-with-icon">-->
-        <!--                            <input type="text" class="form-control" placeholder="Keyword...">-->
-        <!--                            <i class="ti-key"></i>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                &lt;!&ndash; Location &ndash;&gt;-->
-        <!--                <div class="sidebar-widget">-->
-        <!--                    <div class="form-group">-->
-        <!--                        <h5 class="mb-3">Location</h5>-->
-        <!--                        <div class="input-with-icon">-->
-        <!--                            <input type="text" class="form-control" placeholder="Location..">-->
-        <!--                            <i class="ti-target"></i>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                &lt;!&ndash; Category &ndash;&gt;-->
-        <!--                <div class="sidebar-widget">-->
-        <!--                    <div class="form-group">-->
-        <!--                        <h5 class="mb-3">Category</h5>-->
-        <!--                        <div class="input-with-shadow">-->
-        <!--                            <select id="category-side" class="js-states form-control">-->
-        <!--                            <option value="">&nbsp;</option>-->
-        <!--                            <option value="1">SEO & Web Design</option>-->
-        <!--                            <option value="2">Wealth & Healthcare</option>-->
-        <!--                            <option value="3">Account / Finance</option>-->
-        <!--                            <option value="4">Education</option>-->
-        <!--                            <option value="5">Banking Jobs</option>-->
-        <!--                        </select>-->
-        <!--                            <i class="ti-layers"></i>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                &lt;!&ndash; Experince &ndash;&gt;-->
-        <!--                <div class="sidebar-widget">-->
-        <!--                    <div class="form-group">-->
-        <!--                        <h5 class="mb-2">Experince</h5>-->
-        <!--                        <div class="side-imbo">-->
-        <!--                            <ul class="no-ul-list">-->
-        <!--                                <li>-->
-        <!--                                    <input id="checkbox-se1" class="checkbox-custom" name="checkbox-se1" type="checkbox">-->
-        <!--                                    <label for="checkbox-se1" class="checkbox-custom-label">1 Year</label>-->
-        <!--                                </li>-->
-
-        <!--                                <li>-->
-        <!--                                    <input id="checkbox-se2" class="checkbox-custom" name="checkbox-se2" type="checkbox">-->
-        <!--                                    <label for="checkbox-se2" class="checkbox-custom-label">2 Year</label>-->
-        <!--                                </li>-->
-
-        <!--                                <li>-->
-        <!--                                    <input id="checkbox-se3" class="checkbox-custom" name="checkbox-se3" type="checkbox">-->
-        <!--                                    <label for="checkbox-se3" class="checkbox-custom-label">3 Year</label>-->
-        <!--                                </li>-->
-
-        <!--                                <li>-->
-        <!--                                    <input id="checkbox-se4" class="checkbox-custom" name="checkbox-se4" type="checkbox">-->
-        <!--                                    <label for="checkbox-se4" class="checkbox-custom-label">4+ Year</label>-->
-        <!--                                </li>-->
-        <!--                            </ul>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                &lt;!&ndash; Job Type &ndash;&gt;-->
-        <!--                <div class="sidebar-widget">-->
-        <!--                    <div class="form-group">-->
-        <!--                        <h5 class="mb-2">Job Type</h5>-->
-        <!--                        <div class="side-imbo">-->
-        <!--                            <ul class="no-ul-list">-->
-        <!--                                <li>-->
-        <!--                                    <input id="checkbox-sj1" class="checkbox-custom" name="checkbox-sj1" type="checkbox">-->
-        <!--                                    <label for="checkbox-sj1" class="checkbox-custom-label">Full Time</label>-->
-        <!--                                </li>-->
-
-        <!--                                <li>-->
-        <!--                                    <input id="checkbox-sj2" class="checkbox-custom" name="checkbox-sj2" type="checkbox">-->
-        <!--                                    <label for="checkbox-sj2" class="checkbox-custom-label">Part Time</label>-->
-        <!--                                </li>-->
-
-        <!--                                <li>-->
-        <!--                                    <input id="checkbox-sj3" class="checkbox-custom" name="checkbox-sj3" type="checkbox">-->
-        <!--                                    <label for="checkbox-sj3" class="checkbox-custom-label">Construction Base</label>-->
-        <!--                                </li>-->
-
-        <!--                                <li>-->
-        <!--                                    <input id="checkbox-sj4" class="checkbox-custom" name="checkbox-sj4" type="checkbox">-->
-        <!--                                    <label for="checkbox-sj4" class="checkbox-custom-label">Internship</label>-->
-        <!--                                </li>-->
-        <!--                            </ul>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--                &lt;!&ndash; Compensation &ndash;&gt;-->
-        <!--                <div class="sidebar-widget">-->
-        <!--                    <div class="form-group">-->
-        <!--                        <h5 class="mb-2">Compensation</h5>-->
-        <!--                        <div class="side-imbo">-->
-        <!--                            <ul class="no-ul-list">-->
-        <!--                                <li>-->
-        <!--                                    <input id="checkbox-sc1" class="checkbox-custom" name="checkbox-sc1" type="checkbox">-->
-        <!--                                    <label for="checkbox-sc1" class="checkbox-custom-label">$500 - $1000</label>-->
-        <!--                                </li>-->
-
-        <!--                                <li>-->
-        <!--                                    <input id="checkbox-sc2" class="checkbox-custom" name="checkbox-sc2" type="checkbox">-->
-        <!--                                    <label for="checkbox-sc2" class="checkbox-custom-label">$1000 - $2000</label>-->
-        <!--                                </li>-->
-
-        <!--                                <li>-->
-        <!--                                    <input id="checkbox-c3" class="checkbox-custom" name="checkbox-sc3" type="checkbox">-->
-        <!--                                    <label for="checkbox-c3" class="checkbox-custom-label">$2000 - $5000</label>-->
-        <!--                                </li>-->
-
-        <!--                                <li>-->
-        <!--                                    <input id="checkbox-sc4" class="checkbox-custom" name="checkbox-sc4" type="checkbox">-->
-        <!--                                    <label for="checkbox-sc4" class="checkbox-custom-label">$5000 - $10000</label>-->
-        <!--                                </li>-->
-        <!--                            </ul>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-
-        <!--            </div>-->
-        <!--        </div>-->
-    </span>
-        <!-- Filter Job Option -->
 
     </div>
     <!-- ============================================================== -->
