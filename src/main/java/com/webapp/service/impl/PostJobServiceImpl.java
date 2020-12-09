@@ -24,6 +24,7 @@ public class PostJobServiceImpl implements PostJobService {
         group.setTitle(job.getTitle());
         group.setLeaderId(id);
         group.setState(1);
+        group.setJobId(job.getId());
         group.setCreateAt(new Timestamp(System.currentTimeMillis()));
         return groupDao.createGroup(group);
     }

@@ -1,6 +1,6 @@
-$(function() {
+$(function () {
     //监听内容的实时输入
-    $("body").delegate("#set-password", "propertychange input", function() {
+    $("body").delegate("#set-password", "propertychange input", function () {
         //判断是否输入了内容
         if ($(this).val().length > 0) {
             //让按钮可用
@@ -11,7 +11,7 @@ $(function() {
         }
     });
     //监听提交按钮的点击
-    $("#signup-submit").click(function() {
+    $("#signup-submit").click(function () {
         let currentTab = getCurrentTabIndex();
         var $realname, $schoolID, type;
         type = currentTab;
@@ -36,7 +36,7 @@ $(function() {
             },
             dataType: "json",
             async: false,
-            success: function(msg) {
+            success: function (msg) {
                 if (msg.message === "注册成功") {
                     document.getElementById("sign-up&sign-in").style.display = "none";
                     document.getElementById("user-name-label").innerText = $realname;
@@ -53,7 +53,7 @@ $(function() {
                     swal(msg.message, "Error!", 'error');
                 }
             },
-            error: function(xhr) {
+            error: function (xhr) {
                 swal(xhr.message, "Error!", 'error');
             }
         });
@@ -64,7 +64,7 @@ $(function() {
 function getCurrentTabIndex() {
     var $tabs = $('#signup-tab').children('div');
     var i = 0;
-    $tabs.each(function() {
+    $tabs.each(function () {
         var $tab = $(this);
         if ($tab.hasClass('active')) {
             return false;

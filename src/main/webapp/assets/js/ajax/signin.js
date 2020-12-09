@@ -30,13 +30,13 @@ $(function () {
                     document.getElementById("user-name-space").style.display = "inline";
                     $('#login').modal('hide');
                     location.reload();
-                }else{
-                    swal(msg.message,"Error!",'error');
+                } else {
+                    swal(msg.message, "Error!", 'error');
                 }
                 // alert("username: " + $username + ", password: " + $password);
             },
             error: function (xhr) {
-                swal(msg.message,"Error!",'error');
+                swal(msg.message, "Error!", 'error');
             }
         });
         // console.log("submit");
