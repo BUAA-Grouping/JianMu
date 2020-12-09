@@ -47,7 +47,7 @@ public class JobDaoImpl extends BaseDao implements JobDao {
 
     @Override
     public Job queryInfoByJobId(int jobId) {
-        String sql = "SELECT `id`,`title`,college_id '');,campus,expected_num_of_member exceptedNumOfMember," +
+        String sql = "SELECT `id`,`title`,college_id college,campus,expected_num_of_member exceptedNumOfMember," +
                 "`state`,`profile`,`telephone`,`email`" +
                 " FROM job WHERE `id`=?";
         return queryForOne(Job.class, sql, jobId);

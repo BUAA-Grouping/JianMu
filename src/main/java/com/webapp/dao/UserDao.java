@@ -1,7 +1,10 @@
 package com.webapp.dao;
 
 import com.webapp.pojo.Apply;
+import com.webapp.pojo.Job;
 import com.webapp.pojo.User;
+
+import java.util.List;
 
 
 public interface UserDao {
@@ -46,4 +49,8 @@ public interface UserDao {
     public boolean delete(String emailId);
 
     public boolean applyJob(Apply apply);
+
+    public List<Job> queryPostedJobs(int userId);
+
+    public List<Apply> queryApplies(int userId);
 }
