@@ -32,6 +32,10 @@
         <servlet-name>DeleteUserServlet</servlet-name>
         <servlet-class>com.webapp.servlet.DeleteUserServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ApplyServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.ApplyServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DeleteUserServlet</servlet-name>
         <url-pattern>/user_delete</url-pattern>
@@ -47,6 +51,10 @@
     <servlet>
         <servlet-name>PostJobServlet</servlet-name>
         <servlet-class>com.webapp.servlet.PostJobServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>QuitServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.QuitServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SignInServlet</servlet-name>
@@ -71,5 +79,9 @@
     <servlet-mapping>
         <servlet-name>QuitServlet</servlet-name>
         <url-pattern>/quit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApplyServlet</servlet-name>
+        <url-pattern>/apply-job</url-pattern>
     </servlet-mapping>
 </web-app>
