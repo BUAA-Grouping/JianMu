@@ -2,11 +2,14 @@ package com.webapp.service.impl;
 
 import com.webapp.dao.JobDao;
 import com.webapp.dao.impl.JobDaoImpl;
+import com.webapp.pojo.Apply;
+import com.webapp.pojo.ApplyResponse;
 import com.webapp.pojo.Job;
 import com.webapp.pojo.User;
 import com.webapp.service.SearchJobService;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SearchJobServiceImpl implements SearchJobService {
@@ -38,5 +41,18 @@ public class SearchJobServiceImpl implements SearchJobService {
     @Override
     public Timestamp getEndTime(int jobId) {
         return jobDao.queryEndTimeByJobId(jobId);
+    }
+
+    @Override
+    public List<List<ApplyResponse>> getApplies(int userId) {
+        List<Job> jobList = jobDao.queryJobByPoster(userId);
+        List<List<ApplyResponse>> res = new ArrayList<>();
+        res.add(new ArrayList<ApplyResponse>());
+        res.add(new ArrayList<ApplyResponse>());
+        res.add(new ArrayList<ApplyResponse>());
+        for (Job j : jobList) {
+            res.get(j.getState()).add(new ApplyResponse(j, jobDao.queryApplies(j.getId())));
+        }
+        return res;
     }
 }

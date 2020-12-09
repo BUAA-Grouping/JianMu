@@ -51,4 +51,6 @@ public interface JobDao {
     Timestamp queryStartTimeByJobId(int jobId);
 
     List<Apply> queryApplies(int jobId);
+
+    public boolean replyApply(Apply apply);
 }

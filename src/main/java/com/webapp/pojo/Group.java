@@ -1,13 +1,20 @@
 package com.webapp.pojo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 
+@Setter @Getter
 public class Group implements Serializable {
     private int id;
-    private User leader;
-    private int status;
-    private Date create_time;
+    private String title;
+    private int leaderId;
+    private int jobId;
+    private int state;
+    private Timestamp createAt;
 
     public int getId() {
         return id;
@@ -17,27 +24,43 @@ public class Group implements Serializable {
         this.id = id;
     }
 
-    public User getLeader() {
-        return leader;
+    public int getLeaderId() {
+        return leaderId;
     }
 
-    public void setLeader(User leader) {
-        this.leader = leader;
+    public void setLeaderId(int leaderId) {
+        this.leaderId = leaderId;
     }
 
-    public int getStatus() {
-        return status;
+    public int getState() {
+        return state;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public void setState(int state) {
+        this.state = state;
     }
 
-    public Date getCreate_time() {
-        return create_time;
+    public Timestamp getCreateAt() {
+        return createAt;
     }
 
-    public void setCreate_time(Date create_time) {
-        this.create_time = create_time;
+    public void setCreateAt(Timestamp createAt) {
+        this.createAt = createAt;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(int jobId) {
+        this.jobId = jobId;
     }
 }

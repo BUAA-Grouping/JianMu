@@ -1,5 +1,7 @@
 package com.webapp.service;
 
+import com.webapp.pojo.Apply;
+import com.webapp.pojo.ApplyResponse;
 import com.webapp.pojo.Job;
 import com.webapp.pojo.User;
 
@@ -14,4 +16,6 @@ public interface SearchJobService {
     User getPoster(int jobId);
 
     Timestamp getEndTime(int jobId);
+
+    List<List<ApplyResponse>> getApplies(int userId);
 }
