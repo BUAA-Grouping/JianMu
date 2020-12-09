@@ -2,6 +2,7 @@ package com.webapp.servlet;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.webapp.pojo.JobInfoMap;
 import com.webapp.pojo.User;
 import com.webapp.service.UserService;
 import com.webapp.service.impl.UserServiceImpl;
@@ -29,6 +30,7 @@ public class UserInfoServlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         PrintWriter writer = response.getWriter();
         jsonObject.addProperty("userdata", gson.toJson(retUser));
+        jsonObject.addProperty("campus", JobInfoMap.campus_map.get(retUser.getCampus()));
         writer.write(jsonObject.toString());
         writer.flush();
     }
