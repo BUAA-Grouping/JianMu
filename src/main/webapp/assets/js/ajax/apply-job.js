@@ -22,6 +22,7 @@ $(function () {
                         timer: 1000
                     });
                 }
+                location.reload();
             },
             error: function (xhr) {
                 swal(xhr.message, "Error!", 'error');
