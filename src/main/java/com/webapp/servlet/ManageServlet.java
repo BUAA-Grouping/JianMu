@@ -3,6 +3,8 @@ package com.webapp.servlet;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.webapp.pojo.Apply;
+import com.webapp.pojo.ApplyResponse;
+import com.webapp.pojo.Job;
 import com.webapp.pojo.User;
 import com.webapp.service.SearchJobService;
 import com.webapp.service.impl.SearchJobServiceImpl;
@@ -15,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.util.List;
 
 @WebServlet(name = "ManageServlet")
@@ -24,21 +27,14 @@ public class ManageServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int jobId = Integer.parseInt(request.getParameter("id"));
-        SearchJobService searchJobService = new SearchJobServiceImpl();
-        User poster = searchJobService.getPoster(jobId);
         HttpSession session = request.getSession();
-        Object id = session.getAttribute("id");
-        JsonObject jsonObject = new JsonObject();
-        if (id == null || (int) id != poster.getId()) {
-            jsonObject.addProperty("message", "登陆该项目的管理员账号查看申请");
-        } else {
-            jsonObject.addProperty("message", "当前申请如下");
-            Gson gson = new Gson();
-            List<Apply> applies = searchJobService.getApplies(jobId);
-            jsonObject.addProperty("applies", gson.toJson(applies));
-        }
+        int id = (int) session.getAttribute("id");
 
+        SearchJobService searchJobService = new SearchJobServiceImpl();
+        List<ApplyResponse> responses = searchJobService.getApplies(id);
+        Gson gson = new Gson();
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("jobList", gson.toJson(responses));
         response.setContentType("text/html;charset=utf-8");
         PrintWriter writer = response.getWriter();
         writer.write(jsonObject.toString());

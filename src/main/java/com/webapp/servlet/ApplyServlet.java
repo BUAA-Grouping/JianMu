@@ -26,7 +26,7 @@ public class ApplyServlet extends HttpServlet {
         JsonObject jsonObject = new JsonObject();
 
         if (session.getAttribute("id") == null) {
-            jsonObject.addProperty("msg", "请先登陆");
+            jsonObject.addProperty("message", "请先登陆");
         } else {
             int userId = (int) session.getAttribute("id");
             String s = request.getParameter("id");

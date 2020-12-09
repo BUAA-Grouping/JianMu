@@ -3,11 +3,13 @@ package com.webapp.service.impl;
 import com.webapp.dao.JobDao;
 import com.webapp.dao.impl.JobDaoImpl;
 import com.webapp.pojo.Apply;
+import com.webapp.pojo.ApplyResponse;
 import com.webapp.pojo.Job;
 import com.webapp.pojo.User;
 import com.webapp.service.SearchJobService;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SearchJobServiceImpl implements SearchJobService {
@@ -42,7 +44,12 @@ public class SearchJobServiceImpl implements SearchJobService {
     }
 
     @Override
-    public List<Apply> getApplies(int jobId) {
-        return jobDao.queryApplies(jobId);
+    public List<ApplyResponse> getApplies(int userId) {
+        List<Job> jobList = jobDao.queryJobByPoster(userId);
+        List<ApplyResponse> res = new ArrayList<>();
+        for (Job j : jobList) {
+            res.add(new ApplyResponse(j, jobDao.queryApplies(j.getId())));
+        }
+        return res;
     }
 }
