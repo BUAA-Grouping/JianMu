@@ -22,26 +22,32 @@ import java.util.List;
 public class ApplyServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        int userId = (int) session.getAttribute("id");
-        int jobId = Integer.parseInt(request.getParameter("id"));
-        ApplyJobService applyJobService = new ApplyJobServiceImpl();
 
         JsonObject jsonObject = new JsonObject();
 
-        boolean contain = false;
-        List<Apply> applies = applyJobService.query(jobId);
-        for (Apply apply : applies) {
-            if (apply.getUserId() == userId) {
-                contain = true;
-                break;
-            }
-        }
-        if (contain) {
-            jsonObject.addProperty("message", "请勿重复申请");
+        if (session.getAttribute("id") == null) {
+            jsonObject.addProperty("请先登陆");
         } else {
-            Apply apply = new Apply(userId, jobId, 1, new Timestamp(System.currentTimeMillis()), null);
-            boolean res = applyJobService.apply(apply);
-            jsonObject.addProperty("message", res ? "申请成功，请耐心等待通过" : "服务器错误");
+            int userId = (int) session.getAttribute("id");
+            int jobId = Integer.parseInt(request.getParameter("id"));
+            ApplyJobService applyJobService = new ApplyJobServiceImpl();
+
+
+            boolean contain = false;
+            List<Apply> applies = applyJobService.query(jobId);
+            for (Apply apply : applies) {
+                if (apply.getUserId() == userId) {
+                    contain = true;
+                    break;
+                }
+            }
+            if (contain) {
+                jsonObject.addProperty("message", "请勿重复申请");
+            } else {
+                Apply apply = new Apply(userId, jobId, 1, new Timestamp(System.currentTimeMillis()), null);
+                boolean res = applyJobService.apply(apply);
+                jsonObject.addProperty("message", res ? "申请成功，请耐心等待通过" : "服务器错误");
+            }
         }
 
 

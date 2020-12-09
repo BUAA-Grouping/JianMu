@@ -12,4 +12,6 @@ public interface SearchJobService {
     Job getDetail(int jobId);
 
     User getPoster(int jobId);
+
+    Timestamp getEndTime(int jobId);
 }
