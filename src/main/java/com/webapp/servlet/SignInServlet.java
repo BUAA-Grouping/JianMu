@@ -32,7 +32,8 @@ public class SignInServlet extends HttpServlet {
 
             boolean success = false;
             User user = new User();
-            switch (signService.signIn(emailID, password, user)) {
+            int type = signService.signIn(emailID, password, user);
+            switch (type) {
                 case -1:
                     jsonObject.addProperty("message", "用户不存在");
                     break;
@@ -40,8 +41,10 @@ public class SignInServlet extends HttpServlet {
                     jsonObject.addProperty("message", "邮箱或密码错误");
                     break;
                 case 0:
+                case 1:
                     jsonObject.addProperty("message", "登陆成功");
                     jsonObject.addProperty("username", user.getName());
+                    jsonObject.addProperty("type", type);
                     success = true;
                     break;
                 default:
@@ -51,7 +54,8 @@ public class SignInServlet extends HttpServlet {
                 session.setAttribute("username", user.getName());
                 session.setAttribute("emailID", emailID);
                 session.setAttribute("password", user.getPassword());
-                session.setAttribute("id",user.getId());
+                session.setAttribute("id", user.getId());
+                session.setAttribute("type", type);
             }
         }
 
