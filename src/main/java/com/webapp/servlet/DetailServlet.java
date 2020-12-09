@@ -17,7 +17,7 @@ import java.io.PrintWriter;
 @WebServlet(name = "DetailServlet")
 public class DetailServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int jobId = (int) request.getAttribute("id");
+        int jobId = Integer.parseInt(request.getParameter("id"));
         SearchJobService searchJobService = new SearchJobServiceImpl();
         Job job = searchJobService.getDetail(jobId);
 
