@@ -23,7 +23,7 @@ public class ApplyServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         int userId = (int) session.getAttribute("id");
-        int jobId = (int) request.getAttribute("id");
+        int jobId = Integer.parseInt(request.getParameter("id"));
         ApplyJobService applyJobService = new ApplyJobServiceImpl();
 
         JsonObject jsonObject = new JsonObject();

@@ -36,6 +36,10 @@
         <servlet-name>ApplyServlet</servlet-name>
         <servlet-class>com.webapp.servlet.ApplyServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DetailServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.DetailServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DeleteUserServlet</servlet-name>
         <url-pattern>/user_delete</url-pattern>
@@ -83,5 +87,9 @@
     <servlet-mapping>
         <servlet-name>ApplyServlet</servlet-name>
         <url-pattern>/apply-job</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailServlet</servlet-name>
+        <url-pattern>/job_detail</url-pattern>
     </servlet-mapping>
 </web-app>
