@@ -110,4 +110,11 @@ public class JobDaoImpl extends BaseDao implements JobDao {
                 "apply_at applyAt,reply_at replyAt FROM user_apply_job where job_id=?";
         return queryForList(Apply.class, sql, jobId);
     }
+
+    @Override
+    public boolean replyApply(Apply apply) {
+        String sql = "UPDATE user_apply_job SET status=?,reply_at=? WHERE job_id=? AND user_id=?";
+        return update(sql, apply.getStatus(), apply.getReplyAt(),
+                apply.getJobId(), apply.getUserId()) > 0;
+    }
 }

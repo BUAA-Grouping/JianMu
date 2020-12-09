@@ -50,7 +50,7 @@ public interface UserDao {
 
     public boolean applyJob(Apply apply);
 
-    public List<Job> queryPostedJobs(int userId);
-
     public List<Apply> queryApplies(int userId);
+
+    public boolean join(int userId, int groupId);
 }
