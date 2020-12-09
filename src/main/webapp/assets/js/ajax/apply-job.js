@@ -15,6 +15,12 @@ $(function () {
                         type: 'warning',
                         timer: 1000
                     });
+                } else if (msg.msg === "请先登陆") {
+                    swal({
+                        title: msg.msg,
+                        type: 'warning',
+                        timer: 2000
+                    });
                 } else {
                     swal({
                         title: msg.message,
