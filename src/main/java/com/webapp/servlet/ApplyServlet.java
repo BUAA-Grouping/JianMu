@@ -1,10 +1,12 @@
 package com.webapp.servlet;
 
 import com.google.gson.JsonObject;
+import com.webapp.dao.impl.JobDaoImpl;
 import com.webapp.pojo.Apply;
 import com.webapp.pojo.User;
 import com.webapp.service.ApplyJobService;
 import com.webapp.service.impl.ApplyJobServiceImpl;
+import sun.rmi.server.UnicastServerRef;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,23 +33,25 @@ public class ApplyServlet extends HttpServlet {
             int userId = (int) session.getAttribute("id");
             String s = request.getParameter("id");
             int jobId = Integer.parseInt(s);
-            ApplyJobService applyJobService = new ApplyJobServiceImpl();
-
-
-            boolean contain = false;
-            List<Apply> applies = applyJobService.query(jobId);
-            for (Apply apply : applies) {
-                if (apply.getUserId() == userId) {
-                    contain = true;
-                    break;
-                }
-            }
-            if (contain) {
-                jsonObject.addProperty("message", "请勿重复申请");
+            if (new JobDaoImpl().queryPosterByJobId(jobId).getId() == userId) {
+                jsonObject.addProperty("message", "无需申请自己创建的项目");
             } else {
-                Apply apply = new Apply(userId, jobId, 0, new Timestamp(System.currentTimeMillis()), null);
-                boolean res = applyJobService.apply(apply);
-                jsonObject.addProperty("message", res ? "申请成功，请耐心等待通过" : "服务器错误");
+                ApplyJobService applyJobService = new ApplyJobServiceImpl();
+                boolean contain = false;
+                List<Apply> applies = applyJobService.query(jobId);
+                for (Apply apply : applies) {
+                    if (apply.getUserId() == userId) {
+                        contain = true;
+                        break;
+                    }
+                }
+                if (contain) {
+                    jsonObject.addProperty("message", "请勿重复申请");
+                } else {
+                    Apply apply = new Apply(userId, jobId, 0, new Timestamp(System.currentTimeMillis()), null);
+                    boolean res = applyJobService.apply(apply);
+                    jsonObject.addProperty("message", res ? "申请成功，请耐心等待通过" : "服务器错误");
+                }
             }
         }
 
