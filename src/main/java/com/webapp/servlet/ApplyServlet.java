@@ -45,7 +45,7 @@ public class ApplyServlet extends HttpServlet {
             if (contain) {
                 jsonObject.addProperty("message", "请勿重复申请");
             } else {
-                Apply apply = new Apply(userId, jobId, 1, new Timestamp(System.currentTimeMillis()), null);
+                Apply apply = new Apply(userId, jobId, 0, new Timestamp(System.currentTimeMillis()), null);
                 boolean res = applyJobService.apply(apply);
                 jsonObject.addProperty("message", res ? "申请成功，请耐心等待通过" : "服务器错误");
             }

@@ -51,7 +51,7 @@ public class SearchJobServiceImpl implements SearchJobService {
         res.add(new ArrayList<ApplyResponse>());
         res.add(new ArrayList<ApplyResponse>());
         for (Job j : jobList) {
-            res.get(j.getState()).add(new ApplyResponse(j, jobDao.queryApplies(j.getId())));
+            res.get(j.getState() - 1).add(new ApplyResponse(j, jobDao.queryApplies(j.getId())));
         }
         return res;
     }

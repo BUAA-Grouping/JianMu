@@ -48,7 +48,7 @@ public class PostJobServlet extends HttpServlet {
         }
         response.setContentType("text/html;charset=utf-8");
         PrintWriter writer = response.getWriter();
-        writer.write(jsonObjectgaa.toString());
+        writer.write(jsonObject.toString());
         writer.flush();
     }
 

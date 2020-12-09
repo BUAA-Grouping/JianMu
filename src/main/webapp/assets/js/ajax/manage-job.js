@@ -1,6 +1,6 @@
 $(function () {
     $.ajax({
-        type: "post",
+        type: "get",
         url: "http://localhost:8080/JianMu_war/manage",
         dataType: "json",
         async: false,
@@ -14,7 +14,7 @@ $(function () {
 })
 
 function addList(msg) {
-    let list = msg.jobList;
+    let list = JSON.parse(msg.jobList);
     let applying = list[0];
     let accept = list[1];
     let deny = list[2];
