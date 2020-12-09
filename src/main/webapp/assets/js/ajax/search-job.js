@@ -56,7 +56,7 @@ function addTab(msg) {
                     '<div class="classic-joblist ultimate-center">\n' +
                     '<div class="cl-job-employer">\n' +
                     '<div class="cljb-emp-thumg">\n' +
-                    '<a href="job-detail.html"><img src="assets/img/软件学院.png" alt=""/></a>\n' +
+                    '<a href="job-detail.html' + '#' + job.id + '"><img src="assets/img/软件学院.png" alt=""/></a>\n' +
                     '</div>\n' +
                     '<div class="cljb-emp-detail">\n' +
                     '<h5><a href="javascript:void(0);">' + job.campus + '</a></h5>\n' +
