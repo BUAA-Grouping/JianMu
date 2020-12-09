@@ -11,6 +11,9 @@ $(function() {
                     type: 'success',
                     timer: 1000
                 });
+                setTimeout(function () {
+                    location.reload();
+                }, 1000);
             },
             error: function(xhr) {
                 swal(xhr.message, "Error!", 'error');
