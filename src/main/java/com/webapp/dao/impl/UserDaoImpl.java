@@ -108,4 +108,20 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         }
     }
 
+    @Override
+    public List<Job> queryPostedJobs(int userId) {
+        String sql = "SELECT job.id,title,college_id college,campus," +
+                "expected_num_of_member exceptedNumOfMember,state,profile,telephone,email" +
+                "FROM user_post_job,job" +
+                " WHERE user_id=? AND user_post_job.job_id=job.id";
+        return queryForList(Job.class, sql, userId);
+    }
+
+    @Override
+    public List<Apply> queryApplies(int userId) {
+        String sql = "SELECT user_id userId,job_id jobId,status," +
+                "apply_at applyAt,reply_at replyAt FROM user_apply_job where user_id=?";
+        return queryForList(Apply.class, sql, userId);
+    }
+
 }
