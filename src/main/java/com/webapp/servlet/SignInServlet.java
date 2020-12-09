@@ -44,6 +44,7 @@ public class SignInServlet extends HttpServlet {
                 case 1:
                     jsonObject.addProperty("message", "登陆成功");
                     jsonObject.addProperty("username", user.getName());
+                    jsonObject.addProperty("type", type);
                     success = true;
                     break;
                 default:
