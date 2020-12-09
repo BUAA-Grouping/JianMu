@@ -2,6 +2,7 @@ package com.webapp.service.impl;
 
 import com.webapp.dao.JobDao;
 import com.webapp.dao.impl.JobDaoImpl;
+import com.webapp.pojo.Apply;
 import com.webapp.pojo.Job;
 import com.webapp.pojo.User;
 import com.webapp.service.SearchJobService;
@@ -38,5 +39,10 @@ public class SearchJobServiceImpl implements SearchJobService {
     @Override
     public Timestamp getEndTime(int jobId) {
         return jobDao.queryEndTimeByJobId(jobId);
+    }
+
+    @Override
+    public List<Apply> getApplies(int jobId) {
+        return jobDao.queryApplies(jobId);
     }
 }

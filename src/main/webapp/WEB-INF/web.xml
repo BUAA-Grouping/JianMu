@@ -40,6 +40,10 @@
         <servlet-name>DetailServlet</servlet-name>
         <servlet-class>com.webapp.servlet.DetailServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManageServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.ManageServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DeleteUserServlet</servlet-name>
         <url-pattern>/user_delete</url-pattern>
@@ -91,5 +95,9 @@
     <servlet-mapping>
         <servlet-name>DetailServlet</servlet-name>
         <url-pattern>/job_detail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManageServlet</servlet-name>
+        <url-pattern>/manage</url-pattern>
     </servlet-mapping>
 </web-app>
