@@ -15,33 +15,31 @@ $(function () {
 
 function addList(msg) {
     let list = JSON.parse(msg.jobList);
-    let applying = list[0];
-    let accept = list[1];
-    let deny = list[2];
-    let counter = 0;
-    for (let i = 0; i < applying.length; i = i + 1) {
-        addJob(applying[i], counter, 0);
-        counter = counter + 1;
-    }
-    for (let i = 0; i < accept.length; i = i + 1) {
-        addJob(applying[i], counter, 1);
-        counter = counter + 1;
-    }
-    for (let i = 0; i < deny.length; i = i + 1) {
-        addJob(applying[i], counter, 2);
-        counter = counter + 1;
+    for (let i = 0; i < list.length; i = i + 1) {
+        addJob(list[i], i);
     }
 }
 
-function addJob(item, postJobID, type) {
+function addJob(item, postJobID) {
     let job = item.job;
     let appliers = item.applies;
     let users = item.users;
     let applyString = '';
-    for (let i = 0; i < appliers.length; i++) {
-        applyString += addApplier(users[i], type, job.id);
+    let applying = appliers[0];
+    let accept = appliers[1];
+    let deny = appliers[2];
+    let applyingUsers = users[0];
+    let acceptUsers = users[1];
+    let denyUsers = users[2];
+    for (let i = 0; i < applying.length; i++) {
+        applyString += addApplier(applyingUsers[i], 0, job.id);
     }
-
+    for (let i = 0; i < accept.length; i++) {
+        applyString += addApplier(acceptUsers[i], 1, job.id);
+    }
+    for (let i = 0; i < deny.length; i++) {
+        applyString += addApplier(denyUsers[i], 2, job.id);
+    }
     $('#job-cards').append(
         '<div class="card">\n' +
         '   <div class="card-header" id="heading' + postJobID + '"' + '>\n' +
@@ -80,7 +78,7 @@ function addApplier(user, type, jobId) {
             '       <img src="assets/img/软件学院.png" class="mx-auto" alt=""/>\n' +
             '   </div>\n' +
             '   <div class="mg-list-caption">\n' +
-            '       <a href="candidate-detail.html#' + user.id + 'class="mg-title">' + user.name + '</a>\n' +
+            '       <a href="candidate-detail.html#' + user.id + '" class="mg-title">' + user.name + '</a>\n' +
             '   </div>\n' +
             '</div>\n' +
             '<div class="mg-action">\n' +
@@ -101,7 +99,7 @@ function addApplier(user, type, jobId) {
             '       <img src="assets/img/软件学院.png" class="mx-auto" alt=""/>\n' +
             '   </div>\n' +
             '   <div class="mg-list-caption">\n' +
-            '       <a href="candidate-detail.html#' + applier.userId + 'class="mg-title">' + applier.name + '</a>\n' +
+            '       <a href="candidate-detail.html#' + user.id + '" class="mg-title">' + user.name + '</a>\n' +
             '   </div>\n' +
             '</div>\n' +
             '<div class="mg-action">\n' +
@@ -120,7 +118,7 @@ function addApplier(user, type, jobId) {
             '       <img src="assets/img/软件学院.png" class="mx-auto" alt=""/>\n' +
             '   </div>\n' +
             '   <div class="mg-list-caption">\n' +
-            '       <a href="candidate-detail.html#' + applier.userId + 'class="mg-title">' + applier.name + '</a>\n' +
+            '       <a href="candidate-detail.html#' + user.id + '" class="mg-title">' + user.name + '</a>\n' +
             '   </div>\n' +
             '</div>\n' +
             '<div class="mg-action">\n' +
