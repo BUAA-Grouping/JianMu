@@ -450,6 +450,11 @@
         height: 150
     });
 
+    // Job Description
+    $('#course-description').summernote({
+        height: 150
+    });
+
     // CV
     $('#cv-cover').summernote({
         height: 150

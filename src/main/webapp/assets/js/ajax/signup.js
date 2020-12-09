@@ -13,7 +13,7 @@ $(function () {
     //监听提交按钮的点击
     $("#signup-submit").click(function () {
         let currentTab = getCurrentTabIndex();
-        var $realname, $schoolID, type;
+        let $realname, $schoolID, type;
         type = currentTab;
         if (currentTab === 2) {
             $realname = $("#student-real-name").val();

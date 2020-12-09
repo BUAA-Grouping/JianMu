@@ -157,24 +157,24 @@
                                 <a class="nav-link active" data-toggle="tab" href="#profile"><i class="ti-user"></i>个人简介</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#shortlisted-jobs"><i
-                                        class="lni-heart-filled"></i>项目经历</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#shortlisted"><i class="lni-briefcase"></i>我的队友</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#applied"><i class="lni-briefcase"></i>已申请的任务</a>
                             </li>
+                            <li class="nav-item" style="display: none">
+                                <a class="nav-link"  data-toggle="tab" href="#manage-courses"><i
+                                        class="ti-files"></i>管理发布的课程</a>
+                            </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#manage-jobs"><i
-                                        class="ti-file"></i>管理已发布任务</a>
+                                <a class="nav-link" data-toggle="tab" href="#manage-jobs">
+                                    <i class="ti-file"></i>管理已发布任务</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#post-new-job"><i class="ti-plus"></i>发布新任务</a>
                             </li>
+                            <li class="nav-item" style="display: none">
+                                <a class="nav-link" data-toggle="tab" href="#post-new-course"><i class="ti-blackboard"></i>发布新课程</a>
+                            </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="candidate-detail.html"><i class="lni-user"></i>查看个人主页</a>
+                                <a id="personal-index" class="nav-link" href="candidate-detail.html"><i class="lni-user"></i>查看个人主页</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#change-password"><i class="lni-lock"></i>修改密码</a>
@@ -183,7 +183,6 @@
                                 <a class="nav-link" href="index.jsp"><i class="lni-trash"></i>删除账号</a>
                             </li>
                         </ul>
-
                     </div>
                 </div>
                 <!-- /col-md-4 -->
@@ -232,6 +231,22 @@
                                             <div class="form-group">
                                                 <label>学号</label>
                                                 <input id="schoolId" class="form-control" type="text" value="">
+                                                <!--记得修改-->
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-sm-12" style="display: none">
+                                            <div class="form-group">
+                                                <label>工号</label>
+                                                <input id="teacherId" class="form-control" type="text" value="">
+                                                <!--记得修改-->
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-sm-12" style="display: none">
+                                            <div class="form-group">
+                                                <label>职称</label>
+                                                <input id="teacher-title" class="form-control" type="text" value="">
                                                 <!--记得修改-->
                                             </div>
                                         </div>
@@ -350,97 +365,6 @@
 
                         </div>
 
-                        <!-- 项目经历 -->
-                        <div class="tab-pane" id="shortlisted-jobs">
-
-                            <div class="tr-single-box">
-                                <div class="tr-single-header">
-                                    <h4><i class="ti-check"></i>项目经历</h4>
-                                </div>
-
-                                <div class="tr-single-body">
-                                    <!-- Single Manage List -->
-                                    <div class="manage-list">
-
-                                        <div class="mg-list-wrap">
-                                            <div class="mg-list-thumb">
-                                                <img src="assets/img/计算机学院.png" class="mx-auto" alt=""/>
-                                            </div>
-                                            <div class="mg-list-caption">
-                                                <h3 class="mg-title">数据库管理员</h3>
-                                                <span class="mg-subtitle">计算机学院</span>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="mg-action">
-                                            <div class="btn-group ml-2">
-                                                <a href="job-detail.html" class="btn btn-view" data-toggle="tooltip"
-                                                   data-placement="top" title="查看任务详情"><i class="ti-eye"></i></a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- 我的队友 -->
-                        <div class="tab-pane" id="shortlisted">
-
-                            <div class="tr-single-box">
-                                <div class="tr-single-header">
-                                    <h4><i class="ti-briefcase"></i> 我的队友</h4>
-                                </div>
-
-                                <div class="tr-single-body">
-                                    <div class="row">
-
-                                        <div class="col-md-12">
-
-                                            <!-- Single Resume -->
-                                            <div class="manage-list">
-
-                                                <div class="mg-list-wrap">
-                                                    <div class="mg-list-thumb">
-                                                        <img src="assets/img/user-6.jpg" class="mx-auto" alt=""/>
-                                                    </div>
-                                                    <div class="mg-list-caption">
-                                                        <h3 class="mg-title">小美</h3>
-                                                        <span class="mg-subtitle">产品经理</span>
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="mg-action">
-                                                    <div class="btn-group custom-drop">
-                                                        <button type="button" class="btn btn-more"
-                                                                data-toggle="dropdown" aria-haspopup="true"
-                                                                aria-expanded="false">
-                                                            <i class="ti-more"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu pull-right animated flipInX">
-                                                            <a href="candidate-detail.html">查看个人主页</a>
-                                                            <!--记得修改-->
-                                                            <a>此处为项目名</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="btn-group ml-2">
-                                                        <a href="#" class="mg-delete"><i class="ti-trash"></i></a>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <!-- /Single Resume -->
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
                         <!-- 已申请的任务 -->
                         <div class="tab-pane" id="applied">
 
@@ -457,9 +381,7 @@
                         </div>
 
                         <!-- 管理已发布任务 -->
-
                         <div class="tab-pane" id="manage-jobs">
-
                             <div class="tr-single-box">
                                 <div class="tr-single-header">
                                     <h4><i class="lni-file"></i>管理已发布任务</h4>
@@ -475,10 +397,29 @@
                                 </div>
                             </div>
                             <!-- /Manage jobs -->
-
                             <a href="#" class="btn btn-info btn-md full-width">保存并更新<i
                                     class="ml-2 ti-arrow-right"></i></a>
+                        </div>
 
+                        <!-- 管理发布的课程 -->
+                        <div class="tab-pane" id="manage-courses">
+                            <div class="tr-single-box">
+                                <div class="tr-single-header">
+                                    <h4><i class="lni-file"></i>管理发布的课程</h4>
+                                </div>
+
+                                <div class="tr-single-body">
+                                    <div class="row">
+
+                                        <div id="course-cards" class="col-md-12">
+                                            <!--动态添加-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Manage jobs -->
+                            <a href="#" class="btn btn-info btn-md full-width">保存并更新<i
+                                    class="ml-2 ti-arrow-right"></i></a>
                         </div>
 
                         <!-- 发布新任务 -->
@@ -617,10 +558,111 @@
                                     </div>
                                 </div>
                             </div>
-
                             <a href="#" id="post-job-save-update" class="btn btn-info btn-md full-width">发布<i
                                     class="ml-2 ti-arrow-right"></i></a>
+                        </div>
 
+                        <!--发布新课程 -->
+                        <div class="tab-pane" id="post-new-course">
+                            <!--发布新课程-->
+                            <div class="tr-single-box">
+                                <div class="tr-single-header">
+                                    <h4><i class="ti-plus"></i>发布新课程</h4>
+                                </div>
+
+                                <div class="tr-single-body">
+                                    <div class="row">
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <label>课程名称</label>
+                                                <input id="course-title" class="form-control" type="text" value="数据库系统原理">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <label>课程描述</label>
+                                                <div id="course-description">
+                                                    课程描述
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label>课程容量</label>
+                                                <input id="capacity" class="form-control" type="text"
+                                                       value="1">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="form-group">
+                                                <label>学院</label>
+                                                <select id="category-1" class="js-states form-control">
+                                                    <option value="1">[01]材料科学与工程学院</option>
+                                                    <option value="2">[02]电子信息工程学院</option>
+                                                    <option value="3">[03]自动化科学与电气工程学院</option>
+                                                    <option value="4">[04]能源与动力工程学院</option>
+                                                    <option value="5">[05]航空科学与工程学院</option>
+                                                    <option value="6">[06]计算机学院</option>
+                                                    <option value="7">[07]机械工程及自动化学院</option>
+                                                    <option value="8">[08]经济管理学院</option>
+                                                    <option value="9">[09]数学科学学院</option>
+                                                    <option value="10">[10]生物与医学工程学院</option>
+                                                    <option value="11">[11]人文社会科学学院</option>
+                                                    <option value="12">[12]外国语学院</option>
+                                                    <option value="13">[13]交通科学与工程学院</option>
+                                                    <option value="14">[14]可靠性与系统工程学院</option>
+                                                    <option value="15">[15]宇航学院</option>
+                                                    <option value="16">[16]飞行学院</option>
+                                                    <option value="17">[17]仪器科学与光电工程学院</option>
+                                                    <option value="18">[18]北京学院</option>
+                                                    <option value="19">[19]物理学院</option>
+                                                    <option value="20">[20]法学院</option>
+                                                    <option value="21">[21]软件学院</option>
+                                                    <option value="22">[22]现代远程教育学院</option>
+                                                    <option value="23">[23]高等理工学院</option>
+                                                    <option value="24">[24]中法工程师学院</option>
+                                                    <option value="25">[25]国际学院</option>
+                                                    <option value="26">[26]新媒体艺术与设计学院</option>
+                                                    <option value="27">[27]化学学院</option>
+                                                    <option value="28">[28]马克思主义学院</option>
+                                                    <option value="29">[29]人文与社会科学高等研究院</option>
+                                                    <option value="30">[30]空间与环境学院</option>
+                                                    <option value="31">[31]武装部</option>
+                                                    <option value="32">[32]工程训练中心</option>
+                                                    <option value="33">[33]体育部</option>
+                                                    <option value="34">[34]图书馆</option>
+                                                    <option value="35">[35]国际通用工程学院</option>
+                                                    <option value="36">[36]校医院</option>
+                                                    <option value="37">[37]招生就业处</option>
+                                                    <option value="38">[38]无人机所</option>
+                                                    <option value="39">[39]网络空间安全学院</option>
+                                                    <option value="40">[40]校机关</option>
+                                                    <option value="41">[41]继续教育学院</option>
+                                                    <option value="42">[42]人工智能研究院</option>
+                                                    <option value="44">[44]研究生院</option>
+                                                    <option value="45">[45]北航暑期学校</option>
+                                                    <option value="49">[49]微电子学院</option>
+                                                    <option value="50">[50]校际</option>
+                                                    <option value="51">[51]学生处武装部</option>
+                                                    <option value="53">[53]团委</option>
+                                                    <option value="56">[56]校内其它单位</option>
+                                                    <option value="60">[60]校外单位</option>
+                                                    <option value="61">[61]学生发展服务中心</option>
+                                                    <option value="70">[70]北航学院</option>
+                                                    <option value="231">[231]高等理工学院（华罗庚班）</option>
+                                                </select>
+                                                <!--记得修改-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" id="post-course-save-update" class="btn btn-info btn-md full-width">发布<i
+                                    class="ml-2 ti-arrow-right"></i></a>
                         </div>
 
                         <!-- 修改密码 -->
