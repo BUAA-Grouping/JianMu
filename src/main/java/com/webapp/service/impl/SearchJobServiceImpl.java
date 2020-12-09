@@ -29,4 +29,9 @@ public class SearchJobServiceImpl implements SearchJobService {
     public Job getDetail(int jobId) {
         return jobDao.queryInfoByJobId(jobId);
     }
+
+    @Override
+    public User getPoster(int jobId) {
+        return jobDao.queryPosterByJobId(jobId);
+    }
 }
