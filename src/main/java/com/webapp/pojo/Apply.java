@@ -1,15 +1,27 @@
 package com.webapp.pojo;
 
+import java.io.Serializable;
+import java.io.SerializablePermission;
+import java.sql.Timestamp;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class Apply {
+public class Apply implements Serializable {
     int userId;
     int jobId;
     int status;
-    int applyAt;
-    int replyAt;
+    Timestamp applyAt;
+    Timestamp replyAt;
+
+    public Apply(int userId, int jobId, int status, Timestamp applyAt, Timestamp replyAt) {
+        this.userId = userId;
+        this.jobId = jobId;
+        this.status = status;
+        this.applyAt = applyAt;
+        this.replyAt = replyAt;
+    }
 
     public int getJobId() {
         return jobId;
@@ -27,19 +39,19 @@ public class Apply {
         this.status = status;
     }
 
-    public int getApplyAt() {
+    public Timestamp getApplyAt() {
         return applyAt;
     }
 
-    public void setApplyAt(int applyAt) {
+    public void setApplyAt(Timestamp applyAt) {
         this.applyAt = applyAt;
     }
 
-    public int getReplyAt() {
+    public Timestamp getReplyAt() {
         return replyAt;
     }
 
-    public void setReplyAt(int replyAt) {
+    public void setReplyAt(Timestamp replyAt) {
         this.replyAt = replyAt;
     }
 
