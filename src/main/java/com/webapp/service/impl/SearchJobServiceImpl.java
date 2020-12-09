@@ -44,11 +44,14 @@ public class SearchJobServiceImpl implements SearchJobService {
     }
 
     @Override
-    public List<ApplyResponse> getApplies(int userId) {
+    public List<List<ApplyResponse>> getApplies(int userId) {
         List<Job> jobList = jobDao.queryJobByPoster(userId);
-        List<ApplyResponse> res = new ArrayList<>();
+        List<List<ApplyResponse>> res = new ArrayList<>();
+        res.add(new ArrayList<ApplyResponse>());
+        res.add(new ArrayList<ApplyResponse>());
+        res.add(new ArrayList<ApplyResponse>());
         for (Job j : jobList) {
-            res.add(new ApplyResponse(j, jobDao.queryApplies(j.getId())));
+            res.get(j.getState()).add(new ApplyResponse(j, jobDao.queryApplies(j.getId())));
         }
         return res;
     }

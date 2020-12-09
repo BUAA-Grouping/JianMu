@@ -17,5 +17,5 @@ public interface SearchJobService {
 
     Timestamp getEndTime(int jobId);
 
-    List<ApplyResponse> getApplies(int jobId);
+    List<List<ApplyResponse>> getApplies(int userId);
 }

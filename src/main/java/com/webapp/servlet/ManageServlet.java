@@ -23,7 +23,7 @@ import java.util.List;
 @WebServlet(name = "ManageServlet")
 public class ManageServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -31,7 +31,7 @@ public class ManageServlet extends HttpServlet {
         int id = (int) session.getAttribute("id");
 
         SearchJobService searchJobService = new SearchJobServiceImpl();
-        List<ApplyResponse> responses = searchJobService.getApplies(id);
+        List<List<ApplyResponse>> responses = searchJobService.getApplies(id);
         Gson gson = new Gson();
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("jobList", gson.toJson(responses));
