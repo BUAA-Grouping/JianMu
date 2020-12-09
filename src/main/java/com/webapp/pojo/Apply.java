@@ -1,5 +1,9 @@
 package com.webapp.pojo;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
 public class Apply {
     int userId;
     int jobId;

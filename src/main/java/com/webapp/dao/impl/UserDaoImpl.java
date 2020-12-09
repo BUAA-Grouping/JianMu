@@ -2,10 +2,12 @@ package com.webapp.dao.impl;
 
 import com.webapp.dao.BaseDao;
 import com.webapp.dao.UserDao;
+import com.webapp.pojo.Apply;
 import com.webapp.pojo.Job;
 import com.webapp.pojo.User;
 
 import java.math.BigInteger;
+import java.sql.Timestamp;
 import java.util.List;
 
 public class UserDaoImpl extends BaseDao implements UserDao {
@@ -92,6 +94,18 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         }
         sql = "DELETE FROM `user` WHERE `email`=?";
         return update(sql, emailId) > 0;
+    }
+
+    @Override
+    public boolean applyJob(Apply apply) {
+        String sql = "INSERT INTO user_apply_job(user_id,job_id,status,apply_at) " +
+                "VALUES (?,?,?,?)";
+        try {
+            return update(sql, apply.getUserId(), apply.getJobId(),
+                    apply.getStatus(), apply.getReplyAt()) > 0;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 }

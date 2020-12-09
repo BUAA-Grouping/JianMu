@@ -1,5 +1,6 @@
 package com.webapp.dao;
 
+import com.webapp.pojo.Apply;
 import com.webapp.pojo.User;
 
 
@@ -43,4 +44,6 @@ public interface UserDao {
     public int logIn(String email);
 
     public boolean delete(String emailId);
+
+    public boolean applyJob(Apply apply);
 }
