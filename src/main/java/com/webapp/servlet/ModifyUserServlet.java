@@ -18,7 +18,7 @@ import java.io.PrintWriter;
 
 @WebServlet(name = "ModifyMemberServlet")
 public class ModifyUserServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
         int id = (int) session.getAttribute("id");
         String userdata = request.getParameter("userdata");
@@ -38,17 +38,17 @@ public class ModifyUserServlet extends HttpServlet {
         writer.flush();
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            HttpSession session = request.getSession();
-            String emailId = (String) session.getAttribute("emailID");
-            ModifyUserService modifyUserService = new ModifyUserServiceImpl();
-            User retUser = modifyUserService.getUser(emailId);
-            Gson gson = new Gson();
-            JsonObject jsonObject = new JsonObject();
-            response.setContentType("text/html;charset=utf-8");
-            PrintWriter writer = response.getWriter();
-            jsonObject.addProperty("userdata", gson.toJson(retUser));
-            writer.write(jsonObject.toString());
-            writer.flush();
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpSession session = request.getSession();
+        String emailId = (String) session.getAttribute("emailID");
+        ModifyUserService modifyUserService = new ModifyUserServiceImpl();
+        User retUser = modifyUserService.getUser(emailId);
+        Gson gson = new Gson();
+        JsonObject jsonObject = new JsonObject();
+        response.setContentType("text/html;charset=utf-8");
+        PrintWriter writer = response.getWriter();
+        jsonObject.addProperty("userdata", gson.toJson(retUser));
+        writer.write(jsonObject.toString());
+        writer.flush();
     }
 }
