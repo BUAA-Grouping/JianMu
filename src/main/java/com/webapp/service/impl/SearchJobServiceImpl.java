@@ -1,7 +1,9 @@
 package com.webapp.service.impl;
 
 import com.webapp.dao.JobDao;
+import com.webapp.dao.UserDao;
 import com.webapp.dao.impl.JobDaoImpl;
+import com.webapp.dao.impl.UserDaoImpl;
 import com.webapp.pojo.Apply;
 import com.webapp.pojo.ApplyResponse;
 import com.webapp.pojo.Job;
@@ -14,6 +16,7 @@ import java.util.List;
 
 public class SearchJobServiceImpl implements SearchJobService {
     JobDao jobDao = new JobDaoImpl();
+    UserDao userDao = new UserDaoImpl();
 
     @Override
     public int searchJob(String keyword, int college, int campus, List<Job> jobList, List<User> poster, List<Timestamp> expectedEndTime) {
@@ -51,7 +54,12 @@ public class SearchJobServiceImpl implements SearchJobService {
         res.add(new ArrayList<ApplyResponse>());
         res.add(new ArrayList<ApplyResponse>());
         for (Job j : jobList) {
-            res.get(j.getState() - 1).add(new ApplyResponse(j, jobDao.queryApplies(j.getId())));
+            List<Apply> applies = jobDao.queryApplies(j.getId());
+            List<User> users = new ArrayList<>();
+            for (Apply apply : applies) {
+                users.add(userDao.queryInfoById(apply.getUserId()));
+            }
+            res.get(j.getState() - 1).add(new ApplyResponse(j, applies, users));
         }
         return res;
     }
