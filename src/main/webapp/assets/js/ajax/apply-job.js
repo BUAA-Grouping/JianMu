@@ -9,17 +9,13 @@ $(function () {
             data: {"id": jobID},
             async: false,
             success: function (msg) {
-                if (msg.message === "请勿重复申请") {
+                if (msg.message === "请勿重复申请"
+                    || msg.message === "无需申请自己创建的项目"
+                    || msg.message === "请先登陆") {
                     swal({
                         title: msg.message,
                         type: 'warning',
                         timer: 1000
-                    });
-                } else if (msg.msg === "请先登陆") {
-                    swal({
-                        title: msg.msg,
-                        type: 'warning',
-                        timer: 2000
                     });
                 } else {
                     swal({
@@ -28,7 +24,10 @@ $(function () {
                         timer: 1000
                     });
                 }
-                location.reload();
+
+                setTimeout(function () {
+                    location.reload();
+                }, 1000);
             },
             error: function (xhr) {
                 swal(xhr.message, "Error!", 'error');
