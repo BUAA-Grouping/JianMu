@@ -34,4 +34,9 @@ public class SearchJobServiceImpl implements SearchJobService {
     public User getPoster(int jobId) {
         return jobDao.queryPosterByJobId(jobId);
     }
+
+    @Override
+    public Timestamp getEndTime(int jobId) {
+        return jobDao.queryEndTimeByJobId(jobId);
+    }
 }
