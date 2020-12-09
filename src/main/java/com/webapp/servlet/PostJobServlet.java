@@ -41,15 +41,14 @@ public class PostJobServlet extends HttpServlet {
         assert date != null;
         expectedEndTime = new Timestamp(date.getTime());
         JsonObject jsonObject = new JsonObject();
-
-        if (postJobService.post(user_id, req_job, expectedEndTime)) {
+        if (postJobService.post(user_id, req_job, expectedEndTime) && postJobService.createGroup(req_job, user_id)) {
             jsonObject.addProperty("message", "发布成功");
         } else {
             jsonObject.addProperty("message", "服务器错误");
         }
         response.setContentType("text/html;charset=utf-8");
         PrintWriter writer = response.getWriter();
-        writer.write(jsonObject.toString());
+        writer.write(jsonObjectgaa.toString());
         writer.flush();
     }
 
