@@ -18,7 +18,7 @@ $(function () {
             $('#campus').text(job.campus);
             $('#poster-name').text(poster.name);
             $('#poster-major').text(poster.major);
-            $('#job-email').text(job.email);
+            $('#job-email').text(poster.emailID);
             $('#job-telephone').text(job.telephone);
             $('#job-campus').text(job.campus);
         },
