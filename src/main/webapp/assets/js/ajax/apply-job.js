@@ -9,11 +9,19 @@ $(function () {
             data: {"id": jobID},
             async: false,
             success: function (msg) {
-                swal({
-                    title: msg.message,
-                    type: 'success',
-                    timer: 1000
-                });
+                if (msg.message === "请勿重复申请") {
+                    swal({
+                        title: msg.message,
+                        type: 'warning',
+                        timer: 1000
+                    });
+                } else {
+                    swal({
+                        title: msg.message,
+                        type: 'success',
+                        timer: 1000
+                    });
+                }
             },
             error: function (xhr) {
                 swal(xhr.message, "Error!", 'error');
