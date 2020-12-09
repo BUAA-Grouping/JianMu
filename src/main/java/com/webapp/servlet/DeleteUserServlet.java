@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class DeleteUserServlet extends javax.servlet.http.HttpServlet {
-    protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+    protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws  IOException {
         HttpSession session = request.getSession(false);
         String emailId = (String) session.getAttribute("emailID");
         JsonObject jsonObject = new JsonObject();
@@ -33,7 +33,7 @@ public class DeleteUserServlet extends javax.servlet.http.HttpServlet {
         writer.flush();
     }
 
-    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) {
 
     }
 }

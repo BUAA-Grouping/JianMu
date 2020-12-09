@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 
 @WebServlet(name = "ModifyJobServlet")
 public class DeleteJobServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int job_id = Integer.parseInt(request.getParameter("job_id"));
         HttpSession session = request.getSession();
         int user_id = (int) session.getAttribute("id");

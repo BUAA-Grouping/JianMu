@@ -4,6 +4,7 @@ import com.webapp.dao.BaseDao;
 import com.webapp.dao.CollegeDao;
 import com.webapp.dao.JobDao;
 import com.webapp.dao.UserDao;
+import com.webapp.pojo.Apply;
 import com.webapp.pojo.Job;
 import com.webapp.pojo.User;
 
@@ -88,8 +89,7 @@ public class JobDaoImpl extends BaseDao implements JobDao {
                 "`state`,`profile`,`telephone`,`email`,campus " +
                 "FROM user_post_job,job " +
                 "WHERE `user_id`=? AND job.id=user_post_job.job_id";
-        List<Job> jobs = queryForList(Job.class, sql, userId);
-        return jobs;
+        return queryForList(Job.class, sql, userId);
     }
 
     @Override
@@ -102,5 +102,12 @@ public class JobDaoImpl extends BaseDao implements JobDao {
     public Timestamp queryStartTimeByJobId(int jobId) {
         String sql = "SELECT create_at `startTime` FROM `job` WHERE id=?";
         return queryForSingleValue(sql, jobId);
+    }
+
+    @Override
+    public List<Apply> queryApplies(int jobId) {
+        String sql = "SELECT user_id userId,job_id jobId,status," +
+                "apply_at applyAt,reply_at replyAt FROM user_apply_job where job_id=?";
+        return queryForList(Apply.class, sql, jobId);
     }
 }

@@ -1,5 +1,6 @@
 package com.webapp.dao;
 
+import com.webapp.pojo.Apply;
 import com.webapp.pojo.Job;
 import com.webapp.pojo.User;
 
@@ -48,4 +49,6 @@ public interface JobDao {
     Timestamp queryEndTimeByJobId(int jobId);
 
     Timestamp queryStartTimeByJobId(int jobId);
+
+    List<Apply> queryApplies(int jobId);
 }
