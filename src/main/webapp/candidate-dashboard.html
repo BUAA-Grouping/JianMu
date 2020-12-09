@@ -42,6 +42,7 @@
     </style>
     <script src="assets/js/getTime.js"></script>
     <script src="assets/js/ajax/quit.js"></script>
+    <script src="assets/js/ajax/manage-job.js"></script>
 </head>
 
 <body class="green-skin">
@@ -353,7 +354,7 @@
 
                             <div class="tr-single-box">
                                 <div class="tr-single-header">
-                                    <h4><i class="ti-check"></i> 项目经历</h4>
+                                    <h4><i class="ti-check"></i>项目经历</h4>
                                 </div>
 
                                 <div class="tr-single-body">
@@ -457,7 +458,7 @@
                                                 <img src="assets/img/软件学院.png" class="mx-auto" alt=""/>
                                             </div>
                                             <div class="mg-list-caption">
-                                                <h4 class="mg-title">软件工程大作业</h4>
+                                                <a  href="candidate-detail.html" class="mg-title">软件工程大作业</a>
                                                 <span class="mg-subtitle">软件学院</span>
 
                                             </div>
@@ -465,10 +466,10 @@
 
                                         <div class="mg-action">
                                             <div class="btn-group ml-2">
-                                                <a href="job-detail.html" class="btn btn-view" data-toggle="tooltip"
-                                                   data-placement="top" title="查看任务详情"><i class="ti-eye"></i></a>
-                                                <a href="#" class="mg-delete ml-2" data-toggle="tooltip"
-                                                   data-placement="top" title="删除"><i class="ti-trash"></i></a>
+                                                <div href="#" class="btn btn-view" data-toggle="tooltip"
+                                                   data-placement="top" title="查看任务详情"><i class="ti-check"></i></div>
+                                                <div href="" class="mg-delete ml-2" data-toggle="tooltip"
+                                                   data-placement="top" title="删除"><i class="ti-close"></i></div>
                                             </div>
                                         </div>
 
@@ -492,147 +493,7 @@
                                     <div class="row">
 
                                         <div id="job-cards" class="col-md-12">
-
-
-                                            <div class="card">
-                                                <div class="card-header" id="headingOne">
-                                                    <h2 class="mb-0">
-                                                        <button class="btn btn-link" type="button"
-                                                                data-toggle="collapse" data-target="#collapseOne"
-                                                                aria-expanded="true" aria-controls="collapseOne">
-                                                            <div class="mg-list-wrap">
-                                                                <div class="mg-list-thumb">
-                                                                    <img src="assets/img/计算机学院.png" class="mx-auto"
-                                                                         alt=""/>
-                                                                </div>
-                                                                <div class="mg-list-caption">
-                                                                    <h4 class="mg-title">数据库大作业</h4>
-                                                                </div>
-                                                            </div>
-                                                        </button>
-                                                    </h2>
-                                                </div>
-
-                                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                                                     data-parent="#accordionExample">
-                                                    <div class="card-body">
-                                                        <div class="mg-list-wrap">
-                                                            <div class="mg-list-thumb">
-                                                                <img src="assets/img/user-6.jpg" class="mx-auto"
-                                                                     alt=""/>
-                                                            </div>
-                                                            <div class="mg-list-caption">
-                                                                <h3 class="mg-title">小美</h3>
-                                                                <span class="mg-subtitle">产品经理</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="mg-action">
-                                                            <div class="btn-group custom-drop">
-                                                                <button type="button" class="btn btn-more"
-                                                                        data-toggle="dropdown" aria-haspopup="true"
-                                                                        aria-expanded="false">
-                                                                    <i class="ti-more"></i>
-                                                                </button>
-                                                                <div class="dropdown-menu pull-right animated flipInX">
-                                                                    <a href="candidate-detail.html">查看个人主页</a>
-                                                                    <!--记得修改-->
-                                                                    <a>此处为项目名</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-group ml-2">
-                                                                <a href="#" class="mg-delete"><i
-                                                                        class="ti-trash"></i></a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mg-list-wrap">
-                                                            <div class="mg-list-thumb">
-                                                                <img src="assets/img/user-6.jpg" class="mx-auto"
-                                                                     alt=""/>
-                                                            </div>
-                                                            <div class="mg-list-caption">
-                                                                <h3 class="mg-title">小美</h3>
-                                                                <span class="mg-subtitle">产品经理</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="mg-action">
-                                                            <div class="btn-group custom-drop">
-                                                                <button type="button" class="btn btn-more"
-                                                                        data-toggle="dropdown" aria-haspopup="true"
-                                                                        aria-expanded="false">
-                                                                    <i class="ti-more"></i>
-                                                                </button>
-                                                                <div class="dropdown-menu pull-right animated flipInX">
-                                                                    <a href="candidate-detail.html">查看个人主页</a>
-                                                                    <!--记得修改-->
-                                                                    <a>此处为项目名</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-group ml-2">
-                                                                <a href="#" class="mg-delete"><i
-                                                                        class="ti-trash"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="card">
-                                                <div class="card-header" id="headingTwo">
-                                                    <h2 class="mb-0">
-                                                        <button class="btn btn-link" type="button"
-                                                                data-toggle="collapse" data-target="#collapseTwo"
-                                                                aria-expanded="true" aria-controls="collapseTwo">
-                                                            <div class="mg-list-wrap">
-                                                                <div class="mg-list-thumb">
-                                                                    <img src="assets/img/计算机学院.png" class="mx-auto"
-                                                                         alt=""/>
-                                                                </div>
-                                                                <div class="mg-list-caption">
-                                                                    <h4 class="mg-title">数据库大作业</h4>
-                                                                </div>
-                                                            </div>
-                                                        </button>
-                                                    </h2>
-                                                </div>
-
-                                                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
-                                                     data-parent="#accordionExample">
-                                                    <div class="card-body">
-                                                        <div class="mg-list-wrap">
-                                                            <div class="mg-list-thumb">
-                                                                <img src="assets/img/user-6.jpg" class="mx-auto"
-                                                                     alt=""/>
-                                                            </div>
-                                                            <div class="mg-list-caption">
-                                                                <h3 class="mg-title">小美</h3>
-                                                                <span class="mg-subtitle">产品经理</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="mg-action">
-                                                            <div class="btn-group custom-drop">
-                                                                <button type="button" class="btn btn-more"
-                                                                        data-toggle="dropdown" aria-haspopup="true"
-                                                                        aria-expanded="false">
-                                                                    <i class="ti-more"></i>
-                                                                </button>
-                                                                <div class="dropdown-menu pull-right animated flipInX">
-                                                                    <a href="candidate-detail.html">查看个人主页</a>
-                                                                    <!--记得修改-->
-                                                                    <a>此处为项目名</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="btn-group ml-2">
-                                                                <a href="#" class="mg-delete"><i
-                                                                        class="ti-trash"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
+                                            <!--自动添加-->
                                         </div>
                                     </div>
                                 </div>

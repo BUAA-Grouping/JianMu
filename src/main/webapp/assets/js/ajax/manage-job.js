@@ -1,99 +1,126 @@
 $(function () {
     $.ajax({
         type: "post",
-        url: "http://localhost:8080/JianMu_war/job_search",
+        url: "http://localhost:8080/JianMu_war/manage",
         dataType: "json",
         async: false,
         success: function (msg) {
-            addJob(msg);
+            addList(msg);
         },
         error: function (xhr) {
             swal(xhr.message, "Error!", 'error');
         }
     });
-    $("#search-job").click(function (message) {
-        $('#jobs').empty();
-        $('#pages').empty();
-        let $keyword = $('#key-words').val();
-        let $college = $('#category').val();
-        let $campus = $('#category-2').val();
-        $.ajax({
-            type: "post",
-            url: "http://localhost:8080/JianMu_war/job_search",
-            data: {
-                "keyword": $keyword,
-                "campus": $campus,
-                "college": $college
-            },
-            dataType: "json",
-            async: false,
-            success: function (msg) {
-                addTab(msg);
-            },
-            error: function (xhr) {
-                swal(xhr.message, "Error!", 'error');
-            }
-        });
-    });
 })
 
-function addJob(msg) {
-    if (msg.message === "成功找到相关项目") {
-        let postJobID = 0;
-        let length = msg.jobList.length;
-        $('#job-cards').append('<div class="card">\n' +
-            '                        <div class="card-header" id="heading' + postJobID + '"' + '>\n' +
-            '                            <h2 class="mb-0">\n' +
-            '                                  <button class="btn btn-link" type="button"\n' +
-            '                                          data-toggle="collapse" data-target="#collapse' + postJobID + '"' + '\n' +
-            '                                          aria-expanded="true" aria-controls="collapse' + postJobID + '"' + '>\n' +
-            '                                          <div class="mg-list-wrap">\n' +
-            '                                               <div class="mg-list-thumb">\n' +
-            '                                                   <img src="assets/img/计算机学院.png" class="mx-auto" alt=""/>\n' +
-            '                                                                </div>\n' +
-            '                                                                <div class="mg-list-caption">\n' +
-            '                                                                    <h4 class="mg-title">数据库大作业</h4>\n' +
-            '                                                                </div>\n' +
-            '                                                            </div>\n' +
-            '                                                        </button>\n' +
-            '                                                    </h2>\n' +
-            '                                                </div>\n' +
-            '\n' +
-            '                                                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"\n' +
-            '                                                     data-parent="#accordionExample">\n' +
-            '                                                    <div class="card-body">\n' +
-            '                                                        <div class="mg-list-wrap">\n' +
-            '                                                            <div class="mg-list-thumb">\n' +
-            '                                                                <img src="assets/img/user-6.jpg" class="mx-auto"\n' +
-            '                                                                     alt=""/>\n' +
-            '                                                            </div>\n' +
-            '                                                            <div class="mg-list-caption">\n' +
-            '                                                                <h3 class="mg-title">小美</h3>\n' +
-            '                                                                <span class="mg-subtitle">产品经理</span>\n' +
-            '                                                            </div>\n' +
-            '                                                        </div>\n' +
-            '\n' +
-            '                                                        <div class="mg-action">\n' +
-            '                                                            <div class="btn-group custom-drop">\n' +
-            '                                                                <button type="button" class="btn btn-more"\n' +
-            '                                                                        data-toggle="dropdown" aria-haspopup="true"\n' +
-            '                                                                        aria-expanded="false">\n' +
-            '                                                                    <i class="ti-more"></i>\n' +
-            '                                                                </button>\n' +
-            '                                                                <div class="dropdown-menu pull-right animated flipInX">\n' +
-            '                                                                    <a href="candidate-detail.html">查看个人主页</a>\n' +
-            '                                                                    <!--记得修改-->\n' +
-            '                                                                    <a>此处为项目名</a>\n' +
-            '                                                                </div>\n' +
-            '                                                            </div>\n' +
-            '                                                            <div class="btn-group ml-2">\n' +
-            '                                                                <a href="#" class="mg-delete"><i\n' +
-            '                                                                        class="ti-trash"></i></a>\n' +
-            '                                                            </div>\n' +
-            '                                                        </div>\n' +
-            '                                                    </div>\n' +
-            '                                                </div>\n' +
-            '                                            </div>');
-
+function addList(msg) {
+    let list = msg.jobList;
+    let applying = list[0];
+    let accept = list[1];
+    let deny = list[2];
+    for (let i = 0; i < applying.length; i = i + 1) {
+        addJob(applying[i], i, 0);
     }
+    for (let i = 0; i < accept.length; i = i + 1) {
+        addJob(applying[i], i, 1);
+    }
+    for (let i = 0; i < deny.length; i = i + 1) {
+        addJob(applying[i], i, 2);
+    }
+}
+
+function addJob(item, postJobID, type) {
+    let job = item.job;
+    let appliers = item.applies;
+    let applyString = '';
+    for (let i = 0; i < appliers.length; i++) {
+        applyString += addApplier(appliers[i], type);
+    }
+
+    $('#job-cards').append(
+        '<div class="card">\n' +
+        '   <div class="card-header" id="heading' + postJobID + '"' + '>\n' +
+        '       <h2 class="mb-0">\n' +
+        '           <button class="btn btn-link" type="button"\n' +
+        '               data-toggle="collapse" data-target="#collapse' + postJobID + '"' + '\n' +
+        '               aria-expanded="true" aria-controls="collapse' + postJobID + '"' + '>\n' +
+        '               <div class="mg-list-wrap">\n' +
+        '                   <div class="mg-list-thumb">\n' +
+        '                       <img src="assets/img/计算机学院.png" class="mx-auto" alt=""/>\n' +
+        '                   </div>\n' +
+        '                   <div class="mg-list-caption">\n' +
+        '                       <h4 class="mg-title">' + job.name + '</h4>\n' +
+        '                   </div>\n' +
+        '               </div>\n' +
+        '           </button>\n' +
+        '       </h2>\n' +
+        '   </div>\n' +
+        '   <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"\n' +
+        '        data-parent="#accordionExample">\n' +
+        '       <div class="card-body">\n' +
+        '           <div class="manage-list">' +
+        applyString +
+        '           </div>' +
+        '       </div>\n' +
+        '   </div>\n' +
+        '</div>'
+    );
+}
+
+function addApplier(applier, type) {
+    if (type === 0) {
+        return (
+            '<div class="mg-list-wrap">\n' +
+            '   <div class="mg-list-thumb">\n' +
+            '       <img src="assets/img/软件学院.png" class="mx-auto" alt=""/>\n' +
+            '   </div>\n' +
+            '   <div class="mg-list-caption">\n' +
+            '       <a href="candidate-detail.html#' + applier.userId + 'class="mg-title">' + applier.name + '</a>\n' +
+            '   </div>\n' +
+            '</div>\n' +
+            '<div class="mg-action">\n' +
+            '   <div class="btn-group ml-2">\n' +
+            '       <a href="#" id="pass-applier" class="btn btn-view" data-toggle="tooltip"\n' +
+            '           data-placement="top" title="通过申请"><i class="ti-check"></i></a>\n' +
+            '       <a href="#" id="deny-applier" class="mg-delete ml-2" data-toggle="tooltip"\n' +
+            '           data-placement="top" title="拒绝申请"><i class="ti-close"></i></a>\n' +
+            '   </div>\n' +
+            '</div>'
+        );
+    } else if (type === 1) {
+        return (
+            '<div class="mg-list-wrap">\n' +
+            '   <div class="mg-list-thumb">\n' +
+            '       <img src="assets/img/软件学院.png" class="mx-auto" alt=""/>\n' +
+            '   </div>\n' +
+            '   <div class="mg-list-caption">\n' +
+            '       <a href="candidate-detail.html#' + applier.userId + 'class="mg-title">' + applier.name + '</a>\n' +
+            '   </div>\n' +
+            '</div>\n' +
+            '<div class="mg-action">\n' +
+            '   <div class="btn-group ml-2">\n' +
+            '       <div class="btn btn-view" data-toggle="tooltip" data-placement="top">' +
+            '           已通过该成员</div>\n' +
+            '   </div>\n' +
+            '</div>'
+        );
+    } else {
+        return (
+            '<div class="mg-list-wrap">\n' +
+            '   <div class="mg-list-thumb">\n' +
+            '       <img src="assets/img/软件学院.png" class="mx-auto" alt=""/>\n' +
+            '   </div>\n' +
+            '   <div class="mg-list-caption">\n' +
+            '       <a href="candidate-detail.html#' + applier.userId + 'class="mg-title">' + applier.name + '</a>\n' +
+            '   </div>\n' +
+            '</div>\n' +
+            '<div class="mg-action">\n' +
+            '   <div class="btn-group ml-2">\n' +
+            '       <div class="mg-delete ml-2" data-toggle="tooltip"\n' +
+            '           data-placement="top" >已拒绝该成员</div>\n' +
+            '   </div>\n' +
+            '</div>'
+        );
+    }
+
 }
