@@ -94,7 +94,7 @@ public class JobDaoImpl extends BaseDao implements JobDao {
 
     @Override
     public Timestamp queryEndTimeByJobId(int jobId) {
-        String sql = "SELECT expected_end_time `expectedEndTime` FROM `post` WHERE job_id=?";
+        String sql = "SELECT expected_end_time `expectedEndTime` FROM user_post_job WHERE job_id=?";
         return queryForSingleValue(sql, jobId);
     }
 
