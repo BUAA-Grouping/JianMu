@@ -10,7 +10,7 @@ $(function () {
         success: function (msg) {
             let job = JSON.parse(msg.job);
             let poster=JSON.parse(msg.poster);
-            let endTime=JSON.parse(msg.endTime);
+            let endTime=msg.endTime;
             $('#expected-end-time').text(endTime);
             $('#expected-num').text(job.exceptedNumOfMember);
             $('#job-profile').text(job.profile);

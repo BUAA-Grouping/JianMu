@@ -7,13 +7,18 @@ import java.sql.Timestamp;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter @Setter
+@Getter
+@Setter
 public class Apply implements Serializable {
     int userId;
     int jobId;
     int status;
     Timestamp applyAt;
     Timestamp replyAt;
+
+    public Apply() {
+
+    }
 
     public Apply(int userId, int jobId, int status, Timestamp applyAt, Timestamp replyAt) {
         this.userId = userId;
