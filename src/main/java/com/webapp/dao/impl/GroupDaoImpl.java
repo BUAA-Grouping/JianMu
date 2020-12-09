@@ -10,7 +10,7 @@ public class GroupDaoImpl extends BaseDao implements GroupDao {
     @Override
     public boolean createGroup(Group group) {
         String sql = "INSERT INTO `group`(title,leader_id,state,job_id) VALUES (?,?,?,?)";
-        return update(sql, group.getTitle(), group.getTitle(),
+        return update(sql, group.getTitle(), group.getLeaderId(),
                 group.getState(), group.getJobId()) > 0;
     }
 }
