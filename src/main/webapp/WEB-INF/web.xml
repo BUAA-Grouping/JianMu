@@ -64,6 +64,10 @@
         <servlet-name>QuitServlet</servlet-name>
         <servlet-class>com.webapp.servlet.QuitServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UserInfoServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.UserInfoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignInServlet</servlet-name>
         <url-pattern>/sign_in</url-pattern>
@@ -99,5 +103,9 @@
     <servlet-mapping>
         <servlet-name>ManageServlet</servlet-name>
         <url-pattern>/manage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserInfoServlet</servlet-name>
+        <url-pattern>/info</url-pattern>
     </servlet-mapping>
 </web-app>
