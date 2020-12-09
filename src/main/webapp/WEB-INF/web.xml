@@ -68,6 +68,10 @@
         <servlet-name>UserInfoServlet</servlet-name>
         <servlet-class>com.webapp.servlet.UserInfoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TeacherSignUpServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.TeacherSignUpServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignInServlet</servlet-name>
         <url-pattern>/sign_in</url-pattern>
@@ -107,5 +111,9 @@
     <servlet-mapping>
         <servlet-name>UserInfoServlet</servlet-name>
         <url-pattern>/info</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TeacherSignUpServlet</servlet-name>
+        <url-pattern>/teacherSignUp</url-pattern>
     </servlet-mapping>
 </web-app>
