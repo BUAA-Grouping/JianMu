@@ -8,17 +8,19 @@ $(function () {
         data: {"id": jobID},
         async: false,
         success: function (msg) {
-            $('#expected-end-time').text(msg.job.expected_end_time);
-            $('#expected-num').text(msg.job.exceptedNumOfMember);
-            $('#job-profile').text(msg.job.profile);
-            $('#job-title').text(msg.job.title);
-            $('#major').text(msg.job.major);
-            $('#campus').text(msg.job.campus);
-            $('#poster-name').text(msg.poster.name);
-            $('#poster-major').text(msg.poster.major);
-            $('#job-email').text(msg.job.email);
-            $('#job-telephone').text(msg.job.telephone);
-            $('#job-campus').text(msg.job.campus);
+            let job = JSON.parse(msg.job);
+            let poster=JSON.parse(msg.poster);
+            $('#expected-end-time').text(job.expected_end_time);
+            $('#expected-num').text(job.exceptedNumOfMember);
+            $('#job-profile').text(job.profile);
+            $('#job-title').text(job.title);
+            $('#major').text(job.major);
+            $('#campus').text(job.campus);
+            $('#poster-name').text(poster.name);
+            $('#poster-major').text(poster.major);
+            $('#job-email').text(job.email);
+            $('#job-telephone').text(job.telephone);
+            $('#job-campus').text(job.campus);
         },
         error: function (xhr) {
             swal(xhr.message, "Error!", 'error');
