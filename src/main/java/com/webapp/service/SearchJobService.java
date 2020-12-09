@@ -18,4 +18,6 @@ public interface SearchJobService {
     Timestamp getEndTime(int jobId);
 
     List<List<ApplyResponse>> getApplies(int userId);
+
+    boolean reply(int userId, int jobId, int status);
 }

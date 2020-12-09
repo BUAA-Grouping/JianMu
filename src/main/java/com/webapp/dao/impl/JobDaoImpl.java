@@ -24,6 +24,8 @@ public class JobDaoImpl extends BaseDao implements JobDao {
         job.setState(1);
         String sql = "INSERT INTO job(`title`,`college_id`,`campus`,`expected_num_of_member`,`state`,`profile`,`email`,`telephone`)" +
                 " VALUES (?,?,?,?,?,?,?,?)";
+
+
         int jobId = ((BigInteger) insert(sql, job.getTitle(), job.getCollege(), job.getCampus(),
                 job.getExceptedNumOfMember(), job.getState(), job.getProfile(), job.getEmailId(),
                 job.getTelephone())).intValue();

@@ -63,4 +63,14 @@ public class SearchJobServiceImpl implements SearchJobService {
         }
         return res;
     }
+
+    @Override
+    public boolean reply(int userId, int jobId, int status) {
+        Apply apply = new Apply();
+        apply.setUserId(userId);
+        apply.setJobId(jobId);
+        apply.setStatus(status);
+        apply.setReplyAt(new Timestamp(System.currentTimeMillis()));
+        return jobDao.replyApply(apply);
+    }
 }
