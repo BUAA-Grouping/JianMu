@@ -2,6 +2,8 @@ package com.webapp.servlet;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.webapp.dao.JobDao;
+import com.webapp.dao.impl.JobDaoImpl;
 import com.webapp.pojo.Apply;
 import com.webapp.pojo.ApplyResponse;
 import com.webapp.pojo.Job;
@@ -20,6 +22,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "ManageServlet")
@@ -47,7 +50,7 @@ public class ManageServlet extends HttpServlet {
         int id = (int) session.getAttribute("id");
 
         SearchJobService searchJobService = new SearchJobServiceImpl();
-        List<List<ApplyResponse>> responses = searchJobService.getApplies(id);
+        List<ApplyResponse> responses = searchJobService.getApplies(id);
         Gson gson = new Gson();
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("jobList", gson.toJson(responses));
@@ -55,6 +58,14 @@ public class ManageServlet extends HttpServlet {
         UserService userService = new UserServiceImpl();
         List<Apply> myApply = userService.getApplies(id);
         jsonObject.addProperty("myApply", gson.toJson(myApply));
+        List<Job> myApplyJob = new ArrayList<>();
+
+        JobDao jobDao = new JobDaoImpl();
+        for (Apply apply : myApply) {
+            myApplyJob.add(jobDao.queryInfoByJobId(apply.getJobId()));
+        }
+        jsonObject.addProperty("myApplyJob", gson.toJson(myApplyJob));
+
 
         response.setContentType("text/html;charset=utf-8");
         PrintWriter writer = response.getWriter();

@@ -47,19 +47,27 @@ public class SearchJobServiceImpl implements SearchJobService {
     }
 
     @Override
-    public List<List<ApplyResponse>> getApplies(int userId) {
+    public List<ApplyResponse> getApplies(int userId) {
         List<Job> jobList = jobDao.queryJobByPoster(userId);
-        List<List<ApplyResponse>> res = new ArrayList<>();
-        res.add(new ArrayList<ApplyResponse>());
-        res.add(new ArrayList<ApplyResponse>());
-        res.add(new ArrayList<ApplyResponse>());
+        List<ApplyResponse> res = new ArrayList<>();
         for (Job j : jobList) {
             List<Apply> applies = jobDao.queryApplies(j.getId());
-            List<User> users = new ArrayList<>();
+            List<List<Apply>> app = new ArrayList<>();
+            app.add(new ArrayList<Apply>());
+            app.add(new ArrayList<Apply>());
+            app.add(new ArrayList<Apply>());
+
+            List<List<User>> users = new ArrayList<>();
+            users.add(new ArrayList<User>());
+            users.add(new ArrayList<User>());
+            users.add(new ArrayList<User>());
+
             for (Apply apply : applies) {
-                users.add(userDao.queryInfoById(apply.getUserId()));
+                app.get(apply.getStatus() - 1).add(apply);
+                users.get(apply.getStatus() - 1).add(userDao.queryInfoById(apply.getUserId()));
             }
-            res.get(j.getState() - 1).add(new ApplyResponse(j, applies, users));
+
+            res.add(new ApplyResponse(j, app, users));
         }
         return res;
     }

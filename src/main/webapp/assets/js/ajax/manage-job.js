@@ -140,7 +140,7 @@ function pass(userId, jobId, status) {
         url: "http://localhost:8080/JianMu_war/manage",
         data: {
             "userId": userId,
-            "jonId": jobId,
+            "jobId": jobId,
             "status": status
         },
         dataType: "json",
