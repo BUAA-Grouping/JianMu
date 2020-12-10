@@ -15,7 +15,7 @@ $(function () {
         let currentTab = getCurrentTabIndex();
         let $realname, $schoolID, type;
         type = currentTab;
-        if (currentTab === 2) {
+        if (currentTab === 0) {
             $realname = $("#student-real-name").val();
             $schoolID = $("#student-id").val();
         } else {
@@ -62,15 +62,9 @@ $(function () {
 })
 
 function getCurrentTabIndex() {
-    var $tabs = $('#signup-tab').children('div');
-    var i = 0;
-    $tabs.each(function () {
-        var $tab = $(this);
-        if ($tab.hasClass('active')) {
-            return false;
-        } else {
-            i++;
-        }
-    });
-    return i;
+    if ($("#student-info-tab").hasClass('active')) {
+        return 0;
+    } else {
+        return 1;
+    }
 }
