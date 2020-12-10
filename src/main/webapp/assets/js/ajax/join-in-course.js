@@ -8,14 +8,15 @@ $(function () {
         dataType: "json",
         async: false,
         success: function (msg) {
-            swal({
-                title: msg.message,
-                type: 'success',
-                timer: 1000
-            });
-            $("#join-course").hide();
-            $("#create-job").show();
-            $("#create-job").attr("href", "candidate-dashboard.html#post-new-job#" + courseID);
+            if (msg.message === "已加入课程") {
+                $("#join-course").hide();
+                $("#create-job").show();
+                $("#create-job").attr("href", "candidate-dashboard.html#post-new-job#" + courseID);
+            } else if (msg.message === "已加入项目") {
+
+            }else{
+
+            }
         },
         error: function (xhr) {
             swal(xhr.message, "Error!", 'error');
