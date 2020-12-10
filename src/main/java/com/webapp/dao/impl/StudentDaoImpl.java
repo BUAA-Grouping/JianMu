@@ -4,7 +4,6 @@ import com.webapp.pojo.Student;
 import com.webapp.pojo.User;
 
 public class StudentDaoImpl extends UserDaoImpl {
-
     @Override
     public boolean save(User user) {
         if (!(user instanceof Student)) {
@@ -63,8 +62,7 @@ public class StudentDaoImpl extends UserDaoImpl {
 
     @Override
     public Student queryByEmail(String email) {
-        String sql = "SELECT user.`id`,`name`,`email` `emailID`,`password`" +
-                " FROM user,student WHERE `email`=? AND user.id=student.user_id";
+        String sql = "SELECT `id`,`name`,`email` `emailID`,`password` FROM user WHERE `email`=?";
         return queryForOne(Student.class, sql, email);
     }
 }
