@@ -15,7 +15,6 @@ public class SignServiceImpl implements SignService {
 
     @Override
     public int signIn(String emailId, String password, User retUser) {
-
         User user = studentDao.queryByEmail(emailId);
         int type = 0;
         if (user == null) {
@@ -42,34 +41,31 @@ public class SignServiceImpl implements SignService {
 
 
     @Override
-    public int registerUser(String realname, String password, String emailId, String schoolId) {
-        Student student = new Student();
-        student.setName(realname);
-        student.setPassword(password);
-        student.setEmailID(emailId);
-        student.setStudentId(schoolId);
-        if (studentDao.queryByEmail(emailId) != null) {
-            return -1;
-        }
-        if (!studentDao.save(student)) {
-            return -2;
-        }
-        return 0;
-    }
-
-    @Override
-    public int registerTeacher(String realname, String password, String emailID, String teacherId) {
-
-        Teacher teacher = new Teacher();
-        teacher.setName(realname);
-        teacher.setPassword(password);
-        teacher.setEmailID(emailID);
-        teacher.setTeacherId(teacherId);
-        if (teacherDao.queryByEmail(emailID) != null) {
-            return -1;
-        }
-        if (!teacherDao.save(teacher)) {
-            return -2;
+    public int registerUser(String realname, String password, String emailId, String id, int type) {
+        if (type == 0) {
+            Student student = new Student();
+            student.setName(realname);
+            student.setPassword(password);
+            student.setEmailID(emailId);
+            student.setStudentId(id);
+            if (studentDao.queryByEmail(emailId) != null) {
+                return -1;
+            }
+            if (!studentDao.save(student)) {
+                return -2;
+            }
+        } else {
+            Teacher teacher = new Teacher();
+            teacher.setName(realname);
+            teacher.setPassword(password);
+            teacher.setEmailID(emailId);
+            teacher.setTeacherId(id);
+            if (teacherDao.queryByEmail(emailId) != null) {
+                return -1;
+            }
+            if (!teacherDao.save(teacher)) {
+                return -2;
+            }
         }
         return 0;
     }

@@ -4,7 +4,6 @@ import com.google.gson.JsonObject;
 import com.webapp.service.SignService;
 import com.webapp.service.impl.SignServiceImpl;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,13 +15,14 @@ import java.io.PrintWriter;
 public class SignUpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String realname = request.getParameter("realname");
-        String schoolId = request.getParameter("schoolID");
         String emailID = request.getParameter("emailID");
         String password = request.getParameter("password");
+        int type = Integer.parseInt(request.getParameter("type"));
+        String id = request.getParameter("schoolID");
 
         SignService signService = new SignServiceImpl();
         JsonObject jsonObject = new JsonObject();
-        switch (signService.registerUser(realname, password, emailID, schoolId)) {
+        switch (signService.registerUser(realname, password, emailID, id, type != 2 ? 0 : 1)) {
             case 0:
                 jsonObject.addProperty("message", "注册成功");
                 break;
