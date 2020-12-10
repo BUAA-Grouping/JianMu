@@ -48,6 +48,10 @@
         <servlet-name>StudyServlet</servlet-name>
         <servlet-class>com.webapp.servlet.StudyServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MemberDeleteServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.MemberDeleteServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DeleteUserServlet</servlet-name>
         <url-pattern>/user_delete</url-pattern>
@@ -139,5 +143,9 @@
     <servlet-mapping>
         <servlet-name>StudyServlet</servlet-name>
         <url-pattern>/study</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MemberDeleteServlet</servlet-name>
+        <url-pattern>/member_delete</url-pattern>
     </servlet-mapping>
 </web-app>
