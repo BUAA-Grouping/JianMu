@@ -52,7 +52,8 @@ function addTab(msg) {
             for (; k < Math.min(12, length); num++, k++) {
                 let job = msg.jobList[num];
                 let poster = msg.poster[num];
-                $('#jobs').append('<div id="tab' + (num + 1).toString() + '" class="col-lg-4 col-md-6 col-sm-6">\n' +
+                $('#jobs').append(
+                    '<div id="tab' + (num + 1).toString() + '" class="col-lg-4 col-md-6 col-sm-6">\n' +
                     '<div class="classic-joblist ultimate-center">\n' +
                     '<div class="cl-job-employer">\n' +
                     '<div class="cljb-emp-thumg">\n' +
