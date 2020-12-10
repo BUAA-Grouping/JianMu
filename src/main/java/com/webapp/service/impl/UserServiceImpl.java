@@ -4,25 +4,33 @@ import com.webapp.dao.GroupDao;
 import com.webapp.dao.UserDao;
 import com.webapp.dao.impl.GroupDaoImpl;
 import com.webapp.dao.impl.StudentDaoImpl;
-import com.webapp.pojo.Apply;
-import com.webapp.pojo.Group;
-import com.webapp.pojo.Student;
-import com.webapp.pojo.User;
+import com.webapp.dao.impl.TeacherDaoImpl;
+import com.webapp.pojo.*;
 import com.webapp.service.UserService;
 
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
     private UserDao userDao = new StudentDaoImpl();
+    private UserDao teacherDao = new TeacherDaoImpl();
 
     @Override
     public User getUser(String emailId) {
-        return userDao.queryInfoByEmail(emailId);
+        User user = userDao.queryInfoByEmail(emailId);
+        if (user == null) {
+            user = teacherDao.queryInfoByEmail(emailId);
+        }
+        return user;
     }
 
     @Override
     public boolean modify(Student student) {
         return userDao.modify(student);
+    }
+
+    @Override
+    public boolean modify(Teacher teacher) {
+        return teacherDao.modify(teacher);
     }
 
     public User getUserByUserId(int userId) {

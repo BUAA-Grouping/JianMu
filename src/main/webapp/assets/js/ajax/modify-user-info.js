@@ -25,6 +25,8 @@ $(function () {
                 $("#manage-courses-tab").show();
                 $("#post-new-course-tab").show();
                 $("#applied-tab").hide();
+                $("#teacherId").show();
+                $("#schoolId").hide();
                 $("#user-greeting").text("您好！" + object.name.substr(0, 1) + "老师");
                 $("#teacherId").attr("value", object.teacherId);
                 $("#teacher-title").attr("value", object.title);
@@ -47,7 +49,7 @@ $(function () {
             userdata = {
                 "emailID": emailID,
                 "name": username,
-                "studentId": teacherId,
+                "teacherId": teacherId,
                 "profile": profile,
                 "collegeId": major,
                 "campus": campus
