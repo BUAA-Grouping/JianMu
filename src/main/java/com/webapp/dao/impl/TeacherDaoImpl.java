@@ -1,5 +1,6 @@
 package com.webapp.dao.impl;
 
+import com.webapp.pojo.Student;
 import com.webapp.pojo.Teacher;
 import com.webapp.pojo.User;
 
@@ -65,5 +66,12 @@ public class TeacherDaoImpl extends UserDaoImpl {
         String sql = "SELECT user.`id`,`name`,`email` `emailID`,`password`" +
                 " FROM user,teacher WHERE `email`=? AND user.id=teacher.user_id";
         return queryForOne(Teacher.class, sql, email);
+    }
+
+    @Override
+    public boolean isInCourse(int userId, int courseId) {
+        String sql = "SELECT teacher_id `id` FROM teacher_teach_course " +
+                "WHERE teacher_id=? AND course_id=?";
+        return queryForOne(Student.class, sql, userId, courseId) != null;
     }
 }

@@ -1,6 +1,8 @@
 use jianmu;
 
 DROP TRIGGER IF EXISTS insert_user ;
+DROP TRIGGER IF EXISTS delete_teacher;
+DROP TRIGGER IF EXISTS delete_student;
 
 DROP TABLE IF EXISTS user_associate_organization;
 DROP TABLE IF EXISTS teacher_teach_course;
@@ -240,3 +242,13 @@ BEGIN
         DELETE FROM `user` WHERE email=NEW.email;
     END IF;
 END;
+
+CREATE TRIGGER delete_teacher
+    AFTER DELETE ON `teacher`
+    FOR EACH ROW
+        DELETE FROM `user` WHERE OLD.user_id=`user`.id;
+
+CREATE TRIGGER delete_student
+    AFTER DELETE ON `student`
+    FOR EACH ROW
+        DELETE FROM `user` WHERE OLD.user_id=`user`.id;

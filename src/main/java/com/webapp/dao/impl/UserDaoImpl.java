@@ -121,4 +121,9 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         return update(sql, userId, groupId) > 0;
     }
 
+    @Override
+    public boolean isInCourse(int userId, int courseId) {
+        return false;
+    }
+
 }

@@ -66,4 +66,11 @@ public class StudentDaoImpl extends UserDaoImpl {
                 " FROM user,student WHERE `email`=? AND user.id=student.user_id";
         return queryForOne(Student.class, sql, email);
     }
+
+    @Override
+    public boolean isInCourse(int userId, int courseId) {
+        String sql = "SELECT student_id `id` FROM std_study_course " +
+                "WHERE student_id=? AND course_id=?";
+        return queryForOne(Student.class, sql, userId, courseId) != null;
+    }
 }

@@ -53,4 +53,6 @@ public interface UserDao {
     public List<Apply> queryApplies(int userId);
 
     public boolean join(int userId, int groupId);
+
+    public boolean isInCourse(int userId, int courseId);
 }
