@@ -63,6 +63,7 @@ public class ModifyUserServlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         PrintWriter writer = response.getWriter();
         jsonObject.addProperty("userdata", gson.toJson(retUser));
+        jsonObject.addProperty("type", (int) session.getAttribute("type"));
         writer.write(jsonObject.toString());
         writer.flush();
     }

@@ -16,7 +16,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(String emailId) {
-        return userDao.queryInfoByEmail(emailId);
+        User user = userDao.queryInfoByEmail(emailId);
+        if (user == null) {
+            user = teacherDao.queryInfoByEmail(emailId);
+        }
+        return user;
     }
 
     @Override
