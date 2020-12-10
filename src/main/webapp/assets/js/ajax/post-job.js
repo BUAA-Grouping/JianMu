@@ -4,7 +4,7 @@ $(function () {
     if (courseID !== '') {
         $.ajax({
             type: "get",
-            url: "http://localhost:8080/JianMu_war/job-post",
+            url: "http://localhost:8080/JianMu_war/job_post",
             data: {"id": courseID},
             dataType: "json",
             async: false,

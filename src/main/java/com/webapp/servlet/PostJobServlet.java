@@ -66,7 +66,8 @@ public class PostJobServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("courseId"));
+        String s = request.getParameter("id");
+        int id = Integer.parseInt(request.getParameter("id"));
         String title = new CourseDaoImpl().queryInfoByCourseId(id).getTitle();
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("courseTitle", title);
