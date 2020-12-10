@@ -1,15 +1,15 @@
 $(function () {
     let ur = location.href;
-    let courseID = decodeURI(ur.split('#')[2]);
-    if (courseID !== '') {
+    let courseId = decodeURI(ur.split('#')[2]);
+    if (courseId !== '') {
         $.ajax({
             type: "get",
             url: "http://localhost:8080/JianMu_war/job_post",
-            data: {"id": courseID},
+            data: {"id": courseId},
             dataType: "json",
             async: false,
             success: function (msg) {
-                $("#job-course").text(msg.courseTitle);
+                $("#job-course").attr("text",msg.courseTitle);
             },
             error: function (xhr) {
                 swal(xhr.message, "Error!", 'error');
@@ -25,7 +25,6 @@ $(function () {
         let telephone = $("#job-telephone").val();
         let emailID = $("#job-email").val();
         let expected_end_time = $("#expected-end-time").val();
-        let courseTitle = $("#job-course").val();
         let jobdata = {
             "emailID": emailID,
             "title": title,
@@ -34,7 +33,7 @@ $(function () {
             "college": college,
             "campus": campus,
             "exceptedNumOfMember": exceptedNumOfMember,
-            "courseTitle": courseTitle
+            "courseId": courseId
         };
         jobdata = JSON.stringify(jobdata);
         $.ajax({
