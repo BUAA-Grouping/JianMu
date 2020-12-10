@@ -10,11 +10,11 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Apply implements Serializable {
-    int userId;
-    int jobId;
-    int status;
-    Timestamp applyAt;
-    Timestamp replyAt;
+    private int userId;
+    private int jobId;
+    private int status;
+    private Timestamp applyAt;
+    private Timestamp replyAt;
 
     public Apply() {
 

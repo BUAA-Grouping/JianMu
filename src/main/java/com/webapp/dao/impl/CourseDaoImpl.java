@@ -2,9 +2,7 @@ package com.webapp.dao.impl;
 
 import com.webapp.dao.BaseDao;
 import com.webapp.dao.CourseDao;
-import com.webapp.pojo.Course;
-import com.webapp.pojo.Student;
-import com.webapp.pojo.Teacher;
+import com.webapp.pojo.*;
 
 import java.math.BigInteger;
 import java.util.List;
@@ -26,8 +24,13 @@ public class CourseDaoImpl extends BaseDao implements CourseDao {
     }
 
     @Override
-    public boolean applyCourse(int userId, int courseId) {
-        return false;
+    public boolean applyCourse(Study study) {
+        String sql = "SELECT user_id FROM student WHERE user_id=?";
+        if (study == null || queryForOne(Student.class, sql, study.getStudentId()) == null) {
+            return false;
+        }
+        sql = "INSERT INTO std_study_course(student_id, course_id, status) VALUES (?,?,1)";
+        return update(sql, study.getStudentId(), study.getCourseId()) > 0;
     }
 
     @Override
@@ -92,5 +95,23 @@ public class CourseDaoImpl extends BaseDao implements CourseDao {
         }
         sql = sql.replaceAll(" AND $", "");
         return queryForList(Course.class, sql);
+    }
+
+    @Override
+    public List<Study> queryStudies(int courseId) {
+        String sql = "SELECT student_id studentId,course_id courseId,status," +
+                "apply_at applyAt,reply_at replyAt " +
+                "FROM std_study_course WHERE course_id=?";
+        return queryForList(Study.class, sql, courseId);
+    }
+
+    @Override
+    public boolean replyStudy(Study study) {
+        if (study == null) {
+            return false;
+        }
+        String sql = "UPDATE std_study_course SET status=?,reply_at=? WHERE course_id=? AND student_id=?";
+        return update(sql, study.getStatus(), study.getReplyAt(),
+                study.getCourseId(), study.getStudentId()) > 0;
     }
 }
