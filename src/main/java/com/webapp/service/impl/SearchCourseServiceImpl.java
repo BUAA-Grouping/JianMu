@@ -42,7 +42,7 @@ public class SearchCourseServiceImpl implements SearchCourseService {
         teacher.setTeacherId(teacher1.getTeacherId());
         teacher.setTitle(teacher1.getTitle());
         teacher.setId(teacher1.getId());
-        eacher.setEmailID(teacher1.getEmailID());
+        teacher.setEmailID(teacher1.getEmailID());
         teacher.setName(teacher1.getName());
         teacher.setCampus(teacher1.getCampus());
         jobList.addAll(jobDao.queryJobsByCourseId(courseId));
