@@ -5,8 +5,7 @@ $(function () {
         type: "post",
         url: "http://localhost:8080/JianMu_war/course_detail",
         dataType: "json",
-        data: {"id": jobID},
-        async: false,
+        data: {"id": jobID},      async: false,
         success: function (msg) {
             let course = JSON.parse(msg.course);
             let teacher = JSON.parse(msg.teacher);
