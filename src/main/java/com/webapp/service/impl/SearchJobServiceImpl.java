@@ -19,8 +19,8 @@ public class SearchJobServiceImpl implements SearchJobService {
     UserDao userDao = new UserDaoImpl();
 
     @Override
-    public int searchJob(String keyword, int college, int campus, List<Job> jobList, List<User> poster, List<Timestamp> expectedEndTime) {
-        jobList.addAll(jobDao.queryJobByConditions(keyword, college, campus));
+    public int searchJob(String keyword, int college, int campus, List<Job> jobList, List<User> poster, List<Timestamp> expectedEndTime,int id) {
+        jobList.addAll(jobDao.queryJobByConditions(keyword, college, campus, id));
         for (Job j : jobList) {
             //TODO filiter
             poster.add(jobDao.queryPosterByJobId(j.getId()));
