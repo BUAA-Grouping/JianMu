@@ -113,6 +113,9 @@ public class JobDaoImpl extends BaseDao implements JobDao {
 
     @Override
     public boolean replyApply(Apply apply) {
+        if (apply == null) {
+            return false;
+        }
         String sql = "UPDATE user_apply_job SET status=?,reply_at=? WHERE job_id=? AND user_id=?";
         return update(sql, apply.getStatus(), apply.getReplyAt(),
                 apply.getJobId(), apply.getUserId()) > 0;

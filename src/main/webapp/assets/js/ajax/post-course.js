@@ -1,5 +1,5 @@
-$(function() {
-    $("#post-course-save-update").click(function(message) {
+$(function () {
+    $("#post-course-save-update").click(function (message) {
         let title = $("#course-title").val();
         let profile = $("#course-description").summernote('code');
         let capacity = $("#capacity").val();
@@ -13,13 +13,13 @@ $(function() {
         courseData = JSON.stringify(courseData);
         $.ajax({
             type: "post",
-            url: "http://localhost:8080/JianMu_war/job_post",
+            url: "http://localhost:8080/JianMu_war/course_post",
             data: {
-                "jobdata": courseData
+                "courseData": courseData
             },
             dataType: "json",
             async: false,
-            success: function(msg) {
+            success: function (msg) {
                 swal({
                     title: msg.message,
                     text: "Success!",
@@ -27,7 +27,7 @@ $(function() {
                     timer: 1000
                 });
             },
-            error: function(xhr) {
+            error: function (xhr) {
                 swal(xhr.message, "Error!", 'error');
             }
         });

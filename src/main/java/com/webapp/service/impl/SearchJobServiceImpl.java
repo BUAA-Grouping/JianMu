@@ -22,6 +22,7 @@ public class SearchJobServiceImpl implements SearchJobService {
     public int searchJob(String keyword, int college, int campus, List<Job> jobList, List<User> poster, List<Timestamp> expectedEndTime) {
         jobList.addAll(jobDao.queryJobByConditions(keyword, college, campus));
         for (Job j : jobList) {
+            //TODO filiter
             poster.add(jobDao.queryPosterByJobId(j.getId()));
             expectedEndTime.add(jobDao.queryEndTimeByJobId(j.getId()));
         }

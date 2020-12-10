@@ -1,7 +1,7 @@
 $(function () {
     $.ajax({
         type: "post",
-        url: "http://localhost:8080/JianMu_war/job_search",
+        url: "http://localhost:8080/JianMu_war/course_search",
         dataType: "json",
         async: false,
         success: function (msg) {
@@ -19,7 +19,7 @@ $(function () {
         let teacher = $('#teacher-name').val();
         $.ajax({
             type: "post",
-            url: "http://localhost:8080/JianMu_war/job_search",
+            url: "http://localhost:8080/JianMu_war/course_search",
             data: {
                 "keyword": keyword,
                 "teacher": teacher,
