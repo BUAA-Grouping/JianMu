@@ -38,11 +38,15 @@
     </servlet>
     <servlet>
         <servlet-name>DetailServlet</servlet-name>
-        <servlet-class>com.webapp.servlet.DetailServlet</servlet-class>
+        <servlet-class>com.webapp.servlet.JobDetailServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ManageServlet</servlet-name>
         <servlet-class>com.webapp.servlet.ManageServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchJobServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.SearchCourseServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>DeleteUserServlet</servlet-name>
@@ -67,6 +71,14 @@
     <servlet>
         <servlet-name>UserInfoServlet</servlet-name>
         <servlet-class>com.webapp.servlet.UserInfoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PostCourseServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.PostCourseServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CourseDetailServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.CourseDetailServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SignInServlet</servlet-name>
@@ -107,5 +119,17 @@
     <servlet-mapping>
         <servlet-name>UserInfoServlet</servlet-name>
         <url-pattern>/info</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchJobServlet</servlet-name>
+        <url-pattern>/course_search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PostCourseServlet</servlet-name>
+        <url-pattern>/course_post</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CourseDetailServlet</servlet-name>
+        <url-pattern>/course_detail</url-pattern>
     </servlet-mapping>
 </web-app>

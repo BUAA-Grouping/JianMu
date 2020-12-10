@@ -13,6 +13,15 @@ public class Job implements Serializable {
     private int college;
     private int exceptedNumOfMember;
     private int state;
+    private int courseId;
+
+    public int getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
+    }
 
     public int getId() {
         return id;

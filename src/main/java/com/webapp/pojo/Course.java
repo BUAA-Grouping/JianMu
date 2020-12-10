@@ -5,12 +5,13 @@ import lombok.Setter;
 
 import java.sql.Timestamp;
 
-@Getter @Setter
+@Getter
+@Setter
 public class Course {
     private int id;
     private String title;
     private int capacity;
-    private int profile;
+    private String profile;
     private int college;
     private Timestamp createAt;
 }
