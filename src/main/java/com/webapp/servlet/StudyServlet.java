@@ -1,6 +1,7 @@
 package com.webapp.servlet;
 
 import com.google.gson.JsonObject;
+import com.webapp.dao.impl.CourseDaoImpl;
 import com.webapp.dao.impl.JobDaoImpl;
 import com.webapp.pojo.Study;
 
@@ -29,7 +30,7 @@ public class StudyServlet extends HttpServlet {
             int userId = (int) session.getAttribute("id");
             String s = request.getParameter("id");
             int courseId = Integer.parseInt(s);
-            if (new JobDaoImpl().queryPosterByJobId(courseId).getId() == userId) {
+            if (new CourseDaoImpl().queryTeachersByCourseId(courseId).get(0).getId() == userId) {
                 jsonObject.addProperty("message", "无需申请自己创建的课程");
             } else {
                 StudyService applyJobService = new StudyServiceImpl();
