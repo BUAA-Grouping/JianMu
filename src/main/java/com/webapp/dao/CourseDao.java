@@ -45,4 +45,6 @@ public interface CourseDao {
      * @return list of studied courses
      */
     List<Course> queryStudiedCourses(int userId);
+
+    List<Course> queryCoursesByConditions(String courseName, String teacherName, int courage);
 }
