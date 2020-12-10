@@ -3,7 +3,7 @@ $(function () {
     let jobID = decodeURI(ur.split('#')[1]);
     $.ajax({
         type: "post",
-        url: "http://localhost:8080/JianMu_war/job_detail",
+        url: "http://localhost:8080/JianMu_war/course_detail",
         dataType: "json",
         data: {"id": jobID},
         async: false,
