@@ -341,6 +341,11 @@
         allowClear: true
     });
 
+    $('#category-1').select2({
+        placeholder: "选择院系...",
+        allowClear: true
+    });
+
     $('#category2').select2({
         placeholder: "选择校区...",
         allowClear: true

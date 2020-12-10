@@ -35,32 +35,32 @@ $(function () {
         }
     });
     $("#save-update").click(function (message) {
-        let $emailID = $("#emailID").val();
-        let $username = $("#user-real-name").val();
+        let emailID = $("#emailID").val();
+        let username = $("#user-real-name").val();
         let greeting = $("#user-greeting").text();
-        let $profile = $("#summernote").val();
-        let $major = $("#category").val();
-        let $campus = $("#category-2").val();
+        let profile = $("#summernote").val();
+        let major = $("#category").val();
+        let campus = $("#category-2").val();
         let userdata;
         if (greeting.substr(greeting.length - 2, 2) === "老师") {
-            let $teacherId = $("#teacherId").val();
+            let teacherId = $("#teacherId").val();
             userdata = {
-                "emailID": $emailID,
-                "name": $username,
-                "studentId": $teacherId,
-                "profile": $profile,
-                "collegeId": $major,
-                "campus": $campus
+                "emailID": emailID,
+                "name": username,
+                "studentId": teacherId,
+                "profile": profile,
+                "collegeId": major,
+                "campus": campus
             };
         }else{
-            let $schoolId = $("#schoolId").val();
+            let schoolId = $("#schoolId").val();
             userdata = {
-                "emailID": $emailID,
-                "name": $username,
-                "studentId": $schoolId,
-                "profile": $profile,
-                "collegeId": $major,
-                "campus": $campus
+                "emailID": emailID,
+                "name": username,
+                "studentId": schoolId,
+                "profile": profile,
+                "collegeId": major,
+                "campus": campus
             };
         }
         userdata = JSON.stringify(userdata);
