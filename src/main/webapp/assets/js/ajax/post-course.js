@@ -7,7 +7,7 @@ $(function() {
         let courseData = {
             "title": title,
             "profile": profile,
-            "college_id": college,
+            "college": college,
             "capacity": capacity
         };
         courseData = JSON.stringify(courseData);
