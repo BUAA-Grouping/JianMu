@@ -22,11 +22,12 @@ public class JobDaoImpl extends BaseDao implements JobDao {
             return false;
         }
         job.setState(1);
-        String sql = "INSERT INTO job(`title`,`college_id`,`campus`,`expected_num_of_member`,`state`,`profile`,`email`,`telephone`)" +
-                " VALUES (?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO job(`title`,`college_id`,`campus`,`expected_num_of_member`," +
+                "`state`,`profile`,`email`,`telephone`,course_id)" +
+                " VALUES (?,?,?,?,?,?,?,?,?)";
         int jobId = ((BigInteger) insert(sql, job.getTitle(), job.getCollege(), job.getCampus(),
                 job.getExceptedNumOfMember(), job.getState(), job.getProfile(), job.getEmailId(),
-                job.getTelephone())).intValue();
+                job.getTelephone(),job.getCourseId())).intValue();
         job.setId(jobId);
         sql = "INSERT INTO user_post_job(`user_id`,`job_id`,`expected_end_time`) VALUES (?,?,?)";
         return update(sql, userId, jobId, expectedEndTime) > 0;
@@ -67,7 +68,7 @@ public class JobDaoImpl extends BaseDao implements JobDao {
                 "`state`,`profile`,`telephone`,`email`,campus " +
                 "FROM job " +
                 "WHERE (course_id IS NULL OR course_id=0 OR course_id IN (" +
-                        "SELECT course_id FROM std_study_course WHERE student_id=? UNION" +
+                        "SELECT course_id FROM std_study_course WHERE student_id=? UNION " +
                         "SELECT course_id FROM teacher_teach_course WHERE teacher_id=?)) AND ";
         if (keyword != null && !keyword.isEmpty()) {
             sql += " `title` LIKE '%" + keyword + "%' AND ";

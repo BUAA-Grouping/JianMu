@@ -41,8 +41,14 @@ public class SearchJobServlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         PrintWriter writer = response.getWriter();
         JsonObject jsonObject = new JsonObject();
+        
+        int userId;
+        try {
+            userId = (int) request.getSession().getAttribute("id");
+        } catch (Exception e) {
+            userId = 0;
+        }
 
-        int userId = (int) request.getSession().getAttribute("id");
         switch (searchJobService.searchJob(keyword, college, campus, jobList, poster, expected_end_time, userId)) {
             case -1:
                 jsonObject.addProperty("message", "没有符合条件的项目");

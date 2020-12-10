@@ -33,7 +33,6 @@ $(function () {
             "college": college,
             "campus": campus,
             "exceptedNumOfMember": exceptedNumOfMember,
-            "courseId": courseId
         };
         jobdata = JSON.stringify(jobdata);
         $.ajax({
@@ -41,7 +40,8 @@ $(function () {
             url: "http://localhost:8080/JianMu_war/job_post",
             data: {
                 "jobdata": jobdata,
-                "expected_end_time": expected_end_time
+                "expected_end_time": expected_end_time,
+                "courseId": courseId
             },
             dataType: "json",
             async: false,
