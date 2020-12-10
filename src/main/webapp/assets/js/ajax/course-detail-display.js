@@ -20,7 +20,7 @@ $(function () {
             $('#job-email').text(teacher.emailID);
             $('#job-telephone').text(teacher.telephone);
             $('#course-campus').text(teacher.campus);
-            addList(jobList, teamList);
+            addJobList(jobList, teamList);
         },
         error: function (xhr) {
             swal(xhr.message, "Error!", 'error');
