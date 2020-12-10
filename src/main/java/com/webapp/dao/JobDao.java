@@ -52,5 +52,5 @@ public interface JobDao {
 
     List<Apply> queryApplies(int jobId);
 
-    public boolean replyApply(Apply apply);
+    boolean replyApply(Apply apply);
 }

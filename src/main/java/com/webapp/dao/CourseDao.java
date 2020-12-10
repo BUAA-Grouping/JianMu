@@ -1,8 +1,6 @@
 package com.webapp.dao;
 
-import com.webapp.pojo.Course;
-import com.webapp.pojo.Student;
-import com.webapp.pojo.Teacher;
+import com.webapp.pojo.*;
 
 import java.util.List;
 
@@ -17,14 +15,7 @@ public interface CourseDao {
      */
     boolean createCourse(int userId, Course course);
 
-    /**
-     * ensure the user is a student
-     *
-     * @param userId   user_id of a student
-     * @param courseId id of course
-     * @return succeed applying course or not
-     */
-    boolean applyCourse(int userId, int courseId);
+    boolean applyCourse(Study study);
 
     boolean deleteCourse(int courseId);
 
@@ -51,4 +42,8 @@ public interface CourseDao {
     List<Course> queryStudiedCourses(int userId);
 
     List<Course> queryCoursesByConditions(String courseName, String teacherName, int courage);
+
+    List<Study> queryStudies(int courseId);
+
+    boolean replyStudy(Study study);
 }
