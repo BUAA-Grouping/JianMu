@@ -48,14 +48,15 @@ public class SearchCourseServiceImpl implements SearchCourseService {
         jobList.addAll(jobDao.queryJobsByCourseId(courseId));
         for (Job j : jobList) {
             List<User> students = new ArrayList<>();
+            students.add(jobDao.queryPosterByJobId(j.getId()));
             List<Apply> applies = jobDao.queryApplies(j.getId());
             for (Apply apply : applies) {
                 if (apply.getStatus() == 2) {
                     students.add(studentDao.queryInfoById(apply.getUserId()));
                 }
             }
+            studentList.add(students);
         }
-        return;
     }
 
     @Override

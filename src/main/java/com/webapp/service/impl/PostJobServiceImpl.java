@@ -1,6 +1,5 @@
 package com.webapp.service.impl;
 
-import com.sun.org.apache.bcel.internal.generic.GotoInstruction;
 import com.webapp.dao.GroupDao;
 import com.webapp.dao.JobDao;
 import com.webapp.dao.impl.GroupDaoImpl;
