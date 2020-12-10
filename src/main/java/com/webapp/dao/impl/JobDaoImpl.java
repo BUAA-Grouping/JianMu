@@ -62,14 +62,13 @@ public class JobDaoImpl extends BaseDao implements JobDao {
     }
 
     @Override
-    public List<Job> queryJobByConditions(String keyword, int college, int campus) {
+    public List<Job> queryJobByConditions(String keyword, int college, int campus, int userId) {
         String sql = "SELECT `id`,`title`,`college_id` college,`expected_num_of_member` AS `exceptedNumOfMember`," +
-                "`state`,`profile`,`telephone`,`email`,campus" +
-                " FROM job";
-        if ((keyword == null || keyword.isEmpty()) && college == 0 && campus == 0) {
-            return queryForList(Job.class, sql);
-        }
-        sql += " WHERE ";
+                "`state`,`profile`,`telephone`,`email`,campus " +
+                "FROM job " +
+                "WHERE (course_id IS NULL OR course_id=0 OR course_id IN (" +
+                        "SELECT course_id FROM std_study_course WHERE student_id=? UNION" +
+                        "SELECT course_id FROM teacher_teach_course WHERE teacher_id=?)) AND ";
         if (keyword != null && !keyword.isEmpty()) {
             sql += " `title` LIKE '%" + keyword + "%' AND ";
         }
@@ -80,7 +79,7 @@ public class JobDaoImpl extends BaseDao implements JobDao {
             sql += " `campus`=" + campus + " AND ";
         }
         sql = sql.replaceAll(" AND $", "");
-        return queryForList(Job.class, sql);
+        return queryForList(Job.class, sql, userId);
     }
 
     @Override
@@ -119,5 +118,13 @@ public class JobDaoImpl extends BaseDao implements JobDao {
         String sql = "UPDATE user_apply_job SET status=?,reply_at=? WHERE job_id=? AND user_id=?";
         return update(sql, apply.getStatus(), apply.getReplyAt(),
                 apply.getJobId(), apply.getUserId()) > 0;
+    }
+
+    @Override
+    public List<Job> queryJobsByCourseId(int courseId) {
+        String sql = "SELECT `id`,`title`,college_id college,campus,expected_num_of_member exceptedNumOfMember," +
+                "`state`,`profile`,`telephone`,`email`" +
+                " FROM job WHERE course_id=?";
+        return queryForList(Job.class, sql, courseId);
     }
 }

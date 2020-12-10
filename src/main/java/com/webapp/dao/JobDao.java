@@ -38,7 +38,7 @@ public interface JobDao {
      * search for jobs if conditions are met.
      * @return a List of job.
      */
-    List<Job> queryJobByConditions(String keyword,int college,int campus);
+    List<Job> queryJobByConditions(String keyword,int college,int campus,int userId);
 
     /**
      * get jobs the person post
@@ -53,4 +53,6 @@ public interface JobDao {
     List<Apply> queryApplies(int jobId);
 
     boolean replyApply(Apply apply);
+
+    List<Job> queryJobsByCourseId(int courseId);
 }
