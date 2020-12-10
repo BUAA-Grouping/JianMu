@@ -2,8 +2,10 @@ package com.webapp.servlet;
 
 import com.google.gson.JsonObject;
 import com.webapp.dao.impl.JobDaoImpl;
-import com.webapp.service.ApplyService;
-import com.webapp.service.impl.ApplyJobServiceImpl;
+import com.webapp.pojo.Study;
+
+import com.webapp.service.StudyService;
+import com.webapp.service.impl.StudyServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,15 +27,17 @@ public class StudyServlet extends HttpServlet {
             jsonObject.addProperty("message", "请先登陆");
         } else {
             int userId = (int) session.getAttribute("id");
-            String s = request.getParameter("courseId");
+            String s = request.getParameter("id");
             int courseId = Integer.parseInt(s);
             if (new JobDaoImpl().queryPosterByJobId(courseId).getId() == userId) {
                 jsonObject.addProperty("message", "无需申请自己创建的课程");
             } else {
-                ApplyService applyJobService = new ApplyJobServiceImpl();
-
-//                boolean res = applyJobService.apply(apply);
-//                jsonObject.addProperty("message", res ? "申请成功，请耐心等待通过" : "服务器错误");
+                StudyService applyJobService = new StudyServiceImpl();
+                Study study = new Study();
+                study.setStudentId(userId);
+                study.setCourseId(courseId);
+                boolean res = applyJobService.study(study);
+                jsonObject.addProperty("message", res ? "申请成功，请耐心等待通过" : "服务器错误");
             }
         }
 
