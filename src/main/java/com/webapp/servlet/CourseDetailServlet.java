@@ -51,7 +51,7 @@ public class CourseDetailServlet extends HttpServlet {
         if (session.getAttribute("id") != null) {
             int userId = (int) session.getAttribute("id");
             int type = (int) session.getAttribute("type");
-            int courseId = Integer.parseInt(request.getParameter("courseId"));
+            int courseId = Integer.parseInt(request.getParameter("id"));
 
             StudyService studyService = new StudyServiceImpl();
             if (studyService.hadStudied(userId, courseId, type)) {
@@ -62,6 +62,7 @@ public class CourseDetailServlet extends HttpServlet {
         } else {
             jsonObject.addProperty("message", "未登录");
         }
+        response.setContentType("text/html;charset=utf-8");
         PrintWriter writer = response.getWriter();
         writer.write(jsonObject.toString());
         writer.flush();
