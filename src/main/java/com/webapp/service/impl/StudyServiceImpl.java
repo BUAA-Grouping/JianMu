@@ -12,7 +12,8 @@ public class StudyServiceImpl implements StudyService {
 
     @Override
     public boolean study(Study study) {
-        return courseDao.study(study);
+//        return courseDao.study(study);
+        return false;
     }
 
     @Override

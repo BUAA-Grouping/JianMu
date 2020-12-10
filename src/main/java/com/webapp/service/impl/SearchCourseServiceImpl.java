@@ -15,7 +15,7 @@ public class SearchCourseServiceImpl implements SearchCourseService {
 
     @Override
     public int searchCourse(String keyword, int college, String teacher, ArrayList<Course> courseList, List<Teacher> teachers) {
-        courseList.addAll(courseDao.queryCourseByConditions(keyword, college, teacher));
+        courseList.addAll(courseDao.queryCoursesByConditions(keyword, teacher, college));
         for (Course c : courseList) {
             teachers.add(courseDao.queryTeachersByCourseId(c.getId()).get(0));
         }

@@ -32,8 +32,8 @@ public class StudyServlet extends HttpServlet {
             } else {
                 ApplyService applyJobService = new ApplyJobServiceImpl();
 
-                boolean res = applyJobService.apply(apply);
-                jsonObject.addProperty("message", res ? "申请成功，请耐心等待通过" : "服务器错误");
+//                boolean res = applyJobService.apply(apply);
+//                jsonObject.addProperty("message", res ? "申请成功，请耐心等待通过" : "服务器错误");
             }
         }
 

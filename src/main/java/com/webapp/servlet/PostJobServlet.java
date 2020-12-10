@@ -2,6 +2,8 @@ package com.webapp.servlet;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.webapp.dao.impl.CourseDaoImpl;
+import com.webapp.pojo.Course;
 import com.webapp.pojo.Job;
 import com.webapp.service.PostJobService;
 import com.webapp.service.impl.PostJobServiceImpl;
@@ -38,6 +40,17 @@ public class PostJobServlet extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+
+        int courseId;
+        try {
+            courseId = Integer.parseInt(request.getParameter("courseId"));
+        } catch (Exception e) {
+            courseId = 0;
+        }
+
+        req_job.setCourseId(courseId);
+
         assert date != null;
         expectedEndTime = new Timestamp(date.getTime());
         JsonObject jsonObject = new JsonObject();
@@ -53,6 +66,14 @@ public class PostJobServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("courseId"));
+        String title = new CourseDaoImpl().queryInfoByCourseId(id).getTitle();
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("courseTitle", title);
 
+        response.setContentType("text/html;charset=utf-8");
+        PrintWriter writer = response.getWriter();
+        writer.write(jsonObject.toString());
+        writer.flush();
     }
 }
