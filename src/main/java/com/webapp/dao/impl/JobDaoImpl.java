@@ -79,7 +79,7 @@ public class JobDaoImpl extends BaseDao implements JobDao {
             sql += " `campus`=" + campus + " AND ";
         }
         sql = sql.replaceAll(" AND $", "");
-        return queryForList(Job.class, sql, userId);
+        return queryForList(Job.class, sql, userId, userId);
     }
 
     @Override
