@@ -11,7 +11,7 @@ $(function () {
             if (msg.message === "已加入课程") {
                 $("#join-course").hide();
                 $("#create-job").show();
-                $("#create-job").attr("href", "candidate-dashboard.html#post-new-job#" + courseID);
+                $("#create-job-href").attr("href", "candidate-dashboard.html#post-new-job#" + courseID);
             } else if (msg.message === "已加入项目") {
 
             }else{
