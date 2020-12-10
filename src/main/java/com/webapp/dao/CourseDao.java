@@ -35,7 +35,14 @@ public interface CourseDao {
     /**
      * ensure the user is a teacher
      * @param userId user_id of teacher
-     * @return list of teaching courses
+     * @return list of taught courses
      */
-    List<Course> queryTeachingCourses(int userId);
+    List<Course> queryTaughtCourses(int userId);
+
+    /**
+     * ensure the user is a student
+     * @param userId user_id of student
+     * @return list of studied courses
+     */
+    List<Course> queryStudiedCourses(int userId);
 }
