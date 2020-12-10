@@ -9,7 +9,7 @@ $(function () {
             dataType: "json",
             async: false,
             success: function (msg) {
-                $("#job-course").attr("text",msg.courseTitle);
+                $("#job-course").attr("value",msg.courseTitle);
             },
             error: function (xhr) {
                 swal(xhr.message, "Error!", 'error');

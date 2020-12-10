@@ -56,7 +56,7 @@ function addCourse(msg) {
             $('#jobs').append(
                 '<div id="tab' + (num + 1).toString() + '" class="col-lg-4 col-md-4 col-sm-6">\n' +
                 '   <div class="employer-wrap">\n' +
-                '       <div class="employer-cover-image" style="background-image: url(assets/img/des-' + (k % 9).toString() + '.jpg)">\n' +
+                '       <div class="employer-cover-image" style="background-image: url(assets/img/des-' + (k % 9 + 1).toString() + '.jpg)">\n' +
                 '           <div class="employer-thumb">\n' +
                 '                   <a href="#"><img alt="" src="assets/img/微电子.png" class="avatar avatar-120 photo"></a>\n' +
                 '           </div>\n' +
