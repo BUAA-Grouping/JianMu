@@ -15,7 +15,7 @@ $(function () {
             });
             $("#join-course").hide();
             $("#create-job").show();
-            $("#create-job").attr("",);
+            $("#create-job").attr("href", "candidate-dashboard.html#post-new-job#" + courseID);
         },
         error: function (xhr) {
             swal(xhr.message, "Error!", 'error');
