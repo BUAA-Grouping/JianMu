@@ -5,6 +5,10 @@
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
     <servlet>
+        <servlet-name>CourageManageServlet</servlet-name>
+        <servlet-class>com.webapp.servlet.CourageManageServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>DeleteJobServlet</servlet-name>
         <servlet-class>com.webapp.servlet.DeleteJobServlet</servlet-class>
     </servlet>
@@ -147,5 +151,9 @@
     <servlet-mapping>
         <servlet-name>MemberDeleteServlet</servlet-name>
         <url-pattern>/member_delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CourageManageServlet</servlet-name>
+        <url-pattern>/courage_manage</url-pattern>
     </servlet-mapping>
 </web-app>

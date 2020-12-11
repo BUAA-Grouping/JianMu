@@ -11,4 +11,6 @@ public interface StudyService {
     List<Study> query(int courseId);
 
     boolean hadStudied(int userId, int courseId,int type);
+
+    boolean hadPosted(int userId,int courseId);
 }

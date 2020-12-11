@@ -55,7 +55,11 @@ public class CourseDetailServlet extends HttpServlet {
 
             StudyService studyService = new StudyServiceImpl();
             if (studyService.hadStudied(userId, courseId, type)) {
-                jsonObject.addProperty("message", "已加入课程");
+                if(studyService.hadPosted(userId,courseId)){
+                    jsonObject.addProperty("message", "已发布项目");
+                }else {
+                    jsonObject.addProperty("message", "已加入课程");
+                }
             } else {
                 jsonObject.addProperty("message", "未加入课程");
             }
