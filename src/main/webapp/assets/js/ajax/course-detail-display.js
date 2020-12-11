@@ -46,17 +46,17 @@ function addJobInCourse(job, appliers, postJobID) {
         '           <button class="btn btn-link" type="button"\n' +
         '               data-toggle="collapse" data-target="#collapse' + postJobID + '"' + '\n' +
         '               aria-expanded="true" aria-controls="collapse' + postJobID + '"' + '>\n' +
-        '               <div class="mg-list-wrap">\n' +
-        '                   <div class="mg-list-thumb">\n' +
-        '                       <img src="assets/img/计算机学院.png" class="mx-auto" alt=""/>\n' +
-        '                   </div>\n' +
-        '                   <div class="mg-list-caption">\n' +
-        '                       <a href="job-detail.html#' + job.id + '" class="mg-title">' + job.title + '</a>\n' +
-        '                   </div>\n' +
-        '               </div>\n' +
+                    job.title +
         '           </button>\n' +
+        '               <div class="mg-action ">\n' +
+        '                   <div class="btn-group mb-0">\n' +
+        '                       <a href="job-detail.html#' + job.id + '" class="btn btn-view" data-toggle="tooltip"\n' +
+        '                           data-placement="top" ><i class="ti-check-box"></i>加入该项目</a>\n' +
+        '                   </div>\n' +
+        '               </div>' +
         '       </h2>\n' +
         '   </div>\n' +
+
         '   <div id="collapse' + postJobID + '"' + ' class="collapse show" aria-labelledby="heading' + postJobID + '"' + '\n' +
         '        data-parent="#accordionExample">\n' +
         '       <div class="card-body">\n' +
