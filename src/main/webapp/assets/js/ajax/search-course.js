@@ -12,7 +12,7 @@ $(function () {
         }
     });
     $("#search-job").click(function (message) {
-        $('#jobs').empty();
+        $('#courses').empty();
         $('#pages').empty();
         let keyword = $('#key-words').val();
         let college = $('#category').val();
