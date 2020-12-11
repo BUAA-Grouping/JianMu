@@ -114,4 +114,12 @@ public class CourseDaoImpl extends BaseDao implements CourseDao {
         return update(sql, study.getStatus(), study.getReplyAt(),
                 study.getCourseId(), study.getStudentId()) > 0;
     }
+
+    @Override
+    public boolean deleteStudent(int userId, int courseId) {
+        String sql = "DELETE FROM std_study_course WHERE student_id=? AND course_id=?";
+        return update(sql, userId, courseId) > 0;
+    }
+
+
 }

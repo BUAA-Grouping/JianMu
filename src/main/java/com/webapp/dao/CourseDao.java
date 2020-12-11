@@ -46,4 +46,6 @@ public interface CourseDao {
     List<Study> queryStudies(int courseId);
 
     boolean replyStudy(Study study);
+
+    boolean deleteStudent(int userId, int courseId);
 }

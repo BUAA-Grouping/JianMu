@@ -55,4 +55,8 @@ public interface UserDao {
     boolean join(int userId, int groupId);
 
     boolean isInCourse(int userId, int courseId);
+
+    boolean deleteApply(int userId, int jobId);
+
+    boolean quitGroup(int userId, int groupId);
 }
