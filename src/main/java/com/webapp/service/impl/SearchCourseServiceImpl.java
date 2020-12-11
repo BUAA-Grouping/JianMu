@@ -59,10 +59,6 @@ public class SearchCourseServiceImpl implements SearchCourseService {
         }
     }
 
-    @Override
-    public Teacher getTeacher(int courseId) {
-        return courseDao.queryTeachersByCourseId(courseId).get(0);
-    }
 
 
 
