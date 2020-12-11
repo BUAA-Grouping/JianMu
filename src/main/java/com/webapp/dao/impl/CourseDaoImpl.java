@@ -63,7 +63,10 @@ public class CourseDaoImpl extends BaseDao implements CourseDao {
 
     @Override
     public List<Course> queryTaughtCourses(int userId) {
-        return null;
+        String sql = "SELECT `id`, title, capacity, profile, " +
+                "college_id collegeId, create_at createAt FROM course" +
+                "WHERE `id` IN (SELECT course_id FROM teacher_teach_course WHERE teacher_id=?)";
+        return queryForList(Course.class, sql, userId);
     }
 
     @Override
