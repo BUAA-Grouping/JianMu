@@ -154,6 +154,6 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CourageManageServlet</servlet-name>
-        <url-pattern>/courage_manage</url-pattern>
+        <url-pattern>/course_manage</url-pattern>
     </servlet-mapping>
 </web-app>
