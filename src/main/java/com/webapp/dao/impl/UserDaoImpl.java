@@ -126,4 +126,16 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         return false;
     }
 
+    @Override
+    public boolean deleteApply(int userId, int jobId) {
+        String sql = "DELETE FROM user_apply_job WHERE user_id=? AND job_id=?";
+        return update(sql, userId, jobId) > 0;
+    }
+
+    @Override
+    public boolean quitGroup(int userId, int groupId) {
+        String sql = "DELETE FROM user_compose_group WHERE user_id=? AND group_id=?";
+        return update(sql, userId, groupId) > 0;
+    }
+
 }

@@ -63,7 +63,10 @@ public class CourseDaoImpl extends BaseDao implements CourseDao {
 
     @Override
     public List<Course> queryTaughtCourses(int userId) {
-        return null;
+        String sql = "SELECT `id`, title, capacity, profile, " +
+                "college_id collegeId, create_at createAt FROM course" +
+                "WHERE `id` IN (SELECT course_id FROM teacher_teach_course WHERE teacher_id=?)";
+        return queryForList(Course.class, sql, userId);
     }
 
     @Override
@@ -114,4 +117,12 @@ public class CourseDaoImpl extends BaseDao implements CourseDao {
         return update(sql, study.getStatus(), study.getReplyAt(),
                 study.getCourseId(), study.getStudentId()) > 0;
     }
+
+    @Override
+    public boolean deleteStudent(int userId, int courseId) {
+        String sql = "DELETE FROM std_study_course WHERE student_id=? AND course_id=?";
+        return update(sql, userId, courseId) > 0;
+    }
+
+
 }
