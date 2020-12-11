@@ -24,7 +24,7 @@ function addCourseList(msg) {
 function addPostCourse(course, studentList, postCID) {
     let applyString = '';
     for (let i = 0; i < studentList.length; i++) {
-        applyString += addStudent(studentList[i], 0, course.id);
+        applyString += addStudent(studentList[i], course.id);
     }
     $('#course-cards').append(
         '<div class="card">\n' +

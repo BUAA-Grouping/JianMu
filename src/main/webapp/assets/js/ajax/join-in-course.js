@@ -12,10 +12,9 @@ $(function () {
                 $("#join-course").hide();
                 $("#create-job").show();
                 $("#create-job-href").attr("href", "candidate-dashboard.html#post-new-job#" + courseID);
-            } else if (msg.message === "已加入项目") {
-
-            }else{
-
+            } else if (msg.message === "已发布项目") {
+                $("#join-course").hide();
+                $("#created").show();
             }
         },
         error: function (xhr) {
@@ -52,6 +51,7 @@ $(function () {
                 setTimeout(function () {
                     location.reload();
                 }, 1000);
+                location.reload();
             },
             error: function (xhr) {
                 swal(xhr.message, "Error!", 'error');
