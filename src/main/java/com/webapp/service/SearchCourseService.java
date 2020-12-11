@@ -11,9 +11,6 @@ public interface SearchCourseService {
 
     void getDetail(int courseId, Course course, Teacher teacher, List<Job> jobList, List<List<User>> studentList);
 
-    Teacher getTeacher(int courseId);
-
-    List<Course> getCourse(int teacherId);
 
     boolean getCourse(int teacherId, List<Course> courseList, List<List<User>> studentList);
 }
