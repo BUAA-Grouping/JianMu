@@ -64,16 +64,19 @@ public class SearchCourseServiceImpl implements SearchCourseService {
         return courseDao.queryTeachersByCourseId(courseId).get(0);
     }
 
+
+
     @Override
-    public boolean getCourse(int teacherId,List<Course> courseList, List<List<User>> studentList) {
+    public boolean getCourse(int teacherId, List<Course> courseList, List<List<User>> studentList) {
         courseList.addAll(courseDao.queryTaughtCourses(teacherId));
-        for(Course course:courseList){
+        for (Course course : courseList) {
             List<User> list = new ArrayList<>();
             List<Study> studies = courseDao.queryStudies(course.getId());
-            for(Study study:studies) {
+            for (Study study : studies) {
                 list.add(studentDao.queryInfoById(study.getStudentId()));
             }
             studentList.add(list);
         }
+        return true;
     }
 }
