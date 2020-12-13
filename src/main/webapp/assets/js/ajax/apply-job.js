@@ -28,6 +28,7 @@ $(function () {
                 setTimeout(function () {
                     location.reload();
                 }, 1000);
+                location.reload();
             },
             error: function (xhr) {
                 swal(xhr.message, "Error!", 'error');
