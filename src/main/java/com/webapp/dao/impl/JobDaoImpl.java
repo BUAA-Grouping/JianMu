@@ -27,7 +27,7 @@ public class JobDaoImpl extends BaseDao implements JobDao {
                 " VALUES (?,?,?,?,?,?,?,?,?)";
         int jobId = ((BigInteger) insert(sql, job.getTitle(), job.getCollege(), job.getCampus(),
                 job.getExceptedNumOfMember(), job.getState(), job.getProfile(), job.getEmailId(),
-                job.getTelephone(),job.getCourseId())).intValue();
+                job.getTelephone(),job.getCourseId() != 0 ? job.getCourseId() : null)).intValue();
         job.setId(jobId);
         sql = "INSERT INTO user_post_job(`user_id`,`job_id`,`expected_end_time`) VALUES (?,?,?)";
         return update(sql, userId, jobId, expectedEndTime) > 0;
