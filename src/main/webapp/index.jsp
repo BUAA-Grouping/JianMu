@@ -220,19 +220,13 @@
                                 <div class="item">
                                     <div class="job-grid style-1">
                                         <div class="job-grid-wrap">
-                                            <span class="job-type j-part-time">Part Time</span>
                                             <div class="job-grid-thumb">
                                                 <a href="job-detail.html"><img src="assets/img/微电子.png" class="img-fluid mx-auto" alt="" /></a>
                                             </div>
-                                            <h4 class="job-title"><a href="job-detail.html">Product Manager</a></h4>
+                                            <h4 class="job-title"><a href="job-detail.html">数据库大作业</a></h4>
                                             <hr>
                                             <div class="job-grid-detail">
-                                                <h4 class="jbc-name"><a href="employer-detail.html">Alliziance Tech</a></h4>
-                                                <p><i class="ti-location-pin"></i>325, New Market, New York </p>
-                                            </div>
-                                            <div class="job-grid-footer">
-                                                <h4 class="job-price">$7,247</h4>
-                                                <a href="job-detail.html" class="btn btn-outline-info btn-rounded">Apply</a>
+                                                <h4 class="jbc-name"><a href="employer-detail.html">666</a></h4>
                                             </div>
 
                                         </div>
@@ -244,66 +238,13 @@
                                     <div class="job-grid style-1">
                                         <div class="job-grid-wrap">
                                             <div class="featured-job"><i class="ti-star filled"></i></div>
-                                            <span class="job-type j-full-time">Full Time</span>
-                                            <div class="job-grid-thumb">
-                                                <a href="job-detail.html"><img src="assets/img/材料科学与工程.png" class="img-fluid mx-auto" alt="" /></a>
-                                            </div>
-                                            <h4 class="job-title"><a href="job-detail.html">Project & Team Head</a></h4>
-                                            <hr>
-                                            <div class="job-grid-detail">
-                                                <h4 class="jbc-name"><a href="employer-detail.html">Asana Inc.</a></h4>
-                                                <p><i class="ti-location-pin"></i>356, Blick Shop, London </p>
-                                            </div>
-                                            <div class="job-grid-footer">
-                                                <h4 class="job-price">$3,254</h4>
-                                                <a href="job-detail.html" class="btn btn-outline-info btn-rounded">Apply</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single Job -->
-                                <div class="item">
-                                    <div class="job-grid style-1">
-                                        <div class="job-grid-wrap">
-                                            <span class="job-type j-full-time">Full Time</span>
-                                            <div class="job-grid-thumb">
-                                                <a href="job-detail.html"><img src="assets/img/经管.png" class="img-fluid mx-auto" alt="" /></a>
-                                            </div>
-                                            <h4 class="job-title"><a href="job-detail.html">Web Designer</a></h4>
-                                            <hr>
-                                            <div class="job-grid-detail">
-                                                <h4 class="jbc-name"><a href="employer-detail.html">Drive Tech</a></h4>
-                                                <p><i class="ti-location-pin"></i>New Market, United State </p>
-                                            </div>
-                                            <div class="job-grid-footer">
-                                                <h4 class="job-price">$5,747</h4>
-                                                <a href="job-detail.html" class="btn btn-outline-info btn-rounded">Apply</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single Job -->
-                                <div class="item">
-                                    <div class="job-grid style-1">
-                                        <div class="job-grid-wrap">
-                                            <div class="featured-job"><i class="ti-star filled"></i></div>
-                                            <span class="job-type j-freelance-time">Freelance</span>
                                             <div class="job-grid-thumb">
                                                 <a href="job-detail.html"><img src="assets/img/航空科学与工程学院.png" class="img-fluid mx-auto" alt="" /></a>
                                             </div>
-                                            <h4 class="job-title"><a href="job-detail.html">Sales Analytics</a></h4>
+                                            <h4 class="job-title"><a href="job-detail.html">数据库大作业2</a></h4>
                                             <hr>
                                             <div class="job-grid-detail">
-                                                <h4 class="jbc-name"><a href="employer-detail.html">Photos Info.</a></h4>
-                                                <p><i class="ti-location-pin"></i>325, New Market, New York </p>
-                                            </div>
-                                            <div class="job-grid-footer">
-                                                <h4 class="job-price">$6,357</h4>
-                                                <a href="job-detail.html" class="btn btn-outline-info btn-rounded">Apply</a>
+                                                <h4 class="jbc-name"><a href="employer-detail.html">555</a></h4>
                                             </div>
 
                                         </div>
@@ -314,19 +255,13 @@
                                 <div class="item">
                                     <div class="job-grid style-1">
                                         <div class="job-grid-wrap">
-                                            <span class="job-type j-part-time">Part Time</span>
                                             <div class="job-grid-thumb">
                                                 <a href="job-detail.html"><img src="assets/img/计算机学院.png" class="img-fluid mx-auto" alt="" /></a>
                                             </div>
-                                            <h4 class="job-title"><a href="job-detail.html">Product Manager</a></h4>
+                                            <h4 class="job-title"><a href="job-detail.html">Task1</a></h4>
                                             <hr>
                                             <div class="job-grid-detail">
-                                                <h4 class="jbc-name"><a href="employer-detail.html">Google Info.</a></h4>
-                                                <p><i class="ti-location-pin"></i>325, Rack Newer, England </p>
-                                            </div>
-                                            <div class="job-grid-footer">
-                                                <h4 class="job-price">$10,047</h4>
-                                                <a href="job-detail.html" class="btn btn-outline-info btn-rounded">Apply</a>
+                                                <h4 class="jbc-name"><a href="employer-detail.html">222</a></h4>
                                             </div>
 
                                         </div>
@@ -338,19 +273,13 @@
                                     <div class="job-grid style-1">
                                         <div class="job-grid-wrap">
                                             <div class="featured-job"><i class="ti-star filled"></i></div>
-                                            <span class="job-type j-temporary-time">Temporary</span>
                                             <div class="job-grid-thumb">
                                                 <a href="job-detail.html"><img src="assets/img/网安.png" class="img-fluid mx-auto" alt="" /></a>
                                             </div>
-                                            <h4 class="job-title"><a href="job-detail.html">Team Director</a></h4>
+                                            <h4 class="job-title"><a href="job-detail.html">Task2</a></h4>
                                             <hr>
                                             <div class="job-grid-detail">
-                                                <h4 class="jbc-name"><a href="employer-detail.html">PayPal Info.</a></h4>
-                                                <p><i class="ti-location-pin"></i>254, New Buklack, London </p>
-                                            </div>
-                                            <div class="job-grid-footer">
-                                                <h4 class="job-price">$8,247</h4>
-                                                <a href="job-detail.html" class="btn btn-outline-info btn-rounded">Apply</a>
+                                                <h4 class="jbc-name"><a href="employer-detail.html">222</a></h4>
                                             </div>
 
                                         </div>
@@ -382,32 +311,32 @@
                                 <li>
                                     <a href="search.html" class="standard-category-box">
                                         <i class="ti-money"></i>
-                                        <h4>Account / Finance</h4>
-                                        <span>10 new job posted</span>
+                                        <h4>金融</h4>
+                                        <span>114514个</span>
                                     </a>
                                 </li>
 
                                 <li>
                                     <a href="search.html" class="standard-category-box">
                                         <i class="ti-headphone-alt"></i>
-                                        <h4>Telecommunications</h4>
-                                        <span>12 new job posted</span>
+                                        <h4>通信</h4>
+                                        <span>666个</span>
                                     </a>
                                 </li>
 
                                 <li>
                                     <a href="search.html" class="standard-category-box">
                                         <i class="ti-book"></i>
-                                        <h4>Education Training</h4>
-                                        <span>8 new job posted</span>
+                                        <h4>教育</h4>
+                                        <span>996个</span>
                                     </a>
                                 </li>
 
                                 <li>
                                     <a href="search.html" class="standard-category-box">
                                         <i class="ti-car"></i>
-                                        <h4>Automotive Jobs</h4>
-                                        <span>16 new job posted</span>
+                                        <h4>交通</h4>
+                                        <span>16个</span>
                                     </a>
                                 </li>
 
@@ -479,36 +408,28 @@
                                     <!-- Single Testimonial -->
                                     <div class="item">
                                         <div class="tauth-thumb">
-                                            <img src="assets/img/user-2.jpg" class="mx-auto img-circle" alt="" />
+                                            <img src="assets/img/伏拉夫.jpg" class="mx-auto img-circle" alt="" />
                                         </div>
                                         <div class="tauth-detail">
-                                            <h4 class="tauth-title">Riya Kilwarnia</h4>
-                                            <span class="tauth-subtitle">UI/UX Desihner</span>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing elit. consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+                                            <h4 class="tauth-title">伏拉夫</h4>
+                                            <span class="tauth-subtitle">一个爱中国的歪果仁</span>
+                                            <p>我们北航真是太棒了！<br> 俄罗斯的数据库课，不行！
+                                                <br> 中国的数据库课，行！
+                                            </p>
                                         </div>
                                     </div>
 
                                     <!-- Single Testimonial -->
                                     <div class="item">
                                         <div class="tauth-thumb">
-                                            <img src="assets/img/user-3.jpg" class="mx-auto img-circle" alt="" />
+                                            <img src="assets/img/伏拉夫.jpg" class="mx-auto img-circle" alt="" />
                                         </div>
                                         <div class="tauth-detail">
-                                            <h4 class="tauth-title">Daniel Wartion</h4>
-                                            <span class="tauth-subtitle">App Developer</span>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing elit. consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single Testimonial -->
-                                    <div class="item">
-                                        <div class="tauth-thumb">
-                                            <img src="assets/img/user-4.jpg" class="mx-auto img-circle" alt="" />
-                                        </div>
-                                        <div class="tauth-detail">
-                                            <h4 class="tauth-title">Ritika Uswana</h4>
-                                            <span class="tauth-subtitle">Software Developer</span>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing elit. consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+                                            <h4 class="tauth-title">伏拉夫</h4>
+                                            <span class="tauth-subtitle">一个爱中国的歪果仁</span>
+                                            <p>我们北航真是太棒了！<br> 俄罗斯的数据库课，不行！
+                                                <br> 中国的数据库课，行！
+                                            </p>
                                         </div>
                                     </div>
 
