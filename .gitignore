@@ -1,0 +1,6 @@
+*.sql
+target/
+.idea/
+src/main/webapp/test-index.jsp
+out/
+test/
