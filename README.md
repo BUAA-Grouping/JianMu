@@ -1,5 +1,7 @@
 # JianMu v1.0
-a web application for teaming.
+
+BUAA 2020 数据库课程设计项目，使用最简单的 Servlet、Tomcat 等技术实现的简易 Web 程序。用于课程活动发布和招募。
+目前没有进行维护的打算（必要），毕竟使用的技术比较落后。
 
 ### 环境要求
 
